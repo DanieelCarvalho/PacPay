@@ -1,0 +1,21 @@
+<form [formGroup]="formulario" (submit)="autenticar()">
+  <input
+    type="email"
+    formControlName="email"
+    placeholder="Informe seu e-mail"
+    class="form-control"
+  />
+
+  <input
+    type="password"
+    formControlName="senha"
+    placeholder="Informe sua senha"
+    class="form-control"
+  />
+  <input
+    type="submit"
+    value="Entrar"
+    class="btn btn-primary"
+    [disabled]="formulario.invalid"
+  />
+</form>

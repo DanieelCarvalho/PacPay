@@ -10,5 +10,5 @@ export const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent, canActivate: [autenticarGuard] },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
 ];

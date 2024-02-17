@@ -1,45 +1,38 @@
-
-
-
-    <div class="right-content">
-      <span>Login</span>
-      <button class="btn btn-primary">Abra sua conta</button>
-    </div>
-  </div>
-
+<app-header> </app-header>
+<div>
   <div class="center-container">
-    <h1> Acesse Sua Conta</h1>
-    
+    <h1>Acesse Sua Conta</h1>
+
     <form [formGroup]="formulario" (submit)="autenticar()">
       <div class="form-group">
-                  <label for="email">E-mail:</label>
-                  <input
-                    type="email"
-                    id="email"
-                    formControlName="email"
-                    placeholder="Informe seu e-mail"
-                    class="form-control"
-                  />
-                </div>
-        
-                <div class="form-group">
-                  <label for="senha">Senha:</label>
-                  <input
-                    type="password"
-                    id="senha"
-                    formControlName="senha"
-                    placeholder="Informe sua senha"
-                    class="form-control"
-                  />
-                </div>
-        
-                <button
-                  type="submit"
-                  class="btn btn-success"
-                  [disabled]="formulario.invalid"
-                >
-                  Login
-                </button>
+        <label for="email">E-mail:</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Informe seu e-mail"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha:</label>
+        <input
+          type="password"
+          id="senha"
+          formControlName="senha"
+          placeholder="Informe sua senha"
+          class="form-control"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="formulario.invalid"
+      >
+        Login
+      </button>
     </form>
   </div>
 </div>

@@ -3,10 +3,18 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-color: #3d3d3d;
-  height: 16vh;
+
   margin-top: auto;
 }
 p {
   color: #fff;
   font-size: 32px;
+}
+figure {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+img {
+  width: 5.6rem;
 }

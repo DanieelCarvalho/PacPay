@@ -1,145 +1,257 @@
-<form [formGroup]="formulario" (submit)="cadastrar()" class="m-auto w-50 p-5">
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="cpf-cadastro"
-      placeholder="000-000-000-00"
-      required
+<div class="container-full" style="background-color: #f2f2f2">
+  <section
+    id="topo-cadastro"
+    class="row ps-5"
+    style="background-color: #3d3d3d; height: fit-content"
+  >
+    <img
+      src="assets/seta.png"
+      alt="botão para voltar a página anterior"
+      style="height: 4rem; width: 5rem"
+      class="m-4"
     />
-    <label for="cpf-cadastro">CPF</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="nome-cadastro"
-      placeholder="name name"
-      required
-    />
-    <label for="nome-cadastro">Nome Completo</label>
-  </div>
-
-  <div class="form-floating mb-3">
-    <input
-      [type]="isFocus ? 'date' : 'text'"
-      class="form-control"
-      id="data-cadastro"
-      placeholder="01/01/2001"
-      (focus)="isFocus = true"
-      (blur)="isFocus = false"
-      required
-    />
-    <label for="data-cadastro">Data de Nascimento</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="number"
-      class="form-control"
-      id="telefone-cadastro"
-      placeholder="(44) 9 8585-8585"
-      pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"
-      required
-    />
-    <label for="telefone-cadastro">Celular</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="email"
-      class="form-control"
-      id="email-cadastro"
-      placeholder="name@gmiu.com"
-      required
-    />
-    <label for="email-cadastro">Email</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="password"
-      class="form-control"
-      id="senha-cadastro"
-      placeholder="name@gmiu.com"
-      required
-    />
-    <label for="senha-cadastro">Senha</label>
-    <ul>
-      Sua senha deve ter:
-      <li>No mínimo 8 e no máximo 16 caracteres</li>
-      <li>No mínimo 2 letras</li>
-      <li>No mínimo 2 números</li>
-      <li>No mínimo 1 caracter expecial</li>
-    </ul>
-  </div>
-  <p>
-    Ao continuar, você concorda com os
-    <a
-      href="#"
-      data-bs-toggle="modal"
-      data-bs-target="#modalTermos"
-      style="color: #0f253d; font-weight: 600"
-      >Termos de privacidade</a
-    >
-    e
-    <a
-      href="#"
-      data-bs-toggle="modal"
-      data-bs-target="#modalTermos"
-      style="color: #0f253d; font-weight: 600"
-      >Política de privacidade</a
-    >
-  </p>
-  <input
-    type="submit"
-    value="Entrar"
-    class="w-100"
-    style="background-color: #d17a11; color: #ffffff"
-    [disabled]="formulario.invalid"
-  />
-</form>
-
-<div
-  class="modal fade"
-  id="modalTermos"
-  tabindex="-1"
-  aria-labelledby="modalTermosLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalTermosLabel">Termos de privacidade</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Fechar"
-        ></button>
+  </section>
+  <form
+    [formGroup]="formulario"
+    (submit)="cadastrar()"
+    class="m-auto w-75 p-5 row row-gap-3 column-gap-4"
+  >
+    <p class="fs-4">
+      Que tal batizarmos este momento como o ponto de partida para uma vida
+      financeira mais tranquila? Bora?
+    </p>
+    <section class="col">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5"
+          id="nome-cadastro"
+          placeholder="name name"
+          required
+        />
+        <label class="fs-5 pt-4" for="nome-cadastro">Nome Completo</label>
       </div>
-      <div class="modal-body">
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
-          repellendus commodi assumenda labore eaque, sunt quas ullam, maiores
-          quae, nostrum cupiditate earum consectetur sequi quia sapiente aut
-          fuga maxime optio. Optio, non? Saepe maxime ipsum omnis numquam
-          mollitia at, explicabo nostrum temporibus, aliquam, assumenda
-          aspernatur magni eaque quia! Facilis minus tenetur vel illo, suscipit
-          ratione voluptates excepturi quidem nulla. Dolores. Ex delectus, magni
-          voluptatibus hic cupiditate facilis rem quos voluptatum excepturi.
-          Officia, sunt dicta. Velit adipisci dolorem quo ut alias, in
-          architecto nisi quibusdam inventore explicabo cupiditate repellendus
-          est rem! Vel hic sit quas alias assumenda voluptate ad minima ipsam
-          rem explicabo, dolorum esse tenetur vero est. Exercitationem placeat
-          sunt et odio id eveniet dolorum, numquam doloribus accusamus harum
-          aliquam? Voluptatibus, eaque. Fugiat deleniti debitis delectus tempora
-          eius illo nostrum neque consequatur? Suscipit nihil reiciendis eius
-          provident nemo, enim animi odio sint amet similique, ea quaerat
-          voluptatem natus tempora laboriosam?
-        </p>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5"
+          id="cpf-cadastro"
+          placeholder="000-000-000-00"
+          required
+        />
+        <label class="fs-5 pt-4" for="cpf-cadastro">CPF</label>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Fechar
-        </button>
+      <div class="form-floating mb-3">
+        <input
+          [type]="isFocus ? 'date' : 'text'"
+          class="form-control form-control-lg fs-5"
+          id="data-cadastro"
+          placeholder="01/01/2001"
+          (focus)="isFocus = true"
+          (blur)="isFocus = false"
+          required
+        />
+        <label class="fs-5 pt-4" for="data-cadastro">Data de Nascimento</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="number"
+          class="form-control form-control-lg fs-5"
+          id="telefone-cadastro"
+          placeholder="(44) 9 8585-8585"
+          pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"
+          required
+        />
+        <label class="fs-5 pt-4" for="telefone-cadastro">Celular</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control form-control-lg fs-5"
+          id="email-cadastro"
+          placeholder="name@gmiu.com"
+          required
+        />
+        <label class="fs-5 pt-4" for="email-cadastro">Email</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          class="form-control form-control-lg fs-5"
+          id="senha-cadastro"
+          placeholder="name@gmiu.com"
+          required
+        />
+        <label class="fs-5 pt-4" for="senha-cadastro">Senha</label>
+        <ul>
+          Sua senha deve ter:
+          <li>No mínimo 8 e no máximo 16 caracteres</li>
+          <li>No mínimo 2 letras</li>
+          <li>No mínimo 2 números</li>
+          <li>No mínimo 1 caracter expecial</li>
+        </ul>
+      </div>
+    </section>
+    <section class="col">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5"
+          id="cep-cadastro"
+          placeholder="55555-000"
+          required
+        />
+        <label class="fs-5 pt-4" for="cep-cadastro">CEP</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5"
+          id="rua-cadastro"
+          placeholder="name name"
+          required
+        />
+        <label class="fs-5 pt-4" for="rua-cadastro">Rua</label>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control form-control-lg fs-5"
+              id="numero-cadastro"
+              placeholder="01/01/2001"
+              required
+            />
+            <label class="fs-5 pt-4" for="numero-cadastro">Número</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control form-control-lg fs-5"
+              id="complemento-cadastro"
+              placeholder="(44) 9 8585-8585"
+              pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"
+              required
+            />
+            <label class="fs-5 pt-4" for="complemento-cadastro">Complemento</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5"
+          id="bairro-cadastro"
+          placeholder="name@gmiu.com"
+          required
+        />
+        <label class="fs-5 pt-4" for="bairro-cadastro">Bairro</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5"
+          id="cidade-cadastro"
+          placeholder="name@gmiu.com"
+          required
+        />
+        <label class="fs-5 pt-4" for="cidade-cadastro">Cidade</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5"
+          id="referencia-cadastro"
+          placeholder="name@gmiu.com"
+          required
+        />
+        <label class="fs-5 pt-4" for="referencia-cadastro"
+          >Ponto de referência</label
+        >
+      </div>
+    </section>
+
+    <p>
+      Ao continuar, você concorda com os
+      <a
+        href="#"
+        data-bs-toggle="modal"
+        data-bs-target="#modalTermos"
+        style="color: #0f253d; font-weight: 600"
+        >Termos de privacidade</a
+      >
+      e
+      <a
+        href="#"
+        data-bs-toggle="modal"
+        data-bs-target="#modalTermos"
+        style="color: #0f253d; font-weight: 600"
+        >Política de privacidade</a
+      >
+    </p>
+    <input
+      type="submit"
+      value="Entrar"
+      class="w-100"
+      style="background-color: #e89d00; color: #ffffff"
+      [disabled]="formulario.invalid"
+    />
+  </form>
+
+  <div
+    class="modal fade"
+    id="modalTermos"
+    tabindex="-1"
+    aria-labelledby="modalTermosLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTermosLabel">
+            Termos de privacidade
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Fechar"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+            repellendus commodi assumenda labore eaque, sunt quas ullam, maiores
+            quae, nostrum cupiditate earum consectetur sequi quia sapiente aut
+            fuga maxime optio. Optio, non? Saepe maxime ipsum omnis numquam
+            mollitia at, explicabo nostrum temporibus, aliquam, assumenda
+            aspernatur magni eaque quia! Facilis minus tenetur vel illo,
+            suscipit ratione voluptates excepturi quidem nulla. Dolores. Ex
+            delectus, magni voluptatibus hic cupiditate facilis rem quos
+            voluptatum excepturi. Officia, sunt dicta. Velit adipisci dolorem
+            quo ut alias, in architecto nisi quibusdam inventore explicabo
+            cupiditate repellendus est rem! Vel hic sit quas alias assumenda
+            voluptate ad minima ipsam rem explicabo, dolorum esse tenetur vero
+            est. Exercitationem placeat sunt et odio id eveniet dolorum, numquam
+            doloribus accusamus harum aliquam? Voluptatibus, eaque. Fugiat
+            deleniti debitis delectus tempora eius illo nostrum neque
+            consequatur? Suscipit nihil reiciendis eius provident nemo, enim
+            animi odio sint amet similique, ea quaerat voluptatem natus tempora
+            laboriosam?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Fechar
+          </button>
+        </div>
       </div>
     </div>
   </div>

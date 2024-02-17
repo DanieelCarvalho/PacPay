@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import {
   FormControl,
   FormGroup,
@@ -12,9 +13,11 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './cadastro.component.html',
-  styleUrl: './cadastro.component.css',
+  styleUrls: ['./cadastro.component.css'],
 })
 export class CadastroComponent {
+  isFocus = false;
+
   constructor(private rota: Router) {}
 
   formulario = new FormGroup({
@@ -23,8 +26,8 @@ export class CadastroComponent {
   });
 
   cadastrar(): void {
-    localStorage.setItem('email', this.formulario.value.email || '');
-    localStorage.setItem('senha', this.formulario.value.senha || '');
+    localStorage.setItem('email', this.formulario.value.email ?? '');
+    localStorage.setItem('senha', this.formulario.value.senha ?? '');
 
     this.rota.navigateByUrl('/login');
   }

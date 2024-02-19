@@ -1,18 +1,19 @@
 .container {
   background-image: conic-gradient(
-    from 43deg,
-    rgba(0, 0, 0, 0.6),
-    rgba(34, 34, 34, 0.6),
-    rgba(102, 102, 102, 0.5),
-    rgba(136, 136, 136, 0.5)
+    from 65deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(17, 17, 17, 0.8),
+    rgba(68, 68, 68, 0.75),
+    rgba(102, 102, 102, 1)
   );
   padding: 1rem;
   border-radius: 1rem;
   width: 20rem;
-  height: 29em;
-  box-shadow: 0.5rem 0.8rem 0.8rem #000;
-  cursor: pointer;
+  height: 30em;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  cursor: grab;
 }
+
 img[alt="mastercard"] {
   width: 30%;
 }

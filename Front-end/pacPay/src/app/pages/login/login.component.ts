@@ -8,12 +8,13 @@ import {
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 
+
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
-  imports: [ReactiveFormsModule, HeaderComponent],
+  imports: [ReactiveFormsModule, HeaderComponent ],
 })
 export class LoginComponent {
   constructor(private rota: Router) {}

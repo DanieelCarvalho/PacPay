@@ -23,3 +23,50 @@
 .container-fim img {
   width: 100%;
 }
+.container-responsivo {
+  display: none;
+}
+.bCriar {
+  display: none;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  width: 19.8rem;
+  height: 7.5rem;
+  border-radius: 0.7rem;
+  font-size: 2.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: drop;
+  filter: drop-shadow(0 4px 4px var(--header-color));
+}
+@media (max-width: 415px) {
+  .cartao {
+    display: none;
+  }
+  .container-inicio {
+    display: none;
+  }
+  .container-fim {
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
+
+  .Header {
+    display: none;
+  }
+  main {
+    background-image: url("./../../../assets/Background.png");
+    height: 100vh;
+  }
+  .bCriar {
+    display: flex;
+  }
+}

@@ -17,6 +17,7 @@ import { CartaoComponent } from '../../components/cartao/cartao.component';
     HeaderComponent,
     FooterComponent,
     CartaoComponent,
+    RouterLink,
   ],
 })
 export class HomeComponent {}

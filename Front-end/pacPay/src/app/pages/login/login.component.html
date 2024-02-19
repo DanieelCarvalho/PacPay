@@ -1,9 +1,8 @@
 <app-header> </app-header>
 <div>
   <div class="center-container">
-    <h1 id="frase">Acesse Sua Conta</h1>
-
     <form [formGroup]="formulario" (submit)="autenticar()">
+      <h1 id="frase">Acesse Sua Conta</h1>
       <div class="form-group">
         <label for="email">CPF</label>
         <input
@@ -39,4 +38,21 @@
       <h4 id="link-cadastre-se">Não tem uma conta? Cadastre-se</h4>
     </form>
   </div>
+
+  
+</div>
+<div>
+  <footer class="footer">
+    <div class="frases-atendimento">
+        <div class="Atendimento"> Atendimento</div>
+        <div class=" frase-semana"> 24 horas por dia, 7 dias por semana!</div>
+    </div>
+    <div id="lista">
+      <ol id="lista-footer">
+        <li><a href="termos"> Termos de Serviço</a></li>
+        <li><a href="duvidas"> Dúvidas Frequentes</a></li>
+        <li><a href="sobre"> Sobre </a></li>
+      </ol>
+    </div>
+</footer>
 </div>

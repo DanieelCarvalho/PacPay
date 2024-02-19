@@ -1,1 +1,151 @@
-<p>admin works!</p>
+<main>
+  <header>
+    <div class="user-info">
+      <div class="user-detalhes">
+        <img src="./assets/fotodousuario.png" alt="Foto do usuário" />
+        <p>Olá, usuário.</p>
+      </div>
+      <div class="logout">
+        <p (click)="sair()">sair</p>
+        <img src="./assets/engrenagem.png" alt="Ícone de engrenagem" />
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="saldo-section">
+      <div>
+        <h3 class="saldo-label">SALDO DA CONTA CORRENTE</h3>
+        <p class="saldo-amount" *ngIf="saldoVisivel">R$ 1000,00</p>
+        <p class="saldo-amount" *ngIf="!saldoVisivel">R$ ****</p>
+      </div>
+      <img
+        *ngIf="olho"
+        src="./assets/eye (1).svg"
+        alt="Ícone de olho"
+        class="olho-saldo"
+        (click)="alternarSaldo()"
+      />
+      <img
+        *ngIf="!olho"
+        src="./assets/eye-closed (1).svg"
+        alt="Ícone de olho"
+        class="olho-saldo"
+        (click)="alternarSaldo()"
+      />
+    </div>
+  </section>
+  <section>
+    <div class="icons-section">
+      <div class="icon">
+        <img src="./assets/recibo.png" alt="Ícone recibo" />
+        <div class="icon-label">Extrato</div>
+      </div>
+      <div class="icon">
+        <img src="./assets/pix.png" alt="Ícone pix" />
+        <div class="icon-label">Pix</div>
+      </div>
+      <div class="icon">
+        <img src="./assets/codigo-de-barras.png" alt="Ícone codigo" />
+        <div class="icon-label">Código de Barras</div>
+      </div>
+      <div class="icon">
+        <img src="./assets/cofrinho.png" alt="Ícone cofrinho" />
+        <div class="icon-label">Cofrinho</div>
+      </div>
+      <div class="icon">
+        <img src="./assets/transferir.png" alt="Ícone transferir" />
+        <div class="icon-label">Transferir</div>
+      </div>
+      <div class="icon">
+        <img src="./assets/cartao.png" alt="Ícone cartao" />
+        <div class="icon-label">Cartão</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="transaction-history">
+      <h2>Histórico de Transações</h2>
+      <ul>
+        <li class="saida">
+          <img
+            src="./assets/iconextratransf.png"
+            alt="icone de transferencia"
+          />
+          Transferência recebida de João - <span>R$ 500,00</span>
+        </li>
+        <li class="saida">
+          <img
+            src="./assets/iconextratransf.png"
+            alt="icone de transferencia"
+          />
+          Pagamento de conta de luz - <span>R$ 100,00</span>
+        </li>
+        <li class="entrada">
+          <img
+            src="./assets/iconextratransf.png"
+            alt="icone de transferencia"
+          />
+          Compra online na loja X - <span>R$ 200,00</span>
+        </li>
+        <li class="entrada">
+          <img
+            src="./assets/iconextratransf.png"
+            alt="icone de transferencia"
+          />
+          Depósito em dinheiro <span>R$ 300,00</span>
+        </li>
+        <li class="saida">
+          <img
+            src="./assets/iconextratransf.png"
+            alt="icone de transferencia"
+          />
+          Transferência para Maria - <span>R$ 150,00</span>
+        </li>
+        <li class="saida">
+          <img
+            src="./assets/iconextratransf.png"
+            alt="icone de transferencia"
+          />
+          Compra de mantimentos - <span>R$ 50,00</span>
+        </li>
+        <li class="entrada">
+          <img
+            src="./assets/iconextratransf.png"
+            alt="icone de transferencia"
+          />
+          Pagamento de salário - <span>R$ 1000,00</span>
+        </li>
+        <li class="saida">
+          <img
+            src="./assets/iconextratransf.png"
+            alt="icone de transferencia"
+          />
+          Pagamento de aluguel - <span>R$ 700,00</span>
+        </li>
+        <li class="entrada">
+          <img
+            src="./assets/iconextratransf.png"
+            alt="icone de transferencia"
+          />
+          Reembolso de despesas - <span>R$ 250,00</span>
+        </li>
+        <li class="saida">
+          <img
+            src="./assets/iconextratransf.png"
+            alt="icone de transferencia"
+          />
+          Compra de eletrônicos - <span>R$ 800,00</span>
+        </li>
+        <li class="entrada">
+          <img
+            src="./assets/iconextratransf.png"
+            alt="icone de transferencia"
+          />
+          Prêmio de loteria - <span>R$ 5000,00</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>

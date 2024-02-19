@@ -1,4 +1,4 @@
-<app-header> </app-header>
+<app-header class="Header"> </app-header>
 <main>
   <section class="container-inicio">
     <div>
@@ -7,14 +7,21 @@
         lugar.
       </p>
     </div>
-    <figure>
-      <img src="./assets/cartao.png" alt="Cartão" />
-    </figure>
+    <app-cartao class="cartao"></app-cartao>
   </section>
   <section class="container-fim">
     <figure>
       <img src="./assets/BannerHome.svg" alt="" />
     </figure>
   </section>
+  <section class="responsivo">
+    <figure class="responsivo-img">
+      <img src="./assets/LogoComNome.svg" alt="" />
+    </figure>
+    <div class="responsivo-buttons">
+      <button class="bLogin" routerLink="/login">já tenho conta</button>
+      <button class="bCriar" routerLink="/cadastro">criar conta</button>
+    </div>
+  </section>
 </main>
-<app-footer></app-footer>
+<app-footer class="footer"></app-footer>

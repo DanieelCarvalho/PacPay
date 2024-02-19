@@ -1,0 +1,53 @@
+.container {
+  background-image: conic-gradient(
+    from 65deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(17, 17, 17, 0.8),
+    rgba(68, 68, 68, 0.75),
+    rgba(102, 102, 102, 1)
+  );
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 20rem;
+  height: 30em;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  cursor: grab;
+}
+
+img[alt="mastercard"] {
+  width: 30%;
+}
+img[alt="chip"] {
+  width: 40%;
+  transform: rotate(90deg);
+}
+.footer img {
+  width: 25%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.header {
+  height: 70%;
+}
+.box-img {
+  display: flex;
+  align-items: flex-start;
+}
+.footer {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer img {
+  width: 8.6rem;
+}
+.footer p {
+  margin-left: 0.5em;
+  font-size: 1.5em;
+  line-height: 2px;
+  font-style: bold;
+}

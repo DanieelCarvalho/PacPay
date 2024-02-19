@@ -1,7 +1,20 @@
+:root{
+  --primary-color:#E89D00;
+  --secondary-color:#ffffff;
+  --secondary-color-2:#000000;
+  --header-color:#3D3D3D;
+  --footer-color:#111111;
+  --cashin-color:#00FD00;
+  --cahsout-color:#FF0000;
+  --font-principal:'Encode Sans Semi Condensed', sans-serif;
+
+
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-principal);
 }
 html {
   font-size: 62.5%;

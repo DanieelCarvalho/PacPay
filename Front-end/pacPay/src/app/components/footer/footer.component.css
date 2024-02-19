@@ -1,20 +1,44 @@
+*{
+    text-decoration: none;
+}
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3d3d3d;
-
-  margin-top: auto;
+  background-color: var(--footer-color);
+  height: 11.4em;
+  color: var(--secondary-color);
+  font-family: var(--font-principal);
+  font-size: 2em;
+  font-weight: 600;
 }
-p {
-  color: #fff;
-  font-size: 32px;
+.copy{
+    color: white;
+    text-align: center;
 }
-figure {
-  width: 100%;
+.container{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  
 }
-img {
-  width: 5.6rem;
+.left, .middle{
+ text-align: center;
+  
 }
+.right {
+  text-align: center;
+}
+
+.right img{
+  width: 1.9em; 
+  height: auto; 
+  margin-right: 10px;   
+}
+.right .logo{
+  width: 4em; 
+  height: auto; 
+  align-items: center;
+}
+
+
+

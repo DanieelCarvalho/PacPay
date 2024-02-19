@@ -23,3 +23,94 @@
 .container-fim img {
   width: 100%;
 }
+.container-responsivo {
+  display: none;
+}
+.responsivo {
+  display: none;
+}
+
+.bCriar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  width: 15.8rem;
+  height: 5.5rem;
+  border-radius: 0.7rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: drop;
+  filter: drop-shadow(0 4px 4px var(--header-color));
+}
+.bLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--secondary-color);
+  width: 15.8rem;
+  height: 5.5rem;
+  border-radius: 0.7rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: drop;
+  filter: drop-shadow(0 4px 4px var(--header-color));
+}
+.responsivo-img img {
+  width: 1.6rem;
+}
+@media (max-width: 415px) {
+  .cartao {
+    display: none;
+  }
+  .container-inicio {
+    display: none;
+  }
+  .container-fim {
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
+
+  .Header {
+    display: none;
+  }
+  main {
+    background-image: url("./../../../assets/Background.png");
+    height: 100vh;
+  }
+  .responsivo {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .responsivo-buttons {
+    display: flex;
+
+    height: 20%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .responsivo-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .responsivo-img img {
+    width: 15rem;
+    height: 9.47rem;
+    filter: drop-shadow(0 4px 4px var(--header-color));
+    opacity: 0.5;
+  }
+}

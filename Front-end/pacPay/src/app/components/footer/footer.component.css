@@ -1,3 +1,6 @@
+*{
+    text-decoration: none;
+}
 footer {
   display: flex;
   justify-content: space-between;
@@ -9,14 +12,17 @@ footer {
   font-size: 2em;
   font-weight: 600;
 }
+.copy{
+    color: white;
+    text-align: center;
+}
 .container{
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
   
 }
 .left, .middle{
-  flex: 1; 
-  text-align: left;
+ text-align: center;
   
 }
 .right {
@@ -34,7 +40,5 @@ footer {
   align-items: center;
 }
 
-.footer{
-  color: var(--secondary-color-2);
-}
+
 

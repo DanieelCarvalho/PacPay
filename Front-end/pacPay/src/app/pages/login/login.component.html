@@ -1,45 +1,52 @@
 <app-header> </app-header>
+<main>
+  <div>
+    <div class="center-container">
+      <form [formGroup]="formulario" (submit)="autenticar()">
+        <h1 id="frase">Acesse Sua Conta</h1>
 
-<div>
-  <div class="center-container">
-    <form [formGroup]="formulario" (submit)="autenticar()">
-      <h1 id="frase">Acesse Sua Conta</h1>
-      <div class="form-group">
-        <label for="email">CPF</label>
-        <input
-          type="email"
-          id="email"
-          formControlName="email"
-          placeholder="Informe seu CPF"
-          class="form-control"
-        />
-      </div>
-
-      <div class="form-group senha">
-        <label for="senha">Senha</label>
-        <input
-          type="password"
-          id="senha"
-          formControlName="senha"
-          placeholder="Informe sua senha"
-          class="form-control"
-        />
-      </div>
-      <h4 id="link-esqueceuSenha">Esqueceu a sua senha?</h4>
-
-      <button
-        type="submit"
-        class="btn btn-success"
-        id="botaoEntrar"
-        [disabled]="formulario.invalid"
-      >
-        Entrar
-      </button>
-
-      <h4 id="link-cadastre-se">Não tem uma conta? Cadastre-se</h4>
-    </form>
-    
+        <div class="form-group">
+          <label for="email">CPF</label>
+          
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Informe seu CPF"
+            class="form-control"
+          />
+        </div>
+  
+        <div class="form-group senha">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            formControlName="senha"
+            placeholder="Informe sua senha"
+            class="form-control"
+          />
+        </div>
+        <h4 id="link-esqueceuSenha">Esqueceu a sua senha?</h4>
+  
+        <button
+          type="submit"
+          class="btn btn-success"
+          id="botaoEntrar"
+          [disabled]="formulario.invalid"
+        >
+          Entrar
+        </button>
+  
+        <h4 id="link-cadastre-se">Não tem uma conta? Cadastre-se</h4>
+      </form>      
+    </div> 
   </div>
-</div>
+
+</main>
+  
+
+<app-footer class="footer"></app-footer>
+
 
 

@@ -1,11 +1,12 @@
 <app-header class="header"> </app-header>
+
 <main>
   <div>
     <div class="center-container">
       <form [formGroup]="formulario" (submit)="autenticar()">
         <h1 id="frase">Acesse Sua Conta</h1>
 
-
+        <div>
           <input
             type="email"
             id="cpf"
@@ -24,7 +25,6 @@
             placeholder="Informe sua senha"
             class="form-control"
           />
-
         </div>
 
         <h4 id="link-esqueceuSenha">Esqueceu a sua senha?</h4>
@@ -39,7 +39,8 @@
         </button>
 
         <h4 id="link-cadastre-se">Não tem uma conta? Cadastre-se</h4>
-
+      </form>
+    </div>
   </div>
 </main>
 <app-footer class="footer"></app-footer>

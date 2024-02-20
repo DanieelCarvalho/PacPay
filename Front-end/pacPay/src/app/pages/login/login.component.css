@@ -62,4 +62,20 @@ h4{
   font-size: 1.3rem;
 }
 
+@media (max-width: 415px) {
+  
+  .center-container{
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
+
+  .Header {
+    display: none;
+  }
+ 
+}
+
+
 

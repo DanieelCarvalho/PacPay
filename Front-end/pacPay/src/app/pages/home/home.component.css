@@ -63,7 +63,7 @@
 .responsivo-img img {
   width: 1.6rem;
 }
-@media (max-width: 415px) {
+@media (max-width: 450px) {
   .cartao {
     display: none;
   }
@@ -82,6 +82,8 @@
   }
   main {
     background-image: url("./../../../assets/Background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
   }
   .responsivo {

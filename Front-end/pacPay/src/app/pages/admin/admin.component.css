@@ -48,19 +48,22 @@ header {
 }
 
 .logout {
-  display: flex;
-  align-items: center;
+    display: flex;
+    
 }
 
 .logout p {
   cursor: pointer;
   text-transform: uppercase;
+  padding: 0.2rem;
+  margin-right: 1rem;
+  
 }
 
 .logout img {
   width: 3rem;
-  height: auto;
-  margin-left: 2rem;
+  height: 3rem;
+  margin-right: .5rem;
   cursor: pointer;
 }
 
@@ -75,12 +78,10 @@ header {
   margin-right: 2rem;
 }
 
-
 .olho-saldo {
-  align-self: flex-end;
-  width: 3rem;
+  align-self: center;
+  width: 3.5rem;
   height: auto;
-
   cursor: pointer;
 }
 
@@ -92,6 +93,7 @@ header {
   display: flex;
   text-align: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .icons-section .icon {
@@ -102,7 +104,8 @@ header {
 
 .icons-section .icon img {
   width: 6em;
-  height: auto;
+  height: 6em;
+  margin-bottom: 5px;
 }
 
 .icon-label {
@@ -113,7 +116,6 @@ header {
   color: var(--cahsout-color);
   background-color: var(--header-color);
 }
-
 .entrada span {
   color: var(--cashin-color);
   background-color: var(--header-color);
@@ -122,46 +124,91 @@ header {
 h2 {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin: 20px auto;
 }
 
-ul {
+.transaction-history ul {
+  display: flex;
+  flex-direction: column;
   background-color: var(--header-color);
-  border-radius: 1rem;
   margin: 0 auto;
-  width: 90%;
+  min-width: 50%;
+  max-width: 60%;
+  padding: 10px 0px;
+  border-radius: 5px;
 }
 
-.transaction-history ul li {
+.transaction-history li {
+  display: flex;
+  align-items: center;
   background-color: var(--header-color);
-  border-radius: 1rem;
-  padding: 1rem;
-  font-size: 1.5rem;
+  padding: 10px 15px;
+  font-size: 15px;
   list-style-type: none;
   text-transform: uppercase;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+}
+.transaction-history li:nth-child(odd) {
+}
+
+.transaction-history p {
+  background-color: var(--header-color);
+  margin-left: 20px;
+  word-break: keep-all;
+}
+.transaction-history span {
+  margin-left: auto;
+  padding: 5px;
+  word-break: keep-all;
 }
 
 .transaction-history img {
   background-color: var(--header-color);
-  width: 3rem;
-  height: auto;
-  margin-right: 2rem;
+  width: 2em;
+  height: 3em;
 }
 
 .hidden {
   display: none;
 }
 
-@media screen and (max-width: 414px) {
-
-
+@media screen and (max-width: 435px) {
   .user-info {
-    width:95%;
-    margin: 0 0 0 0;
+    width: 95%;
+    margin: 0px;
     font-size: 1.5rem;
-
   }
+  .logout {
+    display: flex;
+    
+}
 
+.logout p {
+  text-transform: uppercase;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  
+}
+
+.logout img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0;
+}
+
+  .olho-saldo {
+    align-self: center;
+  }
+  .icons-section {
+    display: flex;
+    justify-content: center;
+  }
+  .icons-section .icon img {
+    width: 5em;
+    height: 5em;
+    margin-bottom: 2px;
+  }
 
   .user-detalhes img {
     width: 6rem;
@@ -192,9 +239,25 @@ ul {
   .transaction-history ul li {
     font-size: 1.2rem;
   }
-  .transaction-history img {
-    width: 2rem;
-    height: auto;
+  .transaction-history ul {
+    min-width: 75%;
+    width: 80%;
+    padding: 0px;
   }
-  
+  .transaction-history p {
+    margin: 0px;
+  }
+  .transaction-history li {
+    display: flex;
+    word-break: keep-all;
+    align-items: center;
+  }
+  .transaction-history img {
+    width: 2em;
+    height: 3em;
+    margin-right: 5px;
+  }
+  .transaction-history span {
+    word-break: keep-all;
+  }
 }

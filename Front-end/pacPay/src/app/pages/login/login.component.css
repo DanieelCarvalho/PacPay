@@ -1,34 +1,62 @@
 
 .center-container {
-  height: 519px;
-  width: 542px;
+  font-family: var(--font-principal);
+  width: 440px;
+  height: 470px;
   background-color: #F9F9F9; /* Adicione a cor de fundo desejada */
   margin: 50px auto; /* Centraliza vertical e horizontalmente */
-  padding: 20px; 
-}
+  padding: 50px; 
+  font-size: 1.5rem;
 
-.btn-primary {
-  background-color: #e89d00;
-  height: 85px;
-  width: 200px;
+  
 }
-
-#botaoEntrar {
-  background-color: #E89D00;
-  height: 40px;
-  width: 100%;
-  margin-top: 10px;
-}
-
 #frase {
-  margin-left: 170px;
+ 
+  margin: auto 91px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.form-group {
+
+  font-size: 1.5rem;
+  font-weight: bold; 
+  padding-bottom: 10px;
+}
+
+h4{
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.form-control{
+  width: 23rem;
+  height: 4rem;
+  margin: 0 auto;
+  display: block;
+  background-color: #ffffff;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 #link-esqueceuSenha {
   margin-top: 10px;
-  margin-left: 400px;
+  margin-left: 80px;
 }
 
 #link-cadastre-se {
   width: 100%;
 }
+
+#botaoEntrar {
+  width: 23rem;
+  height: 4rem;
+  margin: 0 auto;
+  display: block;
+  background-color: #e89d00;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+

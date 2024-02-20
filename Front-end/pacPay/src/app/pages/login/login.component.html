@@ -5,12 +5,12 @@
       <form [formGroup]="formulario" (submit)="autenticar()">
         <h1 id="frase">Acesse Sua Conta</h1>
 
-        <div class="form-group">
-          <label for="email">CPF</label>
+        <div class="form-group cpf">
+          <label for="email"></label>
           
           <input
             type="email"
-            id="email"
+            id="cpf"
             formControlName="email"
             placeholder="Informe seu CPF"
             class="form-control"
@@ -18,7 +18,7 @@
         </div>
   
         <div class="form-group senha">
-          <label for="senha">Senha</label>
+          <label for="senha"></label>
           <input
             type="password"
             id="senha"
@@ -26,8 +26,9 @@
             placeholder="Informe sua senha"
             class="form-control"
           />
-        <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seus dados, com ninguém.</small>
+
         </div>
+
         <h4 id="link-esqueceuSenha">Esqueceu a sua senha?</h4>
   
         <button
@@ -40,6 +41,7 @@
         </button>
   
         <h4 id="link-cadastre-se">Não tem uma conta? Cadastre-se</h4>
+        
       </form>      
     </div> 
   </div>

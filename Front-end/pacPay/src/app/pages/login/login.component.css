@@ -8,10 +8,8 @@
   padding: 50px; 
   font-size: 1.5rem;
 
-  
 }
 #frase {
- 
   margin: auto 91px;
   font-size: 20px;
   font-weight: bold;
@@ -23,6 +21,10 @@
   font-size: 1.5rem;
   font-weight: bold; 
   padding-bottom: 10px;
+}
+
+::placeholder{
+  font-size: 1.3rem;
 }
 
 h4{
@@ -57,6 +59,7 @@ h4{
   background-color: #e89d00;
   color: #ffffff;
   font-weight: 500;
+  font-size: 1.3rem;
 }
 
 

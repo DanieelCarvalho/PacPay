@@ -80,7 +80,6 @@ header {
   align-self: flex-end;
   width: 3rem;
   height: auto;
-
   cursor: pointer;
 }
 
@@ -121,30 +120,47 @@ header {
 h2 {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin: 20px auto;
+
 }
 
-ul {
+.transaction-history ul {
+  display: flex;
+  flex-direction: column;
   background-color: var(--header-color);
-  border-radius: 1rem;
   margin: 0 auto;
-  width: 90%;
+  width: 50%;
+  padding: 10px 0px;
+  border-radius: 5px;
 }
 
-.transaction-history ul li {
+.transaction-history li {
+  display: flex;
   background-color: var(--header-color);
-  border-radius: 1rem;
-  padding: 1rem;
-  font-size: 1.5rem;
+  padding: 10px 15px;
+  font-size: 15px;
   list-style-type: none;
   text-transform: uppercase;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+}
+.transaction-history li:nth-child(odd) {
+    
+  }
+
+.transaction-history p{
+    background-color: var(--header-color);
+    margin-left: 20px;
+}
+.transaction-history span{
+    margin-left: auto;
 }
 
 .transaction-history img {
+  
   background-color: var(--header-color);
   width: 3rem;
   height: auto;
-  margin-right: 2rem;
 }
 
 .hidden {

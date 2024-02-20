@@ -22,7 +22,9 @@
       Que tal batizarmos este momento como o ponto de partida para uma vida
       financeira mais tranquila? Bora?
     </p>
-    <section class="col">
+
+    <section class="col" *ngIf="etapa === 1">
+      <h2>Etapa 1</h2>
       <div class="form-floating mb-3">
         <input
           type="text"
@@ -93,8 +95,10 @@
           <li>No mínimo 1 caracter expecial</li>
         </ul>
       </div>
+      <button type="button" (click)="proximaEtapa()">Continuar</button>
     </section>
-    <section class="col">
+
+    <section class="col" *ngIf="etapa === 2">
       <div class="form-floating mb-3">
         <input
           type="text"
@@ -176,32 +180,33 @@
           >Ponto de referência</label
         >
       </div>
-    </section>
+      <button type="button" (click)="etapaAnterior()">Voltar</button>
 
-    <p>
-      Ao continuar, você concorda com os
-      <a
-        href="#"
-        data-bs-toggle="modal"
-        data-bs-target="#modalTermos"
-        style="color: #0f253d; font-weight: 600"
-        >Termos de privacidade</a
-      >
-      e
-      <a
-        href="#"
-        data-bs-toggle="modal"
-        data-bs-target="#modalTermos"
-        style="color: #0f253d; font-weight: 600"
-        >Política de privacidade</a
-      >
-    </p>
-    <input
-      type="submit"
-      value="Cadastrar"
-      id="button"
-      [disabled]="formulario.invalid"
-    />
+      <p>
+        Ao continuar, você concorda com os
+        <a
+          href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#modalTermos"
+          style="color: #0f253d; font-weight: 600"
+          >Termos de privacidade</a
+        >
+        e
+        <a
+          href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#modalTermos"
+          style="color: #0f253d; font-weight: 600"
+          >Política de privacidade</a
+        >
+      </p>
+      <input
+        type="submit"
+        value="Cadastrar"
+        id="button"
+        [disabled]="formulario.invalid"
+      />
+    </section>
   </form>
 
   <div

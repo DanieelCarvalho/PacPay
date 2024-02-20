@@ -38,7 +38,7 @@
             formulario.controls.nome.invalid &&
             (formulario.controls.nome.dirty || formulario.controls.nome.touched)
           "
-          class="text-danger"
+          class="text-danger ms-1"
         >
           Nome é obrigatório.
         </div>
@@ -55,12 +55,12 @@
         <label class="fs-5 pt-4" for="cpf-cadastro">CPF</label>
         <div
           *ngIf="
-            formulario.controls.nome.invalid &&
-            (formulario.controls.nome.dirty || formulario.controls.nome.touched)
+            formulario.controls.cpf.invalid &&
+            (formulario.controls.cpf.dirty || formulario.controls.cpf.touched)
           "
-          class="text-danger"
+          class="text-danger ms-1"
         >
-          Nome é obrigatório.
+          CPF é obrigatório.
         </div>
       </div>
       <div class="form-floating mb-3">
@@ -77,12 +77,13 @@
         <label class="fs-5 pt-4" for="data-cadastro">Data de Nascimento</label>
         <div
           *ngIf="
-            formulario.controls.nome.invalid &&
-            (formulario.controls.nome.dirty || formulario.controls.nome.touched)
+            formulario.controls.dataNascimento.invalid &&
+            (formulario.controls.dataNascimento.dirty ||
+              formulario.controls.dataNascimento.touched)
           "
-          class="text-danger"
+          class="text-danger ms-1"
         >
-          Nome é obrigatório.
+          Data de nascimento é obrigatório.
         </div>
       </div>
       <div class="form-floating mb-3">
@@ -96,6 +97,16 @@
           required
         />
         <label class="fs-5 pt-4" for="telefone-cadastro">Celular</label>
+        <div
+          *ngIf="
+            formulario.controls.telefone.invalid &&
+            (formulario.controls.telefone.dirty ||
+              formulario.controls.telefone.touched)
+          "
+          class="text-danger ms-1"
+        >
+          Telefone é obrigatório.
+        </div>
       </div>
       <div class="form-floating mb-3">
         <input
@@ -107,6 +118,16 @@
           required
         />
         <label class="fs-5 pt-4" for="email-cadastro">Email</label>
+        <div
+          *ngIf="
+            formulario.controls.email.invalid &&
+            (formulario.controls.email.dirty ||
+              formulario.controls.email.touched)
+          "
+          class="text-danger ms-1"
+        >
+          Email é obrigatório.
+        </div>
       </div>
       <div class="form-floating mb-3">
         <input
@@ -193,17 +214,38 @@
         />
         <label class="fs-5 pt-4" for="bairro-cadastro">Bairro</label>
       </div>
-      <div class="form-floating mb-3">
-        <input
-          type="text"
-          class="form-control form-control-lg fs-5"
-          id="cidade-cadastro"
-          placeholder="name@gmiu.com"
-          formControlName="cidade"
-          required
-        />
-        <label class="fs-5 pt-4" for="cidade-cadastro">Cidade</label>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control form-control-lg fs-5"
+              id="numero-cadastro"
+              placeholder="martins"
+              formControlName="cidade"
+              required
+            />
+            <label class="fs-5 pt-4" for="numero-cadastro">Cidade</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <select
+              class="form-control form-control-lg fs-5"
+              id="complemento-cadastro"
+              formControlName="estado"
+              required
+            >
+              <option value="">Selecione um estado</option>
+              <option *ngFor="let estado of estados" [value]="estado.sigla">
+                {{ estado.nome }}
+              </option>
+            </select>
+            <label class="fs-5 pt-4" for="complemento-cadastro">Estado</label>
+          </div>
+        </div>
       </div>
+
       <div class="form-floating mb-3">
         <input
           type="text"
@@ -237,12 +279,7 @@
         >Política de privacidade</a
       >
     </p>
-    <input
-      type="submit"
-      value="Cadastrar"
-      id="button"
-      [disabled]="formulario.invalid"
-    />
+    <input type="submit" value="Cadastrar" id="button" />
   </form>
 
   <div

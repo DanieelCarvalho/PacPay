@@ -19,7 +19,6 @@ import { NgIf } from '@angular/common';
 })
 export class CadastroComponent {
   isFocus = false;
-  value: unknown;
 
   constructor(private rota: Router) {}
 
@@ -29,14 +28,15 @@ export class CadastroComponent {
     dataNascimento: new FormControl('', Validators.required),
     telefone: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    senha: new FormControl('', [Validators.required. validators.minLength(8)], Validators.maxLength(16), Validators.pattern(/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{8,16}$/)),
+    senha: new FormControl('', Validators.required),
     cep: new FormControl('', Validators.required),
     rua: new FormControl('', Validators.required),
-    numero: new FormControl('', Validators.required),
-    complemento: new FormControl('', Validators.required),
-    bairro: new FormControl('', Validators.required),
+    numero: new FormControl(''),
+    complemento: new FormControl(''),
+    bairro: new FormControl(''),
     cidade: new FormControl('', Validators.required),
-    referencia: new FormControl('', Validators.required),
+    estado: new FormControl('', Validators.required),
+    referencia: new FormControl(''),
   });
 
   cadastrar(): void {

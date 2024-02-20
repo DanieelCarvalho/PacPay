@@ -1,58 +1,52 @@
 <app-header> </app-header>
-<div>
-  <div class="center-container">
-    <form [formGroup]="formulario" (submit)="autenticar()">
-      <h1 id="frase">Acesse Sua Conta</h1>
-      <div class="form-group">
-        <label for="email">CPF</label>
-        <input
-          type="email"
-          id="email"
-          formControlName="email"
-          placeholder="Informe seu CPF"
-          class="form-control"
-        />
-      </div>
+<main>
+  <div>
+    <div class="center-container">
+      <form [formGroup]="formulario" (submit)="autenticar()">
+        <h1 id="frase">Acesse Sua Conta</h1>
 
-      <div class="form-group senha">
-        <label for="senha">Senha</label>
-        <input
-          type="password"
-          id="senha"
-          formControlName="senha"
-          placeholder="Informe sua senha"
-          class="form-control"
-        />
-      </div>
-      <h4 id="link-esqueceuSenha">Esqueceu a sua senha?</h4>
-
-      <button
-        type="submit"
-        class="btn btn-success"
-        id="botaoEntrar"
-        [disabled]="formulario.invalid"
-      >
-        Entrar
-      </button>
-
-      <h4 id="link-cadastre-se">Não tem uma conta? Cadastre-se</h4>
-    </form>
+        <div class="form-group">
+          <label for="email">CPF</label>
+          
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Informe seu CPF"
+            class="form-control"
+          />
+        </div>
+  
+        <div class="form-group senha">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            formControlName="senha"
+            placeholder="Informe sua senha"
+            class="form-control"
+          />
+        </div>
+        <h4 id="link-esqueceuSenha">Esqueceu a sua senha?</h4>
+  
+        <button
+          type="submit"
+          class="btn btn-success"
+          id="botaoEntrar"
+          [disabled]="formulario.invalid"
+        >
+          Entrar
+        </button>
+  
+        <h4 id="link-cadastre-se">Não tem uma conta? Cadastre-se</h4>
+      </form>      
+    </div> 
   </div>
 
+</main>
   
-</div>
-<div>
-  <footer class="footer">
-    <div class="frases-atendimento">
-        <div class="Atendimento"> Atendimento</div>
-        <div class=" frase-semana"> 24 horas por dia, 7 dias por semana!</div>
-    </div>
-    <div id="lista">
-      <ol id="lista-footer">
-        <li><a href="termos"> Termos de Serviço</a></li>
-        <li><a href="duvidas"> Dúvidas Frequentes</a></li>
-        <li><a href="sobre"> Sobre </a></li>
-      </ol>
-    </div>
-</footer>
-</div>
+
+<app-footer class="footer"></app-footer>
+
+
+

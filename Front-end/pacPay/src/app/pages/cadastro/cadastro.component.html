@@ -1,19 +1,18 @@
 <header>
-    <a href="#inicio">
-        <img
-          src="../../../assets/seta.png"
-          alt="botão para voltar a página anterior"
-        />
-      </a>
-</header> 
+  <a href="#inicio">
+    <img
+      src="../../../assets/seta.png"
+      alt="botão para voltar a página anterior"
+    />
+  </a>
+</header>
 
-<div class="container-full" style="background-color: #f2f2f2">
+<div class="container-full">
   <section
     id="topo-cadastro"
     class="row ps-5"
     style="background-color: #3d3d3d; height: fit-content"
-  >
-</section>
+  ></section>
   <form
     [formGroup]="formulario"
     (submit)="cadastrar()"
@@ -240,9 +239,9 @@
     </p>
     <input
       type="submit"
-      value="Entrar"
-      class="w-100"
-      style="background-color: #e89d00; color: #ffffff"
+      value="Cadastrar"
+      id="button"
+      [disabled]="formulario.invalid"
     />
   </form>
 

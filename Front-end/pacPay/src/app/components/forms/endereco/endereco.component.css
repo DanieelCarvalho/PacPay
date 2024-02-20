@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+.form-control,
+.form-select {
+  height: 5rem;
+}
+
+.container-full {
+  background-color: #f2f2f2;
+  height: max-content;
+  font-size: 1.5rem;
+}

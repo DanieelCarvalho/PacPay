@@ -106,7 +106,6 @@ header {
   color: var(--cahsout-color);
   background-color: var(--header-color);
 }
-
 .entrada span {
   color: var(--cashin-color);
   background-color: var(--header-color);

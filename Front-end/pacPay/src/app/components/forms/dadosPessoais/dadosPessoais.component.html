@@ -69,7 +69,6 @@
       class="form-control form-control-lg fs-5 pt-5"
       id="telefone-cadastro"
       placeholder="(44) 9 8585-8585"
-      pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"
       formControlName="telefone"
       required
     />
@@ -157,5 +156,5 @@
       </li>
     </ul>
   </div>
-  <button type="button" (click)="proximaEtapaEvent.emit()">Continuar</button>
+  <input type="button" (click)="proximaEtapaEvent.emit()" value="Continuar" />
 </form>

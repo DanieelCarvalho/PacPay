@@ -35,32 +35,32 @@
         [formulario]="formulario"
         (proximaEtapaEvent)="etapaAnterior()"
       ></app-endereco>
-    </section>
-    <p>
-      Ao continuar, você concorda com os
-      <a
-        href="#"
-        data-bs-toggle="modal"
-        data-bs-target="#modalTermos"
-        style="color: #0f253d; font-weight: 600"
-        >Termos de privacidade</a
-      >
-      e
-      <a
-        href="#"
-        data-bs-toggle="modal"
-        data-bs-target="#modalTermos"
-        style="color: #0f253d; font-weight: 600"
-        >Política de privacidade</a
-      >
-    </p>
+      <p>
+        Ao continuar, você concorda com os
+        <a
+          href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#modalTermos"
+          style="color: #0f253d; font-weight: 600"
+          >Termos de privacidade</a
+        >
+        e
+        <a
+          href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#modalTermos"
+          style="color: #0f253d; font-weight: 600"
+          >Política de privacidade</a
+        >
+      </p>
 
-    <input
-      type="submit"
-      value="Cadastrar"
-      id="button"
-      [disabled]="formulario.invalid"
-    />
+      <input
+        type="submit"
+        value="Cadastrar"
+        id="button"
+        [disabled]="formulario.invalid"
+      />
+    </section>
   </form>
 
   <div

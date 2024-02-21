@@ -30,7 +30,6 @@ export class DadosPessoaisComponent {
   validarSenha(event: any) {
     const senha = event.target.value;
     let tudoCerto = true;
-
     if (senha === null) return;
 
     const reletraMaiuscula = /[A-Z]/;

@@ -30,11 +30,11 @@ export class CadastroComponent {
   constructor(private rota: Router, private fb: FormBuilder) {}
 
   formulario!: FormGroup;
-  etapa: number = 2;
+  etapa: number = 1;
+  dadosPessoaisPreenchidos: boolean = false;
 
   ngOnInit(): void {
     this.formulario = this.fb.group({
-      cegaa: new FormControl('', Validators.required),
       nome: new FormControl('', Validators.required),
       cpf: new FormControl('', Validators.required),
       dataNascimento: new FormControl('', Validators.required),
@@ -54,13 +54,20 @@ export class CadastroComponent {
   }
 
   proximaEtapa() {
-    this.etapa++;
+    if (
+      this.formulario.get('nome')?.valid &&
+      this.formulario.get('cpf')?.valid &&
+      this.formulario.get('dataNascimento')?.valid &&
+      this.formulario.get('telefone')?.valid &&
+      this.formulario.get('email')?.valid &&
+      this.formulario.get('senha')?.valid
+    ) {
+      this.etapa++;
+    }
   }
   etapaAnterior() {
     this.etapa--;
   }
-
-
 
   cadastrar(): void {
     //

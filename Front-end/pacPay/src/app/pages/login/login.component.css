@@ -76,6 +76,7 @@
   color: #ffffff;
   font-weight: 500;
   font-size: 1.3rem;
+  border: #e89d00 solid;
 }
 
 @media (max-width: 415px) {

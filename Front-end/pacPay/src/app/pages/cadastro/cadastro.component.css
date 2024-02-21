@@ -1,3 +1,7 @@
+:root {
+  background-color: #f2f2f2;
+}
+
 header {
   background-color: var(--header-color);
   color: var(--secondary-color-1);
@@ -18,16 +22,6 @@ header a {
 }
 
 .container-full {
-  background-color: #f2f2f2;
   height: max-content;
   font-size: 1.5rem;
-}
-#button {
-  width: 12em;
-  height: 3rem;
-  margin: 0 auto;
-  display: block;
-  background-color: #e89d00;
-  color: #ffffff;
-  font-weight: 500;
 }

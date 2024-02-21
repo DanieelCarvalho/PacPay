@@ -9,6 +9,7 @@ import {
   ReactiveFormsModule,
   Validators,
   FormBuilder,
+  ValidationErrors,
 } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -30,11 +31,10 @@ export class CadastroComponent {
   constructor(private rota: Router, private fb: FormBuilder) {}
 
   formulario!: FormGroup;
-  etapa: number = 2;
+  etapa: number = 1;
 
   ngOnInit(): void {
     this.formulario = this.fb.group({
-      cegaa: new FormControl('', Validators.required),
       nome: new FormControl('', Validators.required),
       cpf: new FormControl('', Validators.required),
       dataNascimento: new FormControl('', Validators.required),
@@ -53,20 +53,52 @@ export class CadastroComponent {
     });
   }
 
-  proximaEtapa() {
-    this.etapa++;
+  proximaEtapa(event: Event) {
+    event.preventDefault();
+    if (
+      this.formulario.get('nome')?.valid &&
+      this.formulario.get('cpf')?.valid &&
+      this.formulario.get('dataNascimento')?.valid &&
+      this.formulario.get('telefone')?.valid &&
+      this.formulario.get('email')?.valid &&
+      this.formulario.get('senha')?.valid
+    ) {
+      this.etapa++;
+    }
   }
-  etapaAnterior() {
+
+  etapaAnterior(event: Event) {
+    event.preventDefault();
     this.etapa--;
   }
 
+  cadastrar(event: Event): void {
+    event.preventDefault();
+    if (this.formulario.valid) {
+      let ultimoId = Number(localStorage.getItem('ultimoId')) || 0;
+      let novoId = ultimoId + 1;
+      localStorage.setItem('ultimoId', novoId.toString());
+      localStorage.setItem(`${novoId}`, this.formulario.value.toString());
 
+      this.rota.navigateByUrl('/login');
+    } else {
+      console.log('Formulário inválido');
 
-  cadastrar(): void {
-    //
-
-    localStorage.setItem('email', this.formulario.value.email ?? '');
-    localStorage.setItem('senha', this.formulario.value.endereco.cidade ?? '');
-    this.rota.navigateByUrl('/login');
+      Object.keys(this.formulario.controls).forEach((key) => {
+        const control = this.formulario.get(key);
+        if (control) {
+          const controlErrors: ValidationErrors = control.errors!;
+          if (controlErrors != null) {
+            Object.keys(controlErrors).forEach((keyError) => {
+              console.log(
+                `Nome: ${key}
+ Erro: ${keyError}
+  Valor: ${controlErrors[keyError]}`
+              );
+            });
+          }
+        }
+      });
+    }
   }
 }

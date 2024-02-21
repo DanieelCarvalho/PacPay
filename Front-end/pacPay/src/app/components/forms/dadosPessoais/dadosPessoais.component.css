@@ -10,3 +10,9 @@
   height: max-content;
   font-size: 1.5rem;
 }
+
+.botaoDeAcao {
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  background-color: #f2f2f2;
+}

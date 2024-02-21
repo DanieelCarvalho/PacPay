@@ -27,7 +27,7 @@
       <button
         id="button-cep"
         class="form-control form-control-lg"
-        (click)="enviarCep()"
+        (click)="enviarCep($event)"
       >
         Preencher dados
       </button>
@@ -60,7 +60,7 @@
           type="text"
           class="form-control form-control-lg fs-5 pt-5"
           id="numero-cadastro"
-          placeholder="01/01/2001"
+          placeholder="54c1"
           formControlName="numero"
         />
         <label class="fs-5 pt-4" for="numero-cadastro">Número</label>
@@ -72,8 +72,7 @@
           type="text"
           class="form-control form-control-lg fs-5 pt-5"
           id="complemento-cadastro"
-          placeholder="(44) 9 8585-8585"
-          pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"
+          placeholder="casa tal"
           formControlName="complemento"
         />
         <label class="fs-5 pt-4" for="complemento-cadastro">Complemento</label>
@@ -85,7 +84,7 @@
       type="text"
       class="form-control form-control-lg fs-5 pt-5"
       id="bairro-cadastro"
-      placeholder="name@gmiu.com"
+      placeholder="aquele bairro"
       formControlName="bairro"
     />
     <label class="fs-5 pt-4" for="bairro-cadastro">Bairro</label>
@@ -145,5 +144,37 @@
       >Ponto de referência</label
     >
   </div>
-  <button type="button" (click)="proximaEtapaEvent.emit()">Voltar</button>
+  <button
+    type="button"
+    class="botaoDeAcao px-2 mb-2"
+    (click)="proximaEtapaEvent.emit($event)"
+  >
+    Voltar
+  </button>
+
+  <p>
+    Ao continuar, você concorda com os
+    <a
+      href="#"
+      data-bs-toggle="modal"
+      data-bs-target="#modalTermos"
+      style="color: #0f253d; font-weight: 600"
+      >Termos de privacidade</a
+    >
+    e
+    <a
+      href="#"
+      data-bs-toggle="modal"
+      data-bs-target="#modalTermos"
+      style="color: #0f253d; font-weight: 600"
+      >Política de privacidade</a
+    >
+  </p>
+
+  <input
+    type="submit"
+    value="Cadastrar"
+    id="button"
+    (click)="concluirCadastro.emit($event)"
+  />
 </form>

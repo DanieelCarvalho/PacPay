@@ -78,7 +78,7 @@ export class CadastroComponent {
       let ultimoId = Number(localStorage.getItem('ultimoId')) || 0;
       let novoId = ultimoId + 1;
       localStorage.setItem('ultimoId', novoId.toString());
-      localStorage.setItem(`${novoId}`, this.formulario.value.toString());
+      localStorage.setItem(`${novoId}`, JSON.stringify(this.formulario.value));
 
       this.rota.navigateByUrl('/login');
     } else {
@@ -92,7 +92,7 @@ export class CadastroComponent {
             Object.keys(controlErrors).forEach((keyError) => {
               console.log(
                 `Nome: ${key}
- Erro: ${keyError}
+  Erro: ${keyError}
   Valor: ${controlErrors[keyError]}`
               );
             });

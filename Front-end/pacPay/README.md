@@ -47,9 +47,11 @@ Repositório do projeto Hackadev proposto no bootcamp Sharp Coders 2023, promovi
 
 ## Autores
 
+Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pessoas incríveis abaixo:
+
 <div align="center"><img src="https://media.licdn.com/dms/image/D4D03AQErglg5WXVq4A/profile-displayphoto-shrink_200_200/0/1701992059982?e=1714003200&v=beta&t=EqetjqYXTlL5JsYTKTmBmVEKuVicviu-8UpG6Rmi3XM" width="100px;" alt=""/></div>
 
-<div align="center"><a href="https://github.com/DanieelCarvalho">Kelly Dias</a></div>
+<div align="center"><a href="https://github.com/DanieelCarvalho">Daniel Carvalho</a></div>
 
 <div align="center"><a href="https://www.linkedin.com/in/daniel-carvalho-dev/"><img src="X"/></a></div>
 

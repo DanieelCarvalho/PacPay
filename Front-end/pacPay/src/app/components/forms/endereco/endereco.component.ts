@@ -6,7 +6,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-endereco',
@@ -48,4 +48,23 @@ export class EnderecoComponent {
     'SE',
     'TO',
   ];
+
+  async enviarCep() {
+    try {
+      const cep = this.formulario.get('cep')?.value;
+
+      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+
+      const dados = await response.json();
+
+      this.formulario.controls['cep'].setValue(dados.cep);
+      this.formulario.controls['rua'].setValue(dados.logradouro);
+      this.formulario.controls['complemento'].setValue(dados.complemento);
+      this.formulario.controls['bairro'].setValue(dados.bairro);
+      this.formulario.controls['cidade'].setValue(dados.localidade);
+      this.formulario.controls['estado'].setValue(dados.uf);
+    } catch (error) {
+      console.log('Erro ao buscar o CEP: ', error);
+    }
+  }
 }

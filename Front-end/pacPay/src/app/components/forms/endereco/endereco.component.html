@@ -1,22 +1,36 @@
 <form [formGroup]="formulario">
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control form-control-lg fs-5 pt-5"
-      id="cep-cadastro"
-      placeholder="55555-000"
-      formControlName="cep"
-      required
-    />
-    <label class="fs-5 pt-4" for="cep-cadastro">CEP</label>
-    <div
-      *ngIf="
-        formulario.controls['cep'].invalid &&
-        (formulario.controls['cep'].dirty || formulario.controls['cep'].touched)
-      "
-      class="text-danger ms-1"
-    >
-      CEP é obrigatório.
+  <div class="row">
+    <div class="col-md-10">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5 pt-5"
+          id="cep-cadastro"
+          placeholder="55555-000"
+          formControlName="cep"
+          required
+        />
+        <label class="fs-5 pt-4" for="cep-cadastro">CEP</label>
+        <div
+          *ngIf="
+            formulario.controls['cep'].invalid &&
+            (formulario.controls['cep'].dirty ||
+              formulario.controls['cep'].touched)
+          "
+          class="text-danger ms-1"
+        >
+          CEP é obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <button
+        id="button-cep"
+        class="form-control form-control-lg"
+        (click)="enviarCep()"
+      >
+        Preencher dados
+      </button>
     </div>
   </div>
   <div class="form-floating mb-3">

@@ -6,7 +6,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dados-pessoais',
@@ -17,7 +17,6 @@ import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DadosPessoaisComponent {
-
   @Input() formulario!: FormGroup;
   @Output() proximaEtapaEvent = new EventEmitter<void>();
 
@@ -28,7 +27,6 @@ export class DadosPessoaisComponent {
   numeros = false;
   especiais = false;
 
-  
   validarSenha(event: any) {
     const senha = event.target.value;
     let tudoCerto = true;

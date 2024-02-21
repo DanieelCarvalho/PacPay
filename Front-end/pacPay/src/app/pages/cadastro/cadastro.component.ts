@@ -30,7 +30,7 @@ export class CadastroComponent {
   constructor(private rota: Router, private fb: FormBuilder) {}
 
   formulario!: FormGroup;
-  etapa: number = 1;
+  etapa: number = 2;
 
   ngOnInit(): void {
     this.formulario = this.fb.group({
@@ -60,7 +60,11 @@ export class CadastroComponent {
     this.etapa--;
   }
 
+
+
   cadastrar(): void {
+    //
+
     localStorage.setItem('email', this.formulario.value.email ?? '');
     localStorage.setItem('senha', this.formulario.value.endereco.cidade ?? '');
     this.rota.navigateByUrl('/login');

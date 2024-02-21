@@ -16,7 +16,7 @@
           />
         </div>
 
-        <div class="form-group senha">
+        <div class="form-group senha" id="form-senha">
           <label for="senha"></label>
           <input
             type="password"
@@ -25,6 +25,15 @@
             placeholder="Informe sua senha"
             class="form-control"
           />
+          <button
+            type="button"
+            class="btn btn-link"
+            id="esqueceu-senha"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Esqueceu sua senha?
+          </button>
         </div>
 
         <button
@@ -97,8 +106,8 @@
           Entrar
         </button>
 
-        <button type="button" class="btn btn-link" routerLink="/cadastro">
-          Não tem uma conta? Cadastre-se
+        <button type="button" class="btn btn-link" id="cadastrar-login">
+          Não tem uma conta? <span routerLink="/cadastro">Cadastre-se</span>
         </button>
       </form>
     </div>

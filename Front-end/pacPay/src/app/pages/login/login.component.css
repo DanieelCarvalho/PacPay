@@ -14,7 +14,8 @@
   margin: auto 91px;
   font-size: 20px;
   font-weight: bold;
-  padding-bottom: 15px;
+  padding-bottom: 2.5rem;
+  padding-top: 10%;
 }
 
 .form-group {
@@ -23,6 +24,7 @@
   padding-bottom: 10px;
 }
 
+<<<<<<< HEAD
 ::placeholder {
   font-size: 1.3rem;
 }
@@ -30,6 +32,10 @@
 h4 {
   text-align: center;
   padding-bottom: 10px;
+=======
+::placeholder{
+  font-size: 1.5rem;
+>>>>>>> 830a42fe607c05557e23496b68963423f173c7d0
 }
 
 .form-control {
@@ -42,9 +48,29 @@ h4 {
   font-weight: 500;
 }
 
+#esqueceu-senha {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: black;
+  width: 86%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#cadastrar-login {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  width: 86%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 #link-esqueceuSenha {
   margin-top: 10px;
   margin-left: 80px;
+  
 }
 
 #link-cadastre-se {
@@ -63,12 +89,21 @@ h4 {
 }
 
 @media (max-width: 415px) {
+<<<<<<< HEAD
+=======
+  
+  .header {
+    display: none;
+  }
+
+>>>>>>> 830a42fe607c05557e23496b68963423f173c7d0
   /* .center-container{
     display: none;
   } */
 
   .footer {
     display: none;
+    
   }
 
   main {
@@ -77,7 +112,12 @@ h4 {
     background-color: black;
   }
 
+<<<<<<< HEAD
   .header {
     display: none;
   }
+=======
+
+ 
+>>>>>>> 830a42fe607c05557e23496b68963423f173c7d0
 }

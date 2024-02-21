@@ -6,7 +6,12 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-dados-pessoais',
@@ -18,7 +23,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class DadosPessoaisComponent {
   @Input() formulario!: FormGroup;
-  @Output() proximaEtapaEvent = new EventEmitter<void>();
+  @Output() proximaEtapaEvent = new EventEmitter<Event>();
 
   isFocus = false;
 
@@ -30,7 +35,6 @@ export class DadosPessoaisComponent {
   validarSenha(event: any) {
     const senha = event.target.value;
     let tudoCerto = true;
-
     if (senha === null) return;
 
     const reletraMaiuscula = /[A-Z]/;
@@ -39,24 +43,35 @@ export class DadosPessoaisComponent {
 
     if (senha.length >= 8 && senha.length <= 16) {
       this.caracteres = true;
+    } else {
+      this.caracteres = false;
       tudoCerto = false;
-    } else this.caracteres = false;
+    }
 
     if (reletraMaiuscula.test(senha)) {
       this.letraMaiuscula = true;
+    } else {
+      this.letraMaiuscula = false;
       tudoCerto = false;
-    } else this.letraMaiuscula = false;
+    }
 
     if (reNumeros.test(senha)) {
       this.numeros = true;
+    } else {
+      this.numeros = false;
       tudoCerto = false;
-    } else this.numeros = false;
+    }
 
     if (reEspeciais.test(senha)) {
       this.especiais = true;
+    } else {
+      this.especiais = false;
       tudoCerto = false;
-    } else this.especiais = false;
+    }
 
     if (tudoCerto) this.formulario.controls['senha'].setValue(senha);
   }
+}
+function ngOnInit() {
+  throw new Error('Function not implemented.');
 }

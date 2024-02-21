@@ -13,7 +13,8 @@
   margin: auto 91px;
   font-size: 20px;
   font-weight: bold;
-  padding-bottom: 15px;
+  padding-bottom: 2.5rem;
+  padding-top: 10%;
 }
 
 .form-group {
@@ -24,12 +25,7 @@
 }
 
 ::placeholder{
-  font-size: 1.3rem;
-}
-
-h4{
-  text-align: center;
-  padding-bottom: 10px;
+  font-size: 1.5rem;
 }
 
 .form-control{
@@ -42,9 +38,26 @@ h4{
   font-weight: 500;
 }
 
+#esqueceu-senha {
+  text-decoration: none;
+  color: black;
+  width: 86%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#cadastrar-login {
+  text-decoration: none;
+  color: black;
+  width: 86%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 #link-esqueceuSenha {
   margin-top: 10px;
   margin-left: 80px;
+  
 }
 
 #link-cadastre-se {
@@ -64,12 +77,17 @@ h4{
 
 @media (max-width: 415px) {
   
+  .header {
+    display: none;
+  }
+
   /* .center-container{
     display: none;
   } */
 
   .footer {
     display: none;
+    
   }
 
   main {
@@ -78,9 +96,7 @@ h4{
     background-color: black;
   }
 
-  .header {
-    display: none;
-  }
+
  
 }
 

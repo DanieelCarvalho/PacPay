@@ -1,27 +1,101 @@
 # PacPay
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+Projeto de Banco em aplicação web
 
-## Development server
+## Sumário
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Descrição](#descrição)
+- [Features](#features)
+- [Tecnologias usadas](#tecnologias-usadas)
+- [Autores](#autores)
 
-## Code scaffolding
+## Descrição
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Repositório do projeto Hackadev proposto no bootcamp Sharp Coders 2023, promovido pela Ímã Tech e pela MXM Sistemas, e desenvolvido pelo grupo Pac#Man. O objetivo deste desafio é o desenvolvimento de uma aplicação que implemente o sistema de um banco.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Frontend
 
-## Running unit tests
+☑ Tela da Home
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+☑ Tela de cadastro
 
-## Running end-to-end tests
+☑ Tela de login
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+☑ Tela do usuário
 
-## Further help
+☑ Histórico de transações
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Backend
+
+👨‍💻 em construção... 🚧
+
+## Tecnologias usadas
+
+### Frontend
+
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- Angular
+
+### Backend
+
+- C#
+
+## Autores
+
+Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pessoas incríveis abaixo:
+
+<div align="center"><img src="https://media.licdn.com/dms/image/D4D03AQErglg5WXVq4A/profile-displayphoto-shrink_200_200/0/1701992059982?e=1714003200&v=beta&t=EqetjqYXTlL5JsYTKTmBmVEKuVicviu-8UpG6Rmi3XM" width="100px;" alt=""/></div>
+
+<div align="center"><a href="https://github.com/DanieelCarvalho">Daniel Carvalho</a></div>
+
+<div align="center"><a href="https://www.linkedin.com/in/daniel-carvalho-dev/"><img src="X"/></a></div>
+
+</br></br>
+
+<div align="center"><img src="https://avatars.githubusercontent.com/u/84358631?v=4" width="100px;" alt=""/></div>
+
+<div align="center"><a href="https://github.com/keelly-18">Kelly Dias</a></div>
+
+<div align="center"><a href="https://www.linkedin.com/in/keelly18"><img src="X"/></a></div>
+
+</br></br>
+
+<div align="center"><img src="https://avatars.githubusercontent.com/u/129459306?v=4" width="100px;" alt=""/></div>
+
+<div align="center"><a href="https://github.com/LuanCLF">Luan Charlys
+</a></div>
+
+<div align="center"><a href="https://www.linkedin.com/in/luan-charlys-7a318626b/"><img src="X"/></a></div>
+
+</br></br>
+
+<div align="center"><img src="https://avatars.githubusercontent.com/u/94937435?v=4" width="100px;" alt=""/></div>
+
+<div align="center"><a href="https://github.com/LuanCLF">Roger Fernandes
+</a></div>
+
+<div align="center"><a href="https://www.linkedin.com/in/rog214/"><img src="X"/></a></div>
+
+</br></br>
+
+<div align="center"><img src="https://avatars.githubusercontent.com/u/142625762?v=4" width="100px;" alt=""/></div>
+
+<div align="center"><a href="https://github.com/rafaelagil">Rafaela
+</a></div>
+
+<div align="center"><a href="https://www.linkedin.com/in/rafaela-ferreira-gil/"><img src="X"/></a></div>
+
+</br></br>
+
+<div align="center"><img src="https://avatars.githubusercontent.com/u/137074113?v=4" width="100px;" alt=""/></div>
+
+<div align="center"><a href="https://github.com/Petrus-Goncalves">Pétrus Teixeira
+
+</a></div>
+
+<div align="center"><a href=""><img src="X"/></a></div>

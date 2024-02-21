@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 
@@ -15,7 +15,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
   standalone: true,
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
-  imports: [ReactiveFormsModule, HeaderComponent, FooterComponent ],
+  imports: [ReactiveFormsModule, HeaderComponent, FooterComponent, RouterLink],
 })
 export class LoginComponent {
   constructor(private rota: Router) {}

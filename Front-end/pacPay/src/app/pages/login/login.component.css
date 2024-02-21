@@ -64,14 +64,21 @@ h4{
 
 @media (max-width: 415px) {
   
-  .center-container{
+  /* .center-container{
     display: none;
-  }
+  } */
+
   .footer {
     display: none;
   }
 
-  .Header {
+  main {
+    height: 500px;
+    width: 500px;
+    background-color: black;
+  }
+
+  .header {
     display: none;
   }
  

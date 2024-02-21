@@ -2,6 +2,7 @@ import { CommonModule, NgIf, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { DadosPessoaisComponent } from '../../components/forms/dadosPessoais/dadosPessoais.component';
 import { EnderecoComponent } from '../../components/forms/endereco/endereco.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 import {
   FormControl,
@@ -23,6 +24,7 @@ import { Router } from '@angular/router';
     NgFor,
     DadosPessoaisComponent,
     EnderecoComponent,
+    FooterComponent,
   ],
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css'],

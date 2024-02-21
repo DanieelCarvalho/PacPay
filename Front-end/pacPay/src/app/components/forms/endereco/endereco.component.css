@@ -11,3 +11,9 @@
   height: max-content;
   font-size: 1.5rem;
 }
+
+#button-cep {
+  background-color: #e89d00;
+  color: #ffffff;
+  
+}

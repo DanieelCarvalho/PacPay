@@ -1,0 +1,149 @@
+<form [formGroup]="formulario">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5 pt-5"
+          id="cep-cadastro"
+          placeholder="55555-000"
+          formControlName="cep"
+          required
+        />
+        <label class="fs-5 pt-4" for="cep-cadastro">CEP</label>
+        <div
+          *ngIf="
+            formulario.controls['cep'].invalid &&
+            (formulario.controls['cep'].dirty ||
+              formulario.controls['cep'].touched)
+          "
+          class="text-danger ms-1"
+        >
+          CEP é obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <button
+        id="button-cep"
+        class="form-control form-control-lg"
+        (click)="enviarCep()"
+      >
+        Preencher dados
+      </button>
+    </div>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control form-control-lg fs-5 pt-5"
+      id="rua-cadastro"
+      placeholder="name name"
+      formControlName="rua"
+      required
+    />
+    <label class="fs-5 pt-4" for="rua-cadastro">Rua</label>
+    <div
+      *ngIf="
+        formulario.controls['rua'].invalid &&
+        (formulario.controls['rua'].dirty || formulario.controls['rua'].touched)
+      "
+      class="text-danger ms-1"
+    >
+      Rua é obrigatório.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5 pt-5"
+          id="numero-cadastro"
+          placeholder="01/01/2001"
+          formControlName="numero"
+        />
+        <label class="fs-5 pt-4" for="numero-cadastro">Número</label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5 pt-5"
+          id="complemento-cadastro"
+          placeholder="(44) 9 8585-8585"
+          pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"
+          formControlName="complemento"
+        />
+        <label class="fs-5 pt-4" for="complemento-cadastro">Complemento</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control form-control-lg fs-5 pt-5"
+      id="bairro-cadastro"
+      placeholder="name@gmiu.com"
+      formControlName="bairro"
+    />
+    <label class="fs-5 pt-4" for="bairro-cadastro">Bairro</label>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-control-lg fs-5 pt-5"
+          id="cidade-cadastro"
+          placeholder="martins"
+          formControlName="cidade"
+          required
+        />
+        <label class="fs-5 pt-4" for="cidade-cadastro">Cidade</label>
+        <div
+          *ngIf="
+            formulario.controls['cidade'].invalid &&
+            (formulario.controls['cidade'].dirty ||
+              formulario.controls['cidade'].touched)
+          "
+          class="text-danger ms-1"
+        >
+          Cidade é obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-floating mb-3">
+        <select
+          *ngIf="estados"
+          class="form-select form-select-lg fs-5 align-middle py-1 px-3"
+          id="estado-cadastro"
+          formControlName="estado"
+          required
+        >
+          <option *ngFor="let estado of estados">
+            {{ estado }}
+          </option>
+
+          <label for="estado-cadastro">Estado</label>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control form-control-lg fs-5 pt-5"
+      id="referencia-cadastro"
+      placeholder="name@gmiu.com"
+      formControlName="referencia"
+    />
+    <label class="fs-5 pt-4" for="referencia-cadastro"
+      >Ponto de referência</label
+    >
+  </div>
+  <button type="button" (click)="proximaEtapaEvent.emit()">Voltar</button>
+</form>

@@ -30,26 +30,26 @@ export class CadastroComponent {
   constructor(private rota: Router, private fb: FormBuilder) {}
 
   formulario!: FormGroup;
-  etapa: number = 1;
+  etapa: number = 2;
 
   ngOnInit(): void {
     this.formulario = this.fb.group({
+      cegaa: new FormControl('', Validators.required),
       nome: new FormControl('', Validators.required),
       cpf: new FormControl('', Validators.required),
       dataNascimento: new FormControl('', Validators.required),
       telefone: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       senha: new FormControl('', Validators.required),
-      endereco: this.fb.group({
-        cep: new FormControl('', Validators.required),
-        rua: new FormControl('', Validators.required),
-        numero: new FormControl(''),
-        complemento: new FormControl(''),
-        bairro: new FormControl(''),
-        cidade: new FormControl('', Validators.required),
-        estado: new FormControl('', Validators.required),
-        referencia: new FormControl(''),
-      }),
+
+      cep: new FormControl('', Validators.required),
+      rua: new FormControl('', Validators.required),
+      numero: new FormControl(''),
+      complemento: new FormControl(''),
+      bairro: new FormControl(''),
+      cidade: new FormControl('', Validators.required),
+      estado: new FormControl('', Validators.required),
+      referencia: new FormControl(''),
     });
   }
 
@@ -60,7 +60,11 @@ export class CadastroComponent {
     this.etapa--;
   }
 
+
+
   cadastrar(): void {
+    //
+
     localStorage.setItem('email', this.formulario.value.email ?? '');
     localStorage.setItem('senha', this.formulario.value.endereco.cidade ?? '');
     this.rota.navigateByUrl('/login');

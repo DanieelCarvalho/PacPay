@@ -39,6 +39,7 @@
 }
 
 #esqueceu-senha {
+  font-size: 1.4rem;
   text-decoration: none;
   color: black;
   width: 86%;
@@ -47,6 +48,8 @@
 }
 
 #cadastrar-login {
+  font-size: 1.4rem;
+  font-weight: bold;
   text-decoration: none;
   color: black;
   width: 86%;

@@ -26,10 +26,6 @@
     <section class="col" *ngIf="etapa === 1">
       <app-dados-pessoais
         [formulario]="formulario"
-        (nomeChange)="formulario.get('nome')?.setValue($event)"
-        (cpfChange)="formulario.get('cpf')?.setValue($event)"
-        (emailChange)="formulario.get('email')?.setValue($event)"
-        (senhaChange)="formulario.get('senha')?.setValue($event)"
         (proximaEtapaEvent)="proximaEtapa()"
       ></app-dados-pessoais>
     </section>

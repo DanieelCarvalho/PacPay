@@ -15,7 +15,7 @@
   ></section>
   <form
     [formGroup]="formulario"
-    (submit)="cadastrar()"
+    (submit)="cadastrar($event)"
     class="m-auto w-75 p-5 row row-gap-3 column-gap-4"
   >
     <p class="fs-4">
@@ -26,40 +26,16 @@
     <section class="col" *ngIf="etapa === 1">
       <app-dados-pessoais
         [formulario]="formulario"
-        (proximaEtapaEvent)="proximaEtapa()"
+        (proximaEtapaEvent)="proximaEtapa($event)"
       ></app-dados-pessoais>
     </section>
 
     <section class="col" *ngIf="etapa === 2">
       <app-endereco
         [formulario]="formulario"
-        (proximaEtapaEvent)="etapaAnterior()"
+        (proximaEtapaEvent)="etapaAnterior($event)"
+        (concluirCadastro)="cadastrar($event)"
       ></app-endereco>
-      <p>
-        Ao continuar, você concorda com os
-        <a
-          href="#"
-          data-bs-toggle="modal"
-          data-bs-target="#modalTermos"
-          style="color: #0f253d; font-weight: 600"
-          >Termos de privacidade</a
-        >
-        e
-        <a
-          href="#"
-          data-bs-toggle="modal"
-          data-bs-target="#modalTermos"
-          style="color: #0f253d; font-weight: 600"
-          >Política de privacidade</a
-        >
-      </p>
-
-      <input
-        type="submit"
-        value="Cadastrar"
-        id="button"
-        [disabled]="formulario.invalid"
-      />
     </section>
   </form>
 
@@ -74,7 +50,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modalTermosLabel">
-            Termos de privacidade
+            Termos e Política de privacidade
           </h5>
           <button
             type="button"
@@ -118,3 +94,4 @@
     </div>
   </div>
 </div>
+<app-footer class="footer"></app-footer>

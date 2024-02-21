@@ -2,6 +2,7 @@ import { CommonModule, NgIf, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { DadosPessoaisComponent } from '../../components/forms/dadosPessoais/dadosPessoais.component';
 import { EnderecoComponent } from '../../components/forms/endereco/endereco.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 import {
   FormControl,
@@ -9,6 +10,7 @@ import {
   ReactiveFormsModule,
   Validators,
   FormBuilder,
+  ValidationErrors,
 } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -22,6 +24,7 @@ import { Router } from '@angular/router';
     NgFor,
     DadosPessoaisComponent,
     EnderecoComponent,
+    FooterComponent,
   ],
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css'],
@@ -31,7 +34,6 @@ export class CadastroComponent {
 
   formulario!: FormGroup;
   etapa: number = 1;
-  dadosPessoaisPreenchidos: boolean = false;
 
   ngOnInit(): void {
     this.formulario = this.fb.group({
@@ -53,7 +55,8 @@ export class CadastroComponent {
     });
   }
 
-  proximaEtapa() {
+  proximaEtapa(event: Event) {
+    event.preventDefault();
     if (
       this.formulario.get('nome')?.valid &&
       this.formulario.get('cpf')?.valid &&
@@ -65,15 +68,39 @@ export class CadastroComponent {
       this.etapa++;
     }
   }
-  etapaAnterior() {
+
+  etapaAnterior(event: Event) {
+    event.preventDefault();
     this.etapa--;
   }
 
-  cadastrar(): void {
-    //
+  cadastrar(event: Event): void {
+    event.preventDefault();
+    if (this.formulario.valid) {
+      let ultimoId = Number(localStorage.getItem('ultimoId')) || 0;
+      let novoId = ultimoId + 1;
+      localStorage.setItem('ultimoId', novoId.toString());
+      localStorage.setItem(`${novoId}`, JSON.stringify(this.formulario.value));
 
-    localStorage.setItem('email', this.formulario.value.email ?? '');
-    localStorage.setItem('senha', this.formulario.value.endereco.cidade ?? '');
-    this.rota.navigateByUrl('/login');
+      this.rota.navigateByUrl('/login');
+    } else {
+      console.log('Formulário inválido');
+
+      Object.keys(this.formulario.controls).forEach((key) => {
+        const control = this.formulario.get(key);
+        if (control) {
+          const controlErrors: ValidationErrors = control.errors!;
+          if (controlErrors != null) {
+            Object.keys(controlErrors).forEach((keyError) => {
+              console.log(
+                `Nome: ${key}
+  Erro: ${keyError}
+  Valor: ${controlErrors[keyError]}`
+              );
+            });
+          }
+        }
+      });
+    }
   }
 }

@@ -65,7 +65,7 @@
   </div>
   <div class="form-floating mb-3">
     <input
-      type="number"
+      type="text"
       class="form-control form-control-lg fs-5 pt-5"
       id="telefone-cadastro"
       placeholder="(44) 9 8585-8585"
@@ -117,7 +117,7 @@
     />
     <label class="fs-5 pt-4" for="senha-cadastro">Senha</label>
     <ul>
-      Sua senha deve ter no mínimo::
+      Sua senha deve ter no mínimo:
       <li
         id="caracteres"
         [ngClass]="{
@@ -156,5 +156,7 @@
       </li>
     </ul>
   </div>
-  <input type="button" (click)="proximaEtapaEvent.emit()" value="Continuar" />
+  <button class="botaoDeAcao px-2" (click)="proximaEtapaEvent.emit($event)">
+    Continuar
+  </button>
 </form>

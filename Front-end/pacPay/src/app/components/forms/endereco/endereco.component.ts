@@ -18,7 +18,9 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class EnderecoComponent {
   @Input() formulario!: FormGroup;
-  @Output() proximaEtapaEvent = new EventEmitter<void>();
+  @Output() proximaEtapaEvent = new EventEmitter<Event>();
+  @Output() concluirCadastro = new EventEmitter<Event>();
+
   estados = [
     'AC',
     'AL',
@@ -49,7 +51,8 @@ export class EnderecoComponent {
     'TO',
   ];
 
-  async enviarCep() {
+  async enviarCep(event: Event) {
+    event.preventDefault();
     try {
       const cep = this.formulario.get('cep')?.value;
 
@@ -67,4 +70,6 @@ export class EnderecoComponent {
       console.log('Erro ao buscar o CEP: ', error);
     }
   }
+
+  
 }

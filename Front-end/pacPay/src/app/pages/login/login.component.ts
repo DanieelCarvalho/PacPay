@@ -9,7 +9,6 @@ import { Router, RouterLink } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -25,10 +24,31 @@ export class LoginComponent {
   });
 
   autenticar(): void {
-    if (
-      this.formulario.value.email === localStorage.getItem('email') &&
-      this.formulario.value.senha === localStorage.getItem('senha')
-    ) {
+    let usuarioAutenticado = false;
+
+    let ultimoId = Number(localStorage.getItem('ultimoId')) || 0;
+
+    for (let i = 1; i <= ultimoId; i++) {
+      let usuarioJson = localStorage.getItem(i.toString());
+
+      if (usuarioJson) {
+        try {
+          let usuario = JSON.parse(usuarioJson);
+
+          if (
+            usuario.email === this.formulario.value.email &&
+            usuario.senha === this.formulario.value.senha
+          ) {
+            usuarioAutenticado = true;
+            break;
+          }
+        } catch (e) {
+          console.error(`Erro ao analisar o usuário com id ${i}:`, e);
+        }
+      }
+    }
+
+    if (usuarioAutenticado) {
       this.rota.navigateByUrl('/admin');
     } else {
       alert('E-mail ou senha incorretos.');

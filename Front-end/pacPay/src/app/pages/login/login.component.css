@@ -54,12 +54,24 @@ h4 {
 
 #cadastrar-login {
   font-size: 1.4rem;
-  font-weight: bold;
   text-decoration: none;
   color: black;
   width: 86%;
   display: flex;
   justify-content: flex-end;
+  margin-left: -15px;
+}
+
+#link-cadastrar-se {
+  text-decoration: underline;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+#esqueceu-senha {
+  text-decoration: underline;
+  margin-left: -50px;
+  font-weight: bold;
 }
 
 #link-esqueceuSenha {
@@ -80,6 +92,7 @@ h4 {
   color: #ffffff;
   font-weight: 500;
   font-size: 1.3rem;
+  border: #e89d00 solid;
 }
 
 @media (max-width: 415px) {

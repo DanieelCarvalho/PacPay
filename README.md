@@ -76,7 +76,7 @@ Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pess
 
 <div align="center"><img src="https://avatars.githubusercontent.com/u/94937435?v=4" width="100px;" alt=""/></div>
 
-<div align="center"><a href="https://github.com/LuanCLF">Roger Fernandes
+<div align="center"><a href="https://github.com/rog214">Roger Fernandes
 </a></div>
 
 <div align="center"><a href="https://www.linkedin.com/in/rog214/"><img src="https://img.shields.io/badge/-Roger-blue?style=flat-square&logo=Linkedin&logoColor=white"/></a></div>

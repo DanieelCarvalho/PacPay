@@ -53,7 +53,7 @@ Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pess
 
 <div align="center"><a href="https://github.com/DanieelCarvalho">Daniel Carvalho</a></div>
 
-<div align="center"><a href="https://www.linkedin.com/in/daniel-carvalho-dev/"><img src="X"/></a></div>
+<div align="center"><a href="https://www.linkedin.com/in/daniel-carvalho-dev/"><img src="https://img.shields.io/badge/-Daniel-blue?style=flat-square&logo=Linkedin&logoColor=white"/></a></div>
 
 </br></br>
 
@@ -61,7 +61,7 @@ Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pess
 
 <div align="center"><a href="https://github.com/keelly-18">Kelly Dias</a></div>
 
-<div align="center"><a href="https://www.linkedin.com/in/keelly18"><img src="X"/></a></div>
+<div align="center"><a href="https://www.linkedin.com/in/keelly18"><img src="https://img.shields.io/badge/-Kelly-blue?style=flat-square&logo=Linkedin&logoColor=white"/></a></div>
 
 </br></br>
 
@@ -70,7 +70,7 @@ Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pess
 <div align="center"><a href="https://github.com/LuanCLF">Luan Charlys
 </a></div>
 
-<div align="center"><a href="https://www.linkedin.com/in/luan-charlys-7a318626b/"><img src="X"/></a></div>
+<div align="center"><a href="https://www.linkedin.com/in/luan-charlys-7a318626b/"><img src="https://img.shields.io/badge/-Luan-blue?style=flat-square&logo=Linkedin&logoColor=white"/></a></div>
 
 </br></br>
 
@@ -79,7 +79,7 @@ Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pess
 <div align="center"><a href="https://github.com/LuanCLF">Roger Fernandes
 </a></div>
 
-<div align="center"><a href="https://www.linkedin.com/in/rog214/"><img src="X"/></a></div>
+<div align="center"><a href="https://www.linkedin.com/in/rog214/"><img src="https://img.shields.io/badge/-Roger-blue?style=flat-square&logo=Linkedin&logoColor=white"/></a></div>
 
 </br></br>
 
@@ -88,7 +88,7 @@ Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pess
 <div align="center"><a href="https://github.com/rafaelagil">Rafaela
 </a></div>
 
-<div align="center"><a href="https://www.linkedin.com/in/rafaela-ferreira-gil/"><img src="X"/></a></div>
+<div align="center"><a href="https://www.linkedin.com/in/rafaela-ferreira-gil/"><img src="https://img.shields.io/badge/-Rafaela-blue?style=flat-square&logo=Linkedin&logoColor=white"/></a></div>
 
 </br></br>
 
@@ -98,4 +98,4 @@ Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pess
 
 </a></div>
 
-<div align="center"><a href=""><img src="X"/></a></div>
+<div align="center"><a href=""><img src="https://img.shields.io/badge/-Petrus-blue?style=flat-square&logo=Linkedin&logoColor=white"/></a></div>

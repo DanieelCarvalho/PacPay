@@ -1,13 +1,14 @@
-
 .center-container {
   font-family: var(--font-principal);
   width: 440px;
   height: 470px;
-  background-color: #F9F9F9; /* Adicione a cor de fundo desejada */
+  background-color: #f9f9f9; /* Adicione a cor de fundo desejada */
   margin: 50px auto; /* Centraliza vertical e horizontalmente */
-  padding: 50px; 
+  padding: 50px;
   font-size: 1.5rem;
-
+}
+#Esqueceu {
+  text-decoration: none;
 }
 #frase {
   margin: auto 91px;
@@ -17,22 +18,21 @@
 }
 
 .form-group {
-
   font-size: 1.5rem;
-  font-weight: bold; 
+  font-weight: bold;
   padding-bottom: 10px;
 }
 
-::placeholder{
+::placeholder {
   font-size: 1.3rem;
 }
 
-h4{
+h4 {
   text-align: center;
   padding-bottom: 10px;
 }
 
-.form-control{
+.form-control {
   width: 23rem;
   height: 4rem;
   margin: 0 auto;
@@ -63,7 +63,6 @@ h4{
 }
 
 @media (max-width: 415px) {
-  
   /* .center-container{
     display: none;
   } */
@@ -81,8 +80,4 @@ h4{
   .header {
     display: none;
   }
- 
 }
-
-
-

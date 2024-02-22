@@ -2,16 +2,18 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  
 }
 .container-inicio div {
+  min-width: 50%;
   width: 58.4rem;
+  min-height: 50%;
   height: 55rem;
   margin-top: 10rem;
 }
 .container-inicio p {
   margin: 10rem 0 0 0;
   font-size: 5rem;
+  word-break: keep-all;
 }
 .container-fim {
   display: flex;
@@ -22,12 +24,11 @@
 .container-fim figure {
   display: flex;
   width: 100%;
-  
 }
 .container-fim img {
-    width: 100%;
-    margin-left:-3rem;
-  }
+  width: 100%;
+  margin-left: -3rem;
+}
 .container-responsivo {
   display: none;
 }

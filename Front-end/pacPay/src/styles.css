@@ -18,7 +18,7 @@ html {
   font-size: 62.5%;
   ::-webkit-scrollbar {
     width: 0px;
-}
+  }
   /* Para usar rem ex:
   1.6 rem = 16px
   2.0 rem = 20px

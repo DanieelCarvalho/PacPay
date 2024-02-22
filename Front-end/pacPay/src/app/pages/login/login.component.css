@@ -1,36 +1,61 @@
+main {
+  border: solid;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
 .center-container {
   font-family: var(--font-principal);
-  width: 440px;
-  height: 470px;
-  background-color: #f9f9f9; /* Adicione a cor de fundo desejada */
-  margin: 50px auto; /* Centraliza vertical e horizontalmente */
-  padding: 50px;
-  font-size: 1.5rem;
+  width: 44rem;
+  height: 44rem;
+  background-color: #f9f9f9;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+form {
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container-logar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 #Esqueceu {
   text-decoration: none;
 }
-#frase {
-  margin: auto 91px;
-  font-size: 20px;
+.frase {
+  font-size: 2rem;
   font-weight: bold;
-  padding-bottom: 2.5rem;
-  padding-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.form-group {
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding-bottom: 10px;
+form::placeholder {
+  font-size: 1.6rem;
+}
+input {
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 1.6rem;
+}
+p {
+  font-size: 1.6rem;
+  color: red;
+  padding-left: 0.5rem;
+  width: 100%;
 }
 
-::placeholder {
-  font-size: 1.3rem;
-}
-
-h4 {
-  text-align: center;
-  padding-bottom: 10px;
+.responsivo-img {
+  display: none;
 }
 
 .form-control {
@@ -45,22 +70,20 @@ h4 {
 
 #esqueceu-senha {
   font-size: 1.4rem;
-  text-decoration: none;
   color: black;
-  width: 86%;
-  display: flex;
-  justify-content: flex-end;
+  width: 100%;
+
+  justify-content: center;
 }
 
 #cadastrar-login {
   font-size: 1.4rem;
   text-decoration: none;
   color: black;
-  width: 86%;
+  width: 100%;
+  cursor: initial;
   display: flex;
   justify-content: flex-end;
-  margin-left: -15px;
-  cursor: initial;
 }
 #cadastrar-login span {
   text-decoration: underline;
@@ -75,13 +98,10 @@ h4 {
 
 #esqueceu-senha {
   text-decoration: underline;
-  margin-left: -50px;
   font-weight: bold;
-}
-
-#link-esqueceuSenha {
-  margin-top: 10px;
-  margin-left: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 #link-cadastre-se {
@@ -96,11 +116,11 @@ h4 {
   background-color: #e89d00;
   color: #ffffff;
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   border: #e89d00 solid;
 }
 
-@media (max-width: 415px) {
+@media screen and (max-width: 435px) {
   /* .center-container{
     display: none;
   } */
@@ -110,12 +130,43 @@ h4 {
   }
 
   main {
-    height: 500px;
-    width: 500px;
     background-color: black;
+    height: 100vh;
   }
 
-  .header {
+  .Header {
     display: none;
+  }
+  .center-container {
+    background-color: black;
+    color: #ffffff;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .frase {
+    height: 7rem;
+  }
+  .responsivo-img {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+  .responsivo-img img {
+    width: 26.4rem;
+    height: 10rem;
+    filter: drop-shadow(0 4px 4px var(--header-color));
+  }
+  .frase {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

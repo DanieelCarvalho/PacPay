@@ -48,8 +48,7 @@ header {
 }
 
 .logout {
-    display: flex;
-    
+  display: flex;
 }
 
 .logout p {
@@ -57,13 +56,12 @@ header {
   text-transform: uppercase;
   padding: 0.2rem;
   margin-right: 1rem;
-  
 }
 
 .logout img {
   width: 3rem;
   height: 3rem;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   cursor: pointer;
 }
 
@@ -181,21 +179,19 @@ h2 {
   }
   .logout {
     display: flex;
-    
-}
+  }
 
-.logout p {
-  text-transform: uppercase;
-  padding: 0.5rem;
-  margin-right: 1rem;
-  
-}
+  .logout p {
+    text-transform: uppercase;
+    padding: 0.5rem;
+    margin-right: 1rem;
+  }
 
-.logout img {
-  width: 3rem;
-  height: 3rem;
-  margin-right: 0;
-}
+  .logout img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0;
+  }
 
   .olho-saldo {
     align-self: center;

@@ -8,13 +8,20 @@ import {
 import { Router, RouterLink } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
-  imports: [ReactiveFormsModule, HeaderComponent, FooterComponent, RouterLink],
+  imports: [
+    ReactiveFormsModule,
+    HeaderComponent,
+    FooterComponent,
+    RouterLink,
+    CommonModule,
+  ],
 })
 export class LoginComponent {
   constructor(private rota: Router) {}
@@ -22,6 +29,7 @@ export class LoginComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
     senha: new FormControl('', Validators.required),
   });
+  senhaIncorreta: boolean = false;
 
   autenticar(): void {
     let usuarioAutenticado = false;
@@ -52,7 +60,10 @@ export class LoginComponent {
     if (usuarioAutenticado) {
       this.rota.navigateByUrl('/admin');
     } else {
-      alert('E-mail ou senha incorretos.');
+      this.senhaIncorreta = true;
+      setTimeout(() => {
+        this.senhaIncorreta = false;
+      }, 2000);
     }
   }
 }

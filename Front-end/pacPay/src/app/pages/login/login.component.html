@@ -1,100 +1,105 @@
-<app-header class="header"> </app-header>
-
+<app-header class="Header"> </app-header>
 <main>
-  <div>
-    <div class="center-container">
-      <form [formGroup]="formulario" (submit)="autenticar()">
-        <h1 id="frase">Acesse Sua Conta</h1>
+  <section class="center-container">
+    <figure class="responsivo-img">
+      <img src="./assets/LogoComNome.svg" alt="" />
+    </figure>
 
-        <div class="input-group mb-3">
-          <input
-            type="email"
-            formControlName="email"
-            class="form-control form-control-lg"
-            id="emailLogin"
-            aria-describedby="emailHelp"
-            placeholder="Informe seu e-mail"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            class="form-control"
-          />
-        </div>
+    <form [formGroup]="formulario" (submit)="autenticar()">
+      <h1 class="frase">Acesse Sua Conta</h1>
 
-        <div class="input-group mb-3">
-          <label for="senha"></label>
-          <input
-            type="password"
-            id="senha"
-            formControlName="senha"
-            placeholder="Informe sua senha"
-            class="form-control form-control-lg"
-          />
-          <button
-            type="button"
-            class="btn btn-link"
-            id="esqueceu-senha"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Esqueceu sua senha?
-          </button>
-        </div>
+      <div class="input-group mb-3">
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control form-control-lg"
+          id="emailLogin"
+          aria-describedby="emailHelp"
+          placeholder="Informe seu e-mail"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          class="form-control"
+        />
+      </div>
 
-        <div
-          class="modal fade"
-          id="exampleModal"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
+      <div class="input-group mb-3">
+        <input
+          type="password"
+          formControlName="senha"
+          class="form-control form-control-lg"
+          id="senhaLogin"
+          placeholder="Senha"
+          class="form-control"
+        />
+        <p *ngIf="senhaIncorreta" class="mensagem-erro" role="alert">
+          Senha ou e-mail incorreto. Tente novamente.
+        </p>
+        <button
+          type="button"
+          class="btn btn-link"
+          id="esqueceu-senha"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
         >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">
-                  Redefinir senha
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"
-                      >Email para redifinição</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                    />
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Fechar
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-dismiss="modal"
-                >
-                  Enviar redifinição de senha
-                </button>
-              </div>
+          Esqueceu sua senha?
+        </button>
+      </div>
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Redefinir senha
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Email para redifinição</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Fechar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Enviar redifinição de senha
+              </button>
             </div>
           </div>
         </div>
-
+      </div>
+      <div class="container-logar">
         <button
           type="submit"
           class="btn btn-success"
@@ -105,10 +110,10 @@
         </button>
 
         <button type="button" class="btn btn-link" id="cadastrar-login">
-          Não tem uma conta? <span routerLink="/cadastro">Cadastre-se</span>
+          Não tem uma conta? <span routerLink="/cadastro"> Cadastre-se.</span>
         </button>
-      </form>
-    </div>
-  </div>
+      </div>
+    </form>
+  </section>
 </main>
 <app-footer class="footer"></app-footer>

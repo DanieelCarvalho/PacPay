@@ -56,7 +56,6 @@ export class EnderecoComponent {
 
   enviarCep(event: Event) {
     event.preventDefault();
-
     this.servico.retornarEndereco(this.formulario.value.cep).subscribe(
       (retorno) => {
         this.formulario.controls['rua'].setValue(retorno.logradouro);

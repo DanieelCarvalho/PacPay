@@ -6,24 +6,28 @@
       <form [formGroup]="formulario" (submit)="autenticar()">
         <h1 id="frase">Acesse Sua Conta</h1>
 
-        <div>
+        <div class="input-group mb-3">
           <input
             type="email"
-            id="cpf"
             formControlName="email"
-            placeholder="Informe seu CPF"
+            class="form-control form-control-lg"
+            id="emailLogin"
+            aria-describedby="emailHelp"
+            placeholder="Informe seu e-mail"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
             class="form-control"
           />
         </div>
 
-        <div class="form-group senha" id="form-senha">
+        <div class="input-group mb-3">
           <label for="senha"></label>
           <input
             type="password"
             id="senha"
             formControlName="senha"
             placeholder="Informe sua senha"
-            class="form-control"
+            class="form-control form-control-lg"
           />
           <button
             type="button"

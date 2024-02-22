@@ -15,10 +15,13 @@ export class AdminComponent {
 
   saldoVisivel: boolean = true;
   olho: boolean = true;
+  nome: any = localStorage.getItem('nomeLogado')?.split(' ');
+  nome2: any = this.nome;
 
   alternarSaldo() {
     this.saldoVisivel = !this.saldoVisivel;
     this.olho = !this.olho;
+    console.log(this.nome[0]);
   }
   sair(): any {
     this.rota.navigateByUrl('/inicio');

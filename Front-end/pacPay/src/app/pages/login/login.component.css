@@ -39,7 +39,7 @@ h4 {
   margin: 0 auto;
   display: block;
   background-color: #ffffff;
-  color: #ffffff;
+
   font-weight: 500;
 }
 
@@ -60,6 +60,11 @@ h4 {
   display: flex;
   justify-content: flex-end;
   margin-left: -15px;
+  cursor: initial;
+}
+#cadastrar-login span {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 #link-cadastrar-se {

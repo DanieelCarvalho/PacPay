@@ -39,6 +39,7 @@ export class LoginComponent {
             usuario.email === this.formulario.value.email &&
             usuario.senha === this.formulario.value.senha
           ) {
+            localStorage.setItem('nomeLogado', usuario.nome);
             usuarioAutenticado = true;
             break;
           }

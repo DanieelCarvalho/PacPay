@@ -7,6 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CEPService } from '../../../servicos/cep.service';
 
 @Component({
   selector: 'app-endereco',
@@ -20,6 +21,8 @@ export class EnderecoComponent {
   @Input() formulario!: FormGroup;
   @Output() proximaEtapaEvent = new EventEmitter<Event>();
   @Output() concluirCadastro = new EventEmitter<Event>();
+
+  constructor(private servico: CEPService) {}
 
   estados = [
     'AC',
@@ -51,25 +54,20 @@ export class EnderecoComponent {
     'TO',
   ];
 
-  async enviarCep(event: Event) {
+  enviarCep(event: Event) {
     event.preventDefault();
-    try {
-      const cep = this.formulario.get('cep')?.value;
 
-      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-
-      const dados = await response.json();
-
-      this.formulario.controls['cep'].setValue(dados.cep);
-      this.formulario.controls['rua'].setValue(dados.logradouro);
-      this.formulario.controls['complemento'].setValue(dados.complemento);
-      this.formulario.controls['bairro'].setValue(dados.bairro);
-      this.formulario.controls['cidade'].setValue(dados.localidade);
-      this.formulario.controls['estado'].setValue(dados.uf);
-    } catch (error) {
-      console.log('Erro ao buscar o CEP: ', error);
-    }
+    this.servico.retornarEndereco(this.formulario.value.cep).subscribe(
+      (retorno) => {
+        this.formulario.controls['rua'].setValue(retorno.logradouro);
+        this.formulario.controls['complemento'].setValue(retorno.complemento);
+        this.formulario.controls['bairro'].setValue(retorno.bairro);
+        this.formulario.controls['cidade'].setValue(retorno.localidade);
+        this.formulario.controls['estado'].setValue(retorno.uf);
+      },
+      (error) => {
+        console.log('Erro ao buscar o CEP: ', error);
+      }
+    );
   }
-
-  
 }

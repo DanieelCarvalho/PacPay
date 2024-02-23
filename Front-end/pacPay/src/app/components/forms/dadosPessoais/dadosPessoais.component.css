@@ -16,3 +16,9 @@
   border-bottom: 2px solid var(--primary-color);
   background-color: #f2f2f2;
 }
+
+@media screen and (max-width: 435px) {
+  label {
+    color: black;
+  }
+}

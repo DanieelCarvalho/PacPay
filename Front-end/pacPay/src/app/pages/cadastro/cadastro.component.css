@@ -25,3 +25,30 @@ header a {
   height: max-content;
   font-size: 1.5rem;
 }
+
+@media screen and (max-width: 435px) {
+  .container-full {
+    background-color: black;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  header {
+    background-color: black;
+    color: var(--secondary-color-1);
+    display: flex;
+    align-items: center;
+    height: 9em;
+    border-bottom: 0.1rem solid #aaa;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  header img {
+    width: 5em;
+    height: 5rem;
+  }
+  header a {
+    margin-left: 3rem;
+  }
+}

@@ -31,3 +31,12 @@
   color: #ffffff;
   font-weight: 500;
 }
+@media screen and (max-width: 435px) {
+  .container-full {
+    color: black;
+  }
+
+  label {
+    color: black;
+  }
+}

@@ -12,7 +12,7 @@ import {
   FormBuilder,
   ValidationErrors,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -25,6 +25,7 @@ import { Router } from '@angular/router';
     DadosPessoaisComponent,
     EnderecoComponent,
     FooterComponent,
+    RouterLink,
   ],
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css'],

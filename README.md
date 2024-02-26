@@ -8,6 +8,7 @@ Projeto de Banco em aplicação web
 - [Features](#features)
 - [Tecnologias usadas](#tecnologias-usadas)
 - [Autores](#autores)
+- [Deploy](#deploy)
 
 ## Descrição
 
@@ -99,3 +100,9 @@ Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pess
 </a></div>
 
 <div align="center"><a href=""><img src="https://img.shields.io/badge/-Petrus-blue?style=flat-square&logo=Linkedin&logoColor=white"/></a></div>
+
+## 🚀 Deploy
+
+O deploy do projeto foi feito no serviço Vercel.
+
+Deploy: https://pac-pay.vercel.app/inicio

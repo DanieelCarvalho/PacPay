@@ -101,8 +101,8 @@ Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pess
 
 <div align="center"><a href=""><img src="https://img.shields.io/badge/-Petrus-blue?style=flat-square&logo=Linkedin&logoColor=white"/></a></div>
 
-## 🚀 Deploy
+## Deploy
 
 O deploy do projeto foi feito no serviço Vercel.
 
-Deploy: https://pac-pay.vercel.app/inicio
+🚀 Deploy: https://pac-pay.vercel.app/inicio

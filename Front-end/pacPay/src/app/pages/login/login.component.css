@@ -86,6 +86,7 @@ p {
   cursor: initial;
   display: flex;
   justify-content: flex-end;
+  display: none;
 }
 #cadastrar-login span {
   text-decoration: underline;

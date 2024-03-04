@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "JYFmRZop03vDma3oVPYWJyXerbP+/GZbvFoj87qn5Gg=",
+  "Source": "API-pacPay",
+  "BasePath": "_content/API-pacPay",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

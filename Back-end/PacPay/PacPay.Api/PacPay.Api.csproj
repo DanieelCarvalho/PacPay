@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\PacPay.App\PacPay.App.csproj" />
+    <ProjectReference Include="..\PacPay.Persistencia\PacPay.Infra.csproj" />
   </ItemGroup>
 
 </Project>

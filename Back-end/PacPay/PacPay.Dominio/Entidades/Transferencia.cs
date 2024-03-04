@@ -1,12 +1,13 @@
 ﻿namespace PacPay.Dominio.Entidades
 {
-    public class Transferencia(decimal valor, Guid contaOrigem, Guid contaDestino)
+    public class Transferencia
     {
-        public decimal Valor { get; private set; } = valor;
+        public Guid Id { get; private set; } = Guid.NewGuid();
+        public decimal Valor { get;  set; } 
 
-        public Guid ContaOrigem { get; private set; } = contaOrigem;
+        public Guid ContaOrigem { get;  set; }
 
-        public Guid ContaDestino { get; private set; } = contaDestino;
-        public DateTimeOffset DataTransferencia { get; private set; } = DateTimeOffset.Now;
+        public Guid ContaDestino { get;  set; } 
+        public DateTimeOffset DataTransferencia { get; private set; } = DateTimeOffset.Now.ToUniversalTime();
     }
 }

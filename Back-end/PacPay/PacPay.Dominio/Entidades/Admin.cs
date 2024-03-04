@@ -1,6 +1,6 @@
 ﻿namespace PacPay.Dominio.Entidades
 {
-    public class Admin(string nome, string documento, string email, string senha, string dataNascimento, Endereco endereco) : EntidadeBase(nome, documento, email, senha, dataNascimento, endereco)
+    public class Admin : EntidadeBase
     {
         public override void AtualizarConta(string Nome, string email, string senha, string dataDeNascimento, Endereco endereco)
         {
@@ -37,7 +37,7 @@
             throw new NotImplementedException();
         }
 
-        public override void ExcluirConta(Guid numeroConta, string cof, string senha)
+        public override void ExcluirConta(Guid numeroConta, string documento, string senha)
         {
             throw new NotImplementedException();
         }

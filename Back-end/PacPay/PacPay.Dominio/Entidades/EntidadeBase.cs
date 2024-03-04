@@ -1,22 +1,21 @@
 ﻿namespace PacPay.Dominio.Entidades
 {
-    public abstract class EntidadeBase(string nome, string documento, string email, string senha, string dataNascimento, Endereco endereco)
+    public abstract class EntidadeBase
     {
-        public Guid NumeroConta { get; private set; } = Guid.NewGuid();
+        public Guid NumeroConta { get; set; }
+        public string Nome { get; set; } = null!;
+        public string Documento { get; set; } = null!;
+        public string Email { get; set; } = null!;
+        public string Senha { get; set; } = null!;
+        public string DataNascimento { get; set; } = null!;
+        public decimal Saldo { get; set; } = 0;
+        public Guid EnderecoId { get; set; }
+        public Endereco Endereco { get; set; } = null!;
 
-        public string Nome { get; private set; } = nome;
+        public DateTime DataCriacao { get; set; } = DateTime.Now.ToUniversalTime();
 
-        public string Documento { get; private set; } = documento;
-        public string Email { get; private set; } = email;
-        public string Senha { get; private set; } = senha;
-
-        public string DataNascimento { get; private set; } = dataNascimento;
-        public Decimal Saldo { get; private set; }
-
-        public Endereco Endereco { get; private set; } = endereco;
-        public DateTimeOffset DataCriacao { get; private set; } = DateTimeOffset.Now;
-        public DateTimeOffset? UltimaAtualizacao { get; private set; }
-        public DateTimeOffset? DataExclusao { get; private set; }
+        public DateTime? UltimaAtualizacao { get; set; }
+        public DateTime? DataExclusao { get; set; }
 
         public abstract void AtualizarNome(string nome);
 
@@ -36,6 +35,6 @@
 
         public abstract void AtualizarConta(string Nome, string email, string senha, string dataDeNascimento, Endereco endereco);
 
-        public abstract void ExcluirConta(Guid numeroConta, string cof, string senha);
+        public abstract void ExcluirConta(Guid numeroConta, string documento, string senha);
     }
 }

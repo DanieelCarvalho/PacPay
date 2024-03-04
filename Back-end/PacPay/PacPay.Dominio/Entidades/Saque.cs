@@ -1,8 +1,11 @@
 ﻿namespace PacPay.Dominio.Entidades
 {
-    public class Saque(decimal valor)
+    public class Saque
     {
-        public decimal Valor { get; private set; } = valor;
-        public DateTimeOffset DataSaque { get; private set; } = DateTimeOffset.Now;
+        public Guid Id { get; private set; } = Guid.NewGuid();
+        public decimal Valor { get;  set; }
+
+        public Guid ContaOrigem { get;  set; } 
+        public DateTimeOffset DataSaque { get; private set; } = DateTimeOffset.Now.ToUniversalTime();
     }
 }

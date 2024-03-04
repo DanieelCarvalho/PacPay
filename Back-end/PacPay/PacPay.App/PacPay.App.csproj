@@ -7,12 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CasosDeUso\" />
-    <Folder Include="Servicos\" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PacPay.Dominio\PacPay.Dominio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Compartilhado\Excecoes\" />
   </ItemGroup>
 
 </Project>

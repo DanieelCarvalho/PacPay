@@ -1,13 +1,14 @@
 ﻿namespace PacPay.Dominio.Entidades
 {
-    public class Endereco(string cep, string rua, string? numero, string? complemento, string? bairro, string cidade, string estado)
+    public class Endereco
     {
-        public string Cep { get; private set; } = cep;
-        public string Rua { get; private set; } = rua;
-        public string? Numero { get; private set; } = numero;
-        public string? Complemento { get; private set; } = complemento;
-        public string? Bairro { get; private set; } = bairro;
-        public string Cidade { get; private set; } = cidade;
-        public string Estado { get; private set; } = estado;
+        public Guid Id { get; private set; } = Guid.NewGuid();
+        public string Cep { get; set; } = null!;
+        public string Rua { get; set; } = null!;
+        public string? Numero { get; set; }
+        public string? Complemento { get; set; }
+        public string? Bairro { get; set; }
+        public string Cidade { get; set; } = null!;
+        public string Estado { get; set; } = null!;
     }
 }

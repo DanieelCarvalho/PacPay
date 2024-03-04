@@ -9,7 +9,7 @@ namespace PacPay.Infra
 {
     public static class ExtensoesServico
     {
-        public static void ConfigurePersistenceApp(this IServiceCollection services, IConfiguration configuration)
+        public static void ConfiguraInfraApp(this IServiceCollection services, IConfiguration configuration)
         {
             string? connectionString = configuration.GetConnectionString("DefaultConnection");
 
@@ -20,7 +20,6 @@ namespace PacPay.Infra
 
             services.AddScoped<IUnidadeDeTrabalho, UnidadeDeTrabalho>();
             services.AddScoped<IRepositorioCliente, RepositorioCliente>();
-            services.AddScoped<IRepositorioAdmin, RepositorioAdmin>();
         }
     }
 }

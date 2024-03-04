@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{21ED4B4F-566A-4978-B116-4B2E23C6DC39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{27290374-EC67-421F-96BB-615591061AF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{924C20CC-4A66-4384-B592-E79F62D2B055}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{665846A3-A695-4513-8E3F-DEC3534C28C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacPay.Infra", "PacPay.Persistencia\PacPay.Infra.csproj", "{FD523847-119C-438B-8DC4-76908D7B5540}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacPay.Dominio", "PacPay.Dominio\PacPay.Dominio.csproj", "{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacPay.App", "PacPay.App\PacPay.App.csproj", "{37D676D5-1352-4699-BBDC-96EF352412AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{12A86484-E5BE-49DA-B9BA-DA1E394503ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacPay.Api", "PacPay.Api\PacPay.Api.csproj", "{4E93E632-6C52-48C6-85CB-F491789DC0AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD523847-119C-438B-8DC4-76908D7B5540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD523847-119C-438B-8DC4-76908D7B5540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD523847-119C-438B-8DC4-76908D7B5540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD523847-119C-438B-8DC4-76908D7B5540}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37D676D5-1352-4699-BBDC-96EF352412AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37D676D5-1352-4699-BBDC-96EF352412AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37D676D5-1352-4699-BBDC-96EF352412AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37D676D5-1352-4699-BBDC-96EF352412AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E93E632-6C52-48C6-85CB-F491789DC0AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E93E632-6C52-48C6-85CB-F491789DC0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E93E632-6C52-48C6-85CB-F491789DC0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E93E632-6C52-48C6-85CB-F491789DC0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FD523847-119C-438B-8DC4-76908D7B5540} = {924C20CC-4A66-4384-B592-E79F62D2B055}
+		{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6} = {21ED4B4F-566A-4978-B116-4B2E23C6DC39}
+		{37D676D5-1352-4699-BBDC-96EF352412AD} = {27290374-EC67-421F-96BB-615591061AF0}
+		{4E93E632-6C52-48C6-85CB-F491789DC0AF} = {12A86484-E5BE-49DA-B9BA-DA1E394503ED}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5125FE9-099B-4CE2-909A-0507D482C6AC}
+	EndGlobalSection
+EndGlobal

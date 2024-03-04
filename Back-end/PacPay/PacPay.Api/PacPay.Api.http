@@ -1,0 +1,6 @@
+@PacPay.Api_HostAddress = http://localhost:5221
+
+GET {{PacPay.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

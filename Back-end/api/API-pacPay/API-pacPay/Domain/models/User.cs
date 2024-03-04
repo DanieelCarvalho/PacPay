@@ -2,7 +2,7 @@
 using System.Security.Principal;
 using Microsoft.EntityFrameworkCore;
 
-namespace API_pacPay.models;
+namespace API_pacPay.Domain.models;
 
 public class User : Entity
 {
@@ -15,7 +15,7 @@ public class User : Entity
     public DateTime Aniversario { get; set; } = DateTime.Now;
     public string Senha { get; set; }
 
-   //  public virtual Account Account { get; set; }
+    //  public virtual Account Account { get; set; }
     public virtual Address Endereco { get; set; }
 
 

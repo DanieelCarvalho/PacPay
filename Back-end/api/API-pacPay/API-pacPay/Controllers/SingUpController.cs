@@ -1,5 +1,5 @@
-﻿using API_pacPay.Dtos;
-using API_pacPay.models;
+﻿using API_pacPay.Domain.Dtos;
+using API_pacPay.Domain.models;
 using API_pacPay.Repositories;
 using API_pacPay.Repositories.Interfaces;
 using API_pacPay.Services;

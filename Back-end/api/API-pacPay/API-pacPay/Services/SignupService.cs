@@ -1,4 +1,4 @@
-﻿using API_pacPay.Dtos;
+﻿using API_pacPay.Domain.Dtos;
 using System.Text.RegularExpressions;
 
 namespace API_pacPay.Services;

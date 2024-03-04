@@ -1,8 +1,8 @@
-﻿namespace API_pacPay.Dtos;
+﻿namespace API_pacPay.Domain.Dtos;
 
 public class SingUpDto
 {
-    
+
     public string Nome { get; set; }
 
     public string Email { get; set; }

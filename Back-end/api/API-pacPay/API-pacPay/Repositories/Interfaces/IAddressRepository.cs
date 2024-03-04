@@ -1,4 +1,4 @@
-﻿using API_pacPay.models;
+﻿using API_pacPay.Domain.models;
 
 namespace API_pacPay.Repositories.Interfaces;
 

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API_pacPay.models;
+namespace API_pacPay.Domain.models;
 
 public class Address : Entity
 {

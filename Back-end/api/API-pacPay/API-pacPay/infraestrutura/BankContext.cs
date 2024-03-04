@@ -1,4 +1,4 @@
-﻿using API_pacPay.models;
+﻿using API_pacPay.Domain.models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 

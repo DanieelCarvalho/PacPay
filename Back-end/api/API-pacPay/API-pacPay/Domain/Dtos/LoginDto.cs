@@ -1,4 +1,4 @@
-﻿namespace API_pacPay.Dtos;
+﻿namespace API_pacPay.Domain.Dtos;
 
 public class LoginDto
 {

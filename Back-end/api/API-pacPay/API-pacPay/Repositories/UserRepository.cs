@@ -1,6 +1,5 @@
-﻿using API_pacPay.Dtos;
+﻿using API_pacPay.Domain.models;
 using API_pacPay.infraestrutura;
-using API_pacPay.models;
 using API_pacPay.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 

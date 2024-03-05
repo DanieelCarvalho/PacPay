@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API-pacPay")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+609cf3d9d0fe41e76b25f4841351912ad6fcd6fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4df60504b7c1b22162ed08b98032d8719f3ab70")]
 [assembly: System.Reflection.AssemblyProductAttribute("API-pacPay")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API-pacPay")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

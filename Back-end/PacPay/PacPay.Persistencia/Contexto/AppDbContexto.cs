@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PacPay.Dominio.Entidades;
 
 namespace PacPay.Infra.Contexto

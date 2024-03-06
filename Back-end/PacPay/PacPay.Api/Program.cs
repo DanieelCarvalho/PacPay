@@ -1,4 +1,6 @@
 using CleanArchitectureTraining.Application.Services;
+using Microsoft.OpenApi.Models;
+using PacPay.App.Servicos;
 using PacPay.Infra;
 using PacPay.Infra.Contexto;
 
@@ -13,11 +15,38 @@ namespace PacPay.Api
             // Add services to the container.
             builder.Services.ConfiguraInfraApp(builder.Configuration);
             builder.Services.ConfiguraAplicacaoApp();
+            ConfiguracaoAutenticacao.autenticacao(builder.Services, builder.Configuration);
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(
+                x =>
+                {
+                    x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                    {
+                        Name = "Authorization",
+                        In = ParameterLocation.Header,
+                        Type = SecuritySchemeType.ApiKey,
+                        Scheme = "Bearer",
+                    });
+
+                    x.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                    {
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer",
+                                },
+                            },
+                           new List<string>()
+                        },
+                    });
+                }
+                );
 
             var app = builder.Build();
 

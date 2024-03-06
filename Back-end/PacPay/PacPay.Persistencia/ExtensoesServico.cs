@@ -9,17 +9,17 @@ namespace PacPay.Infra
 {
     public static class ExtensoesServico
     {
-        public static void ConfiguraInfraApp(this IServiceCollection services, IConfiguration configuration)
+        public static void ConfiguraInfraApp(this IServiceCollection servicos, IConfiguration configuration)
         {
             string? connectionString = configuration.GetConnectionString("sql");
 
-            services.AddDbContext<AppDbContexto>(options =>
+            servicos.AddDbContext<AppDbContexto>(options =>
             {
                 options.UseSqlite(connectionString);
             });
 
-            services.AddScoped<IUnidadeDeTrabalho, UnidadeDeTrabalho>();
-            services.AddScoped<IRepositorioConta, RepositorioConta>();
+            servicos.AddScoped<IUnidadeDeTrabalho, UnidadeDeTrabalho>();
+            servicos.AddScoped<IRepositorioConta, RepositorioConta>();
         }
     }
 }

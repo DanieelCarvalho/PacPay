@@ -10,6 +10,8 @@ namespace PacPay.Dominio.Interfaces
 
         void Excluir(T entidade);
 
-        Task<T?> BuscarComId(Guid numeroConta, CancellationToken cancellationToken);
+        Task<bool> ContaEsxiste(string documento, CancellationToken cancellationToken);
+
+        Task<string> PegarSenha(string documento, CancellationToken cancellationToken);
     }
 }

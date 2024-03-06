@@ -2,7 +2,7 @@
 {
     public class Endereco
     {
-        public Guid Id { get; private set; } = Guid.NewGuid();
+        public Guid Id { get; private set; }
         public string Cep { get; set; } = null!;
         public string Rua { get; set; } = null!;
         public string? Numero { get; set; }

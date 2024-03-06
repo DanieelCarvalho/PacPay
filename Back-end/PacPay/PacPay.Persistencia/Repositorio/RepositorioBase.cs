@@ -1,4 +1,5 @@
-﻿using PacPay.Dominio.Entidades;
+﻿using Microsoft.EntityFrameworkCore;
+using PacPay.Dominio.Entidades;
 using PacPay.Dominio.Interfaces;
 using PacPay.Infra.Contexto;
 using System;
@@ -16,10 +17,18 @@ namespace PacPay.Infra.Repositorio
 
         public void Adicionar(T entidade)
         {
-            entidade.DataCriacao = DateTime.Now.ToUniversalTime();
+            try
+            {
+                entidade.DataCriacao = DateTime.Now.ToUniversalTime();
 
-            Contexto.Add(entidade.Endereco);
-            Contexto.Add(entidade);
+                Contexto.Add(entidade.Cliente.Endereco);
+                Contexto.Add(entidade.Cliente);
+                Contexto.Add(entidade);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public void Atualizar(T entidade)
@@ -27,14 +36,29 @@ namespace PacPay.Infra.Repositorio
             throw new NotImplementedException();
         }
 
-        public Task<T?> BuscarComId(Guid numeroConta, CancellationToken cancellationToken)
+        public async Task<bool> ContaEsxiste(string documento, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            bool existe = await Contexto.Contas.AnyAsync(c => c.Cliente.Documento == documento, cancellationToken);
+
+            return existe;
         }
 
         public void Excluir(T entidade)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<string> PegarSenha(string documento, CancellationToken cancellationToken)
+        {
+            Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Documento == documento, cancellationToken);
+
+            if (cliente == null) throw new Exception("Conta não existe!");
+
+            Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.ClienteId == cliente.Id, cancellationToken);
+
+            if (conta == null) throw new Exception("Conta não existe!");
+
+            return conta.Senha;
         }
     }
 }

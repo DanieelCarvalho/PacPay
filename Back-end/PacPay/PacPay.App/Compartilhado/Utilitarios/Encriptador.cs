@@ -1,5 +1,4 @@
-﻿using DevOne.Security.Cryptography.BCrypt;
-using PacPay.Dominio.Interfaces.IUtilitarios;
+﻿using PacPay.Dominio.Interfaces.IUtilitarios;
 
 namespace PacPay.App.Compartilhado.Utilitarios
 {
@@ -7,14 +6,15 @@ namespace PacPay.App.Compartilhado.Utilitarios
     {
         public string Encriptar(string senha)
         {
-            string hash = BCryptHelper.HashPassword(senha, BCryptHelper.GenerateSalt(16));
+            string salt = BCrypt.Net.BCrypt.GenerateSalt(16);
+            string hash = BCrypt.Net.BCrypt.HashPassword(senha, salt);
 
             return hash;
         }
 
         public bool Comparar(string senha, string hash)
         {
-            return BCryptHelper.CheckPassword(senha, hash);
+            return BCrypt.Net.BCrypt.Verify(senha, hash);
         }
     }
 }

@@ -2,7 +2,6 @@
 using PacPay.Dominio.Entidades;
 using PacPay.Dominio.Interfaces;
 using PacPay.Infra.Contexto;
-using System;
 
 namespace PacPay.Infra.Repositorio
 {

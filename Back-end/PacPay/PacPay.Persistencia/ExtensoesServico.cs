@@ -11,15 +11,15 @@ namespace PacPay.Infra
     {
         public static void ConfiguraInfraApp(this IServiceCollection services, IConfiguration configuration)
         {
-            string? connectionString = configuration.GetConnectionString("DefaultConnection");
+            string? connectionString = configuration.GetConnectionString("sql");
 
             services.AddDbContext<AppDbContexto>(options =>
             {
-                options.UseNpgsql(connectionString);
+                options.UseSqlite(connectionString);
             });
 
             services.AddScoped<IUnidadeDeTrabalho, UnidadeDeTrabalho>();
-            services.AddScoped<IRepositorioCliente, RepositorioCliente>();
+            services.AddScoped<IRepositorioConta, RepositorioConta>();
         }
     }
 }

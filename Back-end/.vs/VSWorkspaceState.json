@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\API-pacPay",
+    "\\API-pacPay\\API-pacPay",
+    "\\API-pacPay\\API-pacPay\\Services",
+    "\\PacPay\\PacPay.Api",
+    "\\PacPay\\PacPay.Api\\bin\\Release",
+    "\\PacPay\\PacPay.Api\\obj\\Release",
+    "\\PacPay\\PacPay.Api\\obj\\Release\\net8.0",
+    "\\PacPay\\PacPay.Api\\obj\\Release\\net8.0\\ref",
+    "\\PacPay\\PacPay.Dominio\\bin"
+  ],
+  "SelectedNode": "\\API-pacPay\\API-pacPay\\Services\\SignupService.cs",
+  "PreviewInSolutionExplorer": false
+}

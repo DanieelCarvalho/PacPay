@@ -1,26 +1,26 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using PacPay.App.CasosDeUso.AdicionarCliente;
+using PacPay.App.CasosDeUso.AdicionarConta;
 
 namespace PacPay.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClienteController : ControllerBase
+    public class ContaController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public ClienteController(IMediator mediator)
+        public ContaController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
         [HttpPost]
-        public async Task<ActionResult<AdicionarClienteResponse>> CreateUser(AdicionarClienteRequest request, CancellationToken cancellationToken)
+        public async Task<ActionResult<CriarContaResponse>> CreateUser(CriarContaRequest request, CancellationToken cancellationToken)
         {
             try
             {
-                AdicionarClienteResponse response = await _mediator.Send(request, cancellationToken);
+                CriarContaResponse response = await _mediator.Send(request, cancellationToken);
 
                 return Ok(response);
             }

@@ -1,4 +1,5 @@
 using CleanArchitectureTraining.Application.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using PacPay.App.Servicos;
 using PacPay.Infra;
@@ -76,7 +77,9 @@ namespace PacPay.Api
             {
                 var escopoDeServico = app.Services.CreateScope();
                 var dbContexto = escopoDeServico.ServiceProvider.GetService<AppDbContexto>();
+
                 dbContexto?.Database.EnsureCreated();
+                dbContexto?.Database.Migrate();
             }
             catch (Exception ex)
             {

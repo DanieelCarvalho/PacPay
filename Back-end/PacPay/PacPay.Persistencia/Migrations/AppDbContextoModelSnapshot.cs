@@ -84,26 +84,6 @@ namespace PacPay.Infra.Migrations
                     b.ToTable("Contas");
                 });
 
-            modelBuilder.Entity("PacPay.Dominio.Entidades.Deposito", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTimeOffset>("DataDeposito")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("IdContaOrigem")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Valor")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Depositos");
-                });
-
             modelBuilder.Entity("PacPay.Dominio.Entidades.Endereco", b =>
                 {
                     b.Property<Guid>("Id")
@@ -140,33 +120,13 @@ namespace PacPay.Infra.Migrations
                     b.ToTable("Enderecos");
                 });
 
-            modelBuilder.Entity("PacPay.Dominio.Entidades.Saque", b =>
+            modelBuilder.Entity("PacPay.Dominio.Entidades.Operacao", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTimeOffset>("DataSaque")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("IdContaOrigem")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Valor")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Saques");
-                });
-
-            modelBuilder.Entity("PacPay.Dominio.Entidades.Transferencia", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTimeOffset>("DataTransferencia")
+                    b.Property<DateTimeOffset>("DataOperacao")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("IdContaDestino")
@@ -180,7 +140,7 @@ namespace PacPay.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Transferencias");
+                    b.ToTable("Operacoes");
                 });
 
             modelBuilder.Entity("PacPay.Dominio.Entidades.Cliente", b =>

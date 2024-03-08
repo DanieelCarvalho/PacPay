@@ -8,8 +8,6 @@ namespace PacPay.Infra.Contexto
         public DbSet<Conta> Contas { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
-        public DbSet<Saque> Saques { get; set; }
-        public DbSet<Deposito> Depositos { get; set; }
-        public DbSet<Transferencia> Transferencias { get; set; }
+        public DbSet<Operacao> Operacoes { get; set; }
     }
 }

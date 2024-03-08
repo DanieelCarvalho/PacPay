@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Api\\NewFile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PacPay\\PacPay.Api\\NewFile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PacPay\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Services\\SignupService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:API-pacPay\\API-pacPay\\Services\\SignupService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -123,19 +131,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SignupService.cs",
-              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Services\\SignupService.cs",
-              "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Services\\SignupService.cs",
-              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Services\\SignupService.cs",
-              "RelativeToolTip": "API-pacPay\\API-pacPay\\Services\\SignupService.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:33:08.691Z",
+              "Title": "NewFile",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Api\\NewFile",
+              "RelativeDocumentMoniker": "PacPay\\PacPay.Api\\NewFile",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Api\\NewFile",
+              "RelativeToolTip": "PacPay\\PacPay.Api\\NewFile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-03-08T12:30:12.156Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\.gitignore",
+              "RelativeDocumentMoniker": "PacPay\\.gitignore",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\.gitignore",
+              "RelativeToolTip": "PacPay\\.gitignore",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001407|",
+              "WhenOpened": "2024-03-08T12:29:41.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SignupService.cs",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Services\\SignupService.cs",
+              "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Services\\SignupService.cs",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Services\\SignupService.cs",
+              "RelativeToolTip": "API-pacPay\\API-pacPay\\Services\\SignupService.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T00:33:08.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PassWordVerificationService.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Services\\PassWordVerificationService.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Services\\PassWordVerificationService.cs",
@@ -143,12 +175,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Services\\PassWordVerificationService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:33:07.424Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:33:07.424Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Controllers\\UserController.cs",
@@ -156,12 +187,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Controllers\\UserController.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:29:38.749Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:29:38.749Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "SingUpController.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Controllers\\SingUpController.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Controllers\\SingUpController.cs",
@@ -169,12 +199,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Controllers\\SingUpController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:29:36.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:29:36.738Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Controllers\\AccountController.cs",
@@ -182,12 +211,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Controllers\\AccountController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:29:35.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:29:35.229Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "SingUpDto.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Dtos\\SingUpDto.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Dtos\\SingUpDto.cs",
@@ -195,12 +223,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Dtos\\SingUpDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:29:30.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:29:30.914Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ProfileDto.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Dtos\\ProfileDto.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Dtos\\ProfileDto.cs",
@@ -208,12 +235,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Dtos\\ProfileDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:29:29.679Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:29:29.679Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Dtos\\LoginDto.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Dtos\\LoginDto.cs",
@@ -221,12 +247,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Dtos\\LoginDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:29:28.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:29:28.094Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "BankContext.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\infraestrutura\\BankContext.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\infraestrutura\\BankContext.cs",
@@ -234,12 +259,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\infraestrutura\\BankContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:29:08.661Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:29:08.661Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\models\\User.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\models\\User.cs",
@@ -247,12 +271,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\models\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:28:50.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:28:50.536Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Entity.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\models\\Entity.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\models\\Entity.cs",
@@ -260,12 +283,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\models\\Entity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:28:48.826Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:28:48.826Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Address.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\models\\Address.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\models\\Address.cs",
@@ -273,12 +295,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\models\\Address.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:28:45.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:28:45.163Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\appsettings.json",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\appsettings.json",
@@ -286,12 +307,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-05T00:28:38.017Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:28:38.017Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\appsettings.Development.json",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\appsettings.Development.json",
@@ -299,12 +319,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-05T00:28:36.785Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:28:36.785Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Properties\\launchSettings.json",
@@ -312,12 +331,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Properties\\launchSettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-05T00:28:27.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:28:27.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IUserRepository.cs",
@@ -325,12 +343,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IUserRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:28:02.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:28:02.228Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "IRepository.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IRepository.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IRepository.cs",
@@ -338,12 +355,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:27:59.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:27:59.896Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "IEntity.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IEntity.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IEntity.cs",
@@ -351,12 +367,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:27:57.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:27:57.406Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "IAddressRepository.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IAddressRepository.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IAddressRepository.cs",
@@ -364,12 +379,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Repositories\\Interfaces\\IAddressRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:27:55.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:27:55.756Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Repositories\\UserRepository.cs",
@@ -377,12 +391,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Repositories\\UserRepository.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:27:44.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:27:44.081Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "AddressRepository.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Repositories\\AddressRepository.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Repositories\\AddressRepository.cs",
@@ -390,12 +403,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Repositories\\AddressRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:27:33.726Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:27:33.726Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "BaseRepository.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\API-pacPay\\API-pacPay\\Repositories\\BaseRepository.cs",
               "RelativeDocumentMoniker": "API-pacPay\\API-pacPay\\Repositories\\BaseRepository.cs",
@@ -403,8 +415,11 @@
               "RelativeToolTip": "API-pacPay\\API-pacPay\\Repositories\\BaseRepository.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T00:27:29.551Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T00:27:29.551Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

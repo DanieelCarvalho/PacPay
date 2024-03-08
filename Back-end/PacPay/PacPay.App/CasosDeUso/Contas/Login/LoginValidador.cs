@@ -6,8 +6,11 @@ namespace PacPay.App.CasosDeUso.AdicionarConta
     {
         public AdicionarContaValidador()
         {
-            RuleFor(x => x.Documento).NotEmpty().MinimumLength(11).MaximumLength(11);
-            RuleFor(x => x.Senha).NotEmpty().MinimumLength(8).MaximumLength(50);
+            RuleFor(x => x.Senha)
+               .NotEmpty().MinimumLength(8).MaximumLength(100);
+
+            RuleFor(x => x.Documento)
+                .NotEmpty().Matches(@"^\d{11}$|^\d{14}$").WithMessage("O documento só pode conter números e deve ter exatamente 11 (CPF) ou 14 (CNPJ) dígitos.");
         }
     }
 }

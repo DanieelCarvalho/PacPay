@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.persistencia\\migrations\\20240308142731_primeira.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|solutionrelative:pacpay.persistencia\\migrations\\20240308142731_primeira.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E93E632-6C52-48C6-85CB-F491789DC0AF}|PacPay.Api\\PacPay.Api.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.api\\examplo.appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4E93E632-6C52-48C6-85CB-F491789DC0AF}|PacPay.Api\\PacPay.Api.csproj|solutionrelative:pacpay.api\\examplo.appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E93E632-6C52-48C6-85CB-F491789DC0AF}|PacPay.Api\\PacPay.Api.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4E93E632-6C52-48C6-85CB-F491789DC0AF}|PacPay.Api\\PacPay.Api.csproj|solutionrelative:pacpay.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.persistencia\\repositorio\\repositoriobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|solutionrelative:pacpay.persistencia\\repositorio\\repositoriobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.persistencia\\contexto\\appdbcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|solutionrelative:pacpay.persistencia\\contexto\\appdbcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37D676D5-1352-4699-BBDC-96EF352412AD}|PacPay.App\\PacPay.App.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.app\\casosdeuso\\contas\\login\\loginvalidador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37D676D5-1352-4699-BBDC-96EF352412AD}|PacPay.App\\PacPay.App.csproj|solutionrelative:pacpay.app\\casosdeuso\\contas\\login\\loginvalidador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{37D676D5-1352-4699-BBDC-96EF352412AD}|PacPay.App\\PacPay.App.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.app\\casosdeuso\\contas\\criarconta\\criarcontavalidador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{37D676D5-1352-4699-BBDC-96EF352412AD}|PacPay.App\\PacPay.App.csproj|solutionrelative:pacpay.app\\casosdeuso\\contas\\criarconta\\criarcontavalidador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,32 +35,16 @@
       "RelativeMoniker": "D:0:0:{37D676D5-1352-4699-BBDC-96EF352412AD}|PacPay.App\\PacPay.App.csproj|solutionrelative:pacpay.app\\casosdeuso\\contas\\criarconta\\criarconta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E93E632-6C52-48C6-85CB-F491789DC0AF}|PacPay.Api\\PacPay.Api.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4E93E632-6C52-48C6-85CB-F491789DC0AF}|PacPay.Api\\PacPay.Api.csproj|solutionrelative:pacpay.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.persistencia\\migrations\\20240308142731_primeira.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|solutionrelative:pacpay.persistencia\\migrations\\20240308142731_primeira.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.persistencia\\contexto\\appdbcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|solutionrelative:pacpay.persistencia\\contexto\\appdbcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}|PacPay.Dominio\\PacPay.Dominio.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.dominio\\entidades\\entidadebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}|PacPay.Dominio\\PacPay.Dominio.csproj|solutionrelative:pacpay.dominio\\entidades\\entidadebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.persistencia\\repositorio\\repositoriobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD523847-119C-438B-8DC4-76908D7B5540}|PacPay.Persistencia\\PacPay.Infra.csproj|solutionrelative:pacpay.persistencia\\repositorio\\repositoriobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}|PacPay.Dominio\\PacPay.Dominio.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.dominio\\interfaces\\irepositoriobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}|PacPay.Dominio\\PacPay.Dominio.csproj|solutionrelative:pacpay.dominio\\interfaces\\irepositoriobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}|PacPay.Dominio\\PacPay.Dominio.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.dominio\\entidades\\operacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}|PacPay.Dominio\\PacPay.Dominio.csproj|solutionrelative:pacpay.dominio\\entidades\\operacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}|PacPay.Dominio\\PacPay.Dominio.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.dominio\\entidades\\entidadebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}|PacPay.Dominio\\PacPay.Dominio.csproj|solutionrelative:pacpay.dominio\\entidades\\entidadebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}|PacPay.Dominio\\PacPay.Dominio.csproj|c:\\users\\luanf\\onedrive\\documentos\\codigos\\pacpay\\back-end\\pacpay\\pacpay.dominio\\entidades\\enums\\transacoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,6 +86,58 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginValidador.cs",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\Login\\LoginValidador.cs",
+              "RelativeDocumentMoniker": "PacPay.App\\CasosDeUso\\Contas\\Login\\LoginValidador.cs",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\Login\\LoginValidador.cs",
+              "RelativeToolTip": "PacPay.App\\CasosDeUso\\Contas\\Login\\LoginValidador.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwA8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T22:50:00.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CriarConta.cs",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarConta.cs",
+              "RelativeDocumentMoniker": "PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarConta.cs",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarConta.cs",
+              "RelativeToolTip": "PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarConta.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T12:37:49.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CriarContaValidador.cs",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarContaValidador.cs",
+              "RelativeDocumentMoniker": "PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarContaValidador.cs",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarContaValidador.cs",
+              "RelativeToolTip": "PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarContaValidador.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwCUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T23:13:18.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IRepositorioBase.cs",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Dominio\\Interfaces\\IRepositorioBase.cs",
+              "RelativeDocumentMoniker": "PacPay.Dominio\\Interfaces\\IRepositorioBase.cs",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Dominio\\Interfaces\\IRepositorioBase.cs",
+              "RelativeToolTip": "PacPay.Dominio\\Interfaces\\IRepositorioBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T12:36:02.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
               "Title": "AppDbContexto.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Persistencia\\Contexto\\AppDbContexto.cs",
@@ -92,45 +152,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CriarContaValidador.cs",
-              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarContaValidador.cs",
-              "RelativeDocumentMoniker": "PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarContaValidador.cs",
-              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarContaValidador.cs",
-              "RelativeToolTip": "PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarContaValidador.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAANAAAA",
+              "Title": "20240308142731_Primeira.cs",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Persistencia\\Migrations\\20240308142731_Primeira.cs",
+              "RelativeDocumentMoniker": "PacPay.Persistencia\\Migrations\\20240308142731_Primeira.cs",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Persistencia\\Migrations\\20240308142731_Primeira.cs",
+              "RelativeToolTip": "PacPay.Persistencia\\Migrations\\20240308142731_Primeira.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T23:13:18.648Z",
+              "WhenOpened": "2024-03-08T14:27:32.385Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IRepositorioBase.cs",
-              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Dominio\\Interfaces\\IRepositorioBase.cs",
-              "RelativeDocumentMoniker": "PacPay.Dominio\\Interfaces\\IRepositorioBase.cs",
-              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Dominio\\Interfaces\\IRepositorioBase.cs",
-              "RelativeToolTip": "PacPay.Dominio\\Interfaces\\IRepositorioBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "DocumentIndex": 3,
+              "Title": "RepositorioBase.cs",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Persistencia\\Repositorio\\RepositorioBase.cs",
+              "RelativeDocumentMoniker": "PacPay.Persistencia\\Repositorio\\RepositorioBase.cs",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Persistencia\\Repositorio\\RepositorioBase.cs",
+              "RelativeToolTip": "PacPay.Persistencia\\Repositorio\\RepositorioBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T12:36:02.369Z",
+              "WhenOpened": "2024-03-08T12:36:34.062Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EntidadeBase.cs",
-              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Dominio\\Entidades\\EntidadeBase.cs",
-              "RelativeDocumentMoniker": "PacPay.Dominio\\Entidades\\EntidadeBase.cs",
-              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Dominio\\Entidades\\EntidadeBase.cs",
-              "RelativeToolTip": "PacPay.Dominio\\Entidades\\EntidadeBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T12:34:03.831Z",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "PacPay.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Api\\appsettings.json",
+              "RelativeToolTip": "PacPay.Api\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-08T12:30:40.741Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
+              "Title": "examplo.appsettings.json",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Api\\examplo.appsettings.json",
+              "RelativeDocumentMoniker": "PacPay.Api\\examplo.appsettings.json",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Api\\examplo.appsettings.json",
+              "RelativeToolTip": "PacPay.Api\\examplo.appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-08T23:20:00.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Operacao.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Dominio\\Entidades\\Operacao.cs",
               "RelativeDocumentMoniker": "PacPay.Dominio\\Entidades\\Operacao.cs",
@@ -143,7 +216,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
+              "Title": "EntidadeBase.cs",
+              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Dominio\\Entidades\\EntidadeBase.cs",
+              "RelativeDocumentMoniker": "PacPay.Dominio\\Entidades\\EntidadeBase.cs",
+              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Dominio\\Entidades\\EntidadeBase.cs",
+              "RelativeToolTip": "PacPay.Dominio\\Entidades\\EntidadeBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T12:34:03.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Transacoes.cs",
               "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Dominio\\Entidades\\Enums\\Transacoes.cs",
               "RelativeDocumentMoniker": "PacPay.Dominio\\Entidades\\Enums\\Transacoes.cs",
@@ -152,58 +238,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-08T12:35:11.275Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "PacPay.Api\\appsettings.json",
-              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Api\\appsettings.json",
-              "RelativeToolTip": "PacPay.Api\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-08T12:30:40.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CriarConta.cs",
-              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarConta.cs",
-              "RelativeDocumentMoniker": "PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarConta.cs",
-              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarConta.cs",
-              "RelativeToolTip": "PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarConta.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T12:37:49.479Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "20240308142731_Primeira.cs",
-              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Persistencia\\Migrations\\20240308142731_Primeira.cs",
-              "RelativeDocumentMoniker": "PacPay.Persistencia\\Migrations\\20240308142731_Primeira.cs",
-              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Persistencia\\Migrations\\20240308142731_Primeira.cs",
-              "RelativeToolTip": "PacPay.Persistencia\\Migrations\\20240308142731_Primeira.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T14:27:32.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RepositorioBase.cs",
-              "DocumentMoniker": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Persistencia\\Repositorio\\RepositorioBase.cs",
-              "RelativeDocumentMoniker": "PacPay.Persistencia\\Repositorio\\RepositorioBase.cs",
-              "ToolTip": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\PacPay.Persistencia\\Repositorio\\RepositorioBase.cs",
-              "RelativeToolTip": "PacPay.Persistencia\\Repositorio\\RepositorioBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T12:36:34.062Z",
               "EditorCaption": ""
             }
           ]

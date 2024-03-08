@@ -10,7 +10,7 @@ namespace PacPay.Dominio.Interfaces
 
         void Excluir(T entidade);
 
-        Task<bool> ContaEsxiste(string documento, CancellationToken cancellationToken);
+        Task<bool> ContaExiste(string documento, CancellationToken cancellationToken);
 
         Task<string> PegarSenha(string documento, CancellationToken cancellationToken);
     }

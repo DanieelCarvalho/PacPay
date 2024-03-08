@@ -10,7 +10,7 @@
         public decimal Saldo { get; set; } = 0;
 
         public bool Admin { get; set; }
-        public DateTime DataCriacao { get; set; } = DateTime.Now.ToUniversalTime();
+        public DateTime DataCriacao { get; set; }
 
         public DateTime? UltimaAtualizacao { get; set; }
         public DateTime? DataExclusao { get; set; }

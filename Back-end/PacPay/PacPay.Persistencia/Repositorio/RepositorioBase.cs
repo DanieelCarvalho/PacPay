@@ -35,7 +35,7 @@ namespace PacPay.Infra.Repositorio
             throw new NotImplementedException();
         }
 
-        public async Task<bool> ContaEsxiste(string documento, CancellationToken cancellationToken)
+        public async Task<bool> ContaExiste(string documento, CancellationToken cancellationToken)
         {
             bool existe = await Contexto.Contas.AnyAsync(c => c.Cliente.Documento == documento, cancellationToken);
 

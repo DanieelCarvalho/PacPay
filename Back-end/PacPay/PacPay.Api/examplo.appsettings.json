@@ -1,0 +1,12 @@
+{
+  "Chave": "pacaaaaaapapapcapapapappapaasdasdasdasdasdasd",
+  "ConnectionStrings": {
+    "sql": "Data Source=dbdb.db"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}

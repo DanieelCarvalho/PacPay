@@ -1,12 +1,9 @@
-/* *{
-    text-decoration: none;
-} */
 footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: var(--footer-color);
-  height: 23rem;
+  height: 20rem;
   color: var(--secondary-color);
   font-size: 2rem;
   font-family: var(--font-principal);
@@ -19,41 +16,17 @@ footer {
   color: white;
   text-align: center;
 }
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: solid red;
-  width: 100%;
-}
-/* .left,
-.middle {
-  text-align: center;
-} */
-.teste {
-  display: flex;
-  justify-content: space-between;
-  border: solid red;
-}
 
 .left,
-.middle {
+.middle,.right {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  min-width: 33.3%;
 }
 .middle p {
   cursor: pointer;
-}
-.right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.logo {
-  height: 3rem;
-  width: 3rem;
 }
 .right-icones {
   display: flex;
@@ -73,7 +46,35 @@ footer {
   width: 1.9rem;
 }
 .right .logo {
-  width: 4em;
-  height: auto;
   align-items: center;
+  width: 3em;
+  height: calc(3em * 1.2);
 }
+
+.copy {
+    display: inline-block;
+    background-image: linear-gradient(90deg, #e89d00, white, #e89d00); 
+    color: transparent; 
+    background-size: 200% 100%;
+    background-clip: text;
+    animation: wave 5s linear infinite;
+    -webkit-background-clip: text;
+  }
+  
+  @keyframes wave {
+    100% {
+      background-position: -1%;
+    }
+    50% {
+      background-position: 50%; 
+    }
+    0% {
+      background-position: 200%; 
+    }
+  }
+  
+@media screen and (max-width: 800px) {
+    footer {
+      font-size: 1.5rem;
+    }
+  }

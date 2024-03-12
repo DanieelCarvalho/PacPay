@@ -13,6 +13,8 @@ import {
   ValidationErrors,
 } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { UsuarioService } from '../../servicos/usuario.service';
+import { Usuario } from '../../models/Usuario';
 
 @Component({
   selector: 'app-cadastro',
@@ -31,10 +33,15 @@ import { Router, RouterLink } from '@angular/router';
   styleUrls: ['./cadastro.component.css'],
 })
 export class CadastroComponent {
-  constructor(private rota: Router, private fb: FormBuilder) {}
+  constructor(
+    private rota: Router,
+    private fb: FormBuilder,
+    private servico: UsuarioService
+  ) {}
 
   formulario!: FormGroup;
   etapa: number = 1;
+  usuarios: Usuario[] = [];
 
   ngOnInit(): void {
     this.formulario = this.fb.group({
@@ -44,7 +51,6 @@ export class CadastroComponent {
       telefone: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       senha: new FormControl('', Validators.required),
-
       cep: new FormControl('', Validators.required),
       rua: new FormControl('', Validators.required),
       numero: new FormControl(''),
@@ -76,32 +82,38 @@ export class CadastroComponent {
   }
 
   cadastrar(event: Event): void {
-    event.preventDefault();
-    if (this.formulario.valid) {
-      let ultimoId = Number(localStorage.getItem('ultimoId')) || 0;
-      let novoId = ultimoId + 1;
-      localStorage.setItem('ultimoId', novoId.toString());
-      localStorage.setItem(`${novoId}`, JSON.stringify(this.formulario.value));
-
-      this.rota.navigateByUrl('/login');
-    } else {
-      console.log('Formulário inválido');
-
-      Object.keys(this.formulario.controls).forEach((key) => {
-        const control = this.formulario.get(key);
-        if (control) {
-          const controlErrors: ValidationErrors = control.errors!;
-          if (controlErrors != null) {
-            Object.keys(controlErrors).forEach((keyError) => {
-              console.log(
-                `Nome: ${key}
-  Erro: ${keyError}
-  Valor: ${controlErrors[keyError]}`
-              );
-            });
-          }
-        }
+    this.servico
+      .cadastrar(this.formulario.value as Usuario)
+      .subscribe((usuario) => {
+        this.usuarios.push(usuario);
+        this.formulario.reset();
+        this.rota.navigateByUrl('/login');
       });
-    }
+
+    //   if (this.formulario.valid) {
+    //     let ultimoId = Number(localStorage.getItem('ultimoId')) || 0;
+    //     let novoId = ultimoId + 1;
+    //     localStorage.setItem('ultimoId', novoId.toString());
+    //     localStorage.setItem(`${novoId}`, JSON.stringify(this.formulario.value));
+
+    //   } else {
+    //     console.log('Formulário inválido');
+
+    //     Object.keys(this.formulario.controls).forEach((key) => {
+    //       const control = this.formulario.get(key);
+    //       if (control) {
+    //         const controlErrors: ValidationErrors = control.errors!;
+    //         if (controlErrors != null) {
+    //           Object.keys(controlErrors).forEach((keyError) => {
+    //             console.log(
+    //               `Nome: ${key}
+    // Erro: ${keyError}
+    // Valor: ${controlErrors[keyError]}`
+    //             );
+    //           });
+    //         }
+    //       }
+    //     });
+    //   }
   }
 }

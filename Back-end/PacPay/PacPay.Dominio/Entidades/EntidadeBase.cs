@@ -7,7 +7,7 @@
         public Guid ClienteId { get; set; }
         public Cliente Cliente { get; set; } = null!;
         public string Senha { get; set; } = null!;
-        public decimal Saldo { get; set; } = 0;
+        public decimal Saldo { get; set; } = 1000;
 
         public bool Admin { get; set; }
         public DateTime DataCriacao { get; set; }

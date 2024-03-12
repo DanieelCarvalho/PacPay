@@ -12,6 +12,6 @@ namespace PacPay.Dominio.Interfaces
 
         Task<bool> ContaExiste(string documento, CancellationToken cancellationToken);
 
-        Task<string> PegarSenha(string documento, CancellationToken cancellationToken);
+        Task<Conta> BuscarConta(string documento, CancellationToken cancellationToken);
     }
 }

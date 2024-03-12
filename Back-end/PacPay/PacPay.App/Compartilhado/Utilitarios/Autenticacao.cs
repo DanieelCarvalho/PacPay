@@ -25,16 +25,35 @@ namespace PacPay.App.Compartilhado.Utilitarios
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(cc), SecurityAlgorithms.HmacSha256Signature)
             };
 
-            JwtSecurityTokenHandler jwtHandler = new JwtSecurityTokenHandler();
+            JwtSecurityTokenHandler jwtHandler = new();
             SecurityToken tokenCriado = jwtHandler.CreateToken(config);
             string tokenString = new JwtSecurityTokenHandler().WriteToken(tokenCriado);
 
             return tokenString;
         }
 
-        public string ValidarToken(string token)
+        public bool ValidarToken(string token)
         {
-            throw new NotImplementedException();
+            byte[] cc = Encoding.ASCII.GetBytes(_chave);
+            TokenValidationParameters parametrosDeValidacao = new()
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(cc),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ClockSkew = TimeSpan.Zero
+            };
+
+            JwtSecurityTokenHandler jwtHandler = new();
+            try
+            {
+                jwtHandler.ValidateToken(token, parametrosDeValidacao, out SecurityToken tokenValidado);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

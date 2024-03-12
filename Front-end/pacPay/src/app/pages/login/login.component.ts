@@ -40,7 +40,7 @@ export class LoginComponent {
       .subscribe((r) => {
         this.rota.navigateByUrl('/admin');
         localStorage.setItem('token', r.token);
-        localStorage.setItem('nome', r.usuario);
+        localStorage.setItem('nome', r.nome);
       });
   }
 }

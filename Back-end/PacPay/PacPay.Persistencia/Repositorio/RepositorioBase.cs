@@ -47,17 +47,11 @@ namespace PacPay.Infra.Repositorio
             throw new NotImplementedException();
         }
 
-        public async Task<string> PegarSenha(string documento, CancellationToken cancellationToken)
+        public async Task<Conta> BuscarConta(string documento, CancellationToken cancellationToken)
         {
-            Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Documento == documento, cancellationToken);
-
-            if (cliente == null) throw new Exception("Conta não existe!");
-
-            Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.ClienteId == cliente.Id, cancellationToken);
-
-            if (conta == null) throw new Exception("Conta não existe!");
-
-            return conta.Senha;
+            Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Documento == documento, cancellationToken) ?? throw new Exception("Conta não existe!");
+            Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.ClienteId == cliente.Id, cancellationToken) ?? throw new Exception("Conta não existe!");
+            return conta;
         }
     }
 }

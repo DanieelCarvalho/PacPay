@@ -4,7 +4,7 @@ using PacPay.App.CasosDeUso.AdicionarConta;
 
 namespace PacPay.Api.Controllers.Conta
 {
-    [Route("api/[controller]")]
+    [Route("/[controller]")]
     [ApiController]
     public class LoginController(IMediator mediator) : ControllerBase
     {

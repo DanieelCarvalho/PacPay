@@ -1,4 +1,3 @@
-using CleanArchitectureTraining.Application.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using PacPay.App.Servicos;
@@ -56,9 +55,11 @@ namespace PacPay.Api
             CriarBancoDeDados(app);
 
             // Configure the HTTP request pipeline.
+
+            app.UseSwagger();
+
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
                 app.UseSwaggerUI();
             }
 

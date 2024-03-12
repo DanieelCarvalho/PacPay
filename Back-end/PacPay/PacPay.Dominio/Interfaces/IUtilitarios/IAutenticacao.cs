@@ -4,6 +4,6 @@
     {
         string GerarToken(string id);
 
-        string ValidarToken(string token);
+        bool ValidarToken(string token);
     }
 }

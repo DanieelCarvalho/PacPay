@@ -1,4 +1,3 @@
-using CleanArchitectureTraining.Application.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using PacPay.App.Servicos;

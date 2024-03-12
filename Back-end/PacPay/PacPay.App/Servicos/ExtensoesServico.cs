@@ -6,7 +6,7 @@ using PacPay.App.Compartilhado.Utilitarios;
 using PacPay.Dominio.Interfaces.IUtilitarios;
 using System.Reflection;
 
-namespace CleanArchitectureTraining.Application.Services
+namespace PacPay.App.Servicos
 {
     public static class ExtensoesServico
     {

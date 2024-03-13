@@ -69,13 +69,36 @@ p {
 
   font-weight: 500;
 }
+.input-redefinir-senha {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Flex", sans-serif;
+}
+.input-redefinir-senha input {
+  width: 100%;
+}
+.custom-font-size {
+  font-size: 2.4rem !important;
+  font-family: "Roboto Flex", sans-serif;
+  width: 100%;
+}
+.font-button {
+  font-size: 1.4rem !important;
+}
 
 #esqueceu-senha {
   font-size: 1.4rem;
   color: black;
+  justify-content: center;
+}
+.esqueceu-senha {
+  font-size: 1.4rem;
+  color: black;
   width: 100%;
 
-  justify-content: center;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
 }
 
 #cadastrar-login {

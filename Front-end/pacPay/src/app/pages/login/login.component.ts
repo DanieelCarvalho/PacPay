@@ -35,12 +35,20 @@ export class LoginComponent {
   senhaIncorreta: boolean = false;
 
   autenticar(): void {
-    this.servico
-      .autenticar(this.formulario.value as Credencial)
-      .subscribe((r) => {
+    this.servico.autenticar(this.formulario.value as Credencial).subscribe(
+      (r) => {
         this.rota.navigateByUrl('/admin');
         localStorage.setItem('token', r.token);
         localStorage.setItem('nome', r.nome);
-      });
+      },
+      (error) => {
+        if (error.status === 400) {
+          this.senhaIncorreta = true;
+          setTimeout(() => {
+            this.senhaIncorreta = false;
+          }, 5000);
+        }
+      }
+    );
   }
 }

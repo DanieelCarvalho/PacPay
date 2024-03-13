@@ -14,10 +14,12 @@ figure {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0px;
 }
+
 img {
-  width: 16em;
-  height: 13.1rem;
+  width: 15em;
+  height: fit-content;
 }
 nav {
   display: flex;

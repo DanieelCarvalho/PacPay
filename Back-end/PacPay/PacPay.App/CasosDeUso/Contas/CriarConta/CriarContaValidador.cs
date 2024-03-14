@@ -9,8 +9,8 @@ namespace PacPay.App.CasosDeUso.Contas.CriarConta
             RuleFor(x => x.Senha)
                 .NotEmpty().MinimumLength(8).MaximumLength(100).Matches(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,100}$").WithMessage("A senha deve ter pelo menos uma letra minúscula, uma letra maiúscula, um número e um caractere especial.");
 
-            RuleFor(x => x.Cliente.Documento)
-                .NotEmpty().Matches(@"^\d{11}$|^\d{14}$").WithMessage("O documento só pode conter números e deve ter exatamente 11 (CPF) ou 14 (CNPJ) dígitos.");
+            RuleFor(x => x.Cliente.Cpf)
+                .NotEmpty().Matches(@"^\d{11}$").WithMessage("O CPF só pode conter números e deve ter exatamente 11 digitos");
 
             RuleFor(x => x.Cliente.Email)
                 .NotEmpty().MinimumLength(3).MaximumLength(50).EmailAddress().WithMessage("O e-mail informado é inválido. Ex: string@email.com");

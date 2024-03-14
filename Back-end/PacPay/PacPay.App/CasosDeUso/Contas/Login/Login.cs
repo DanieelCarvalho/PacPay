@@ -13,13 +13,13 @@ namespace PacPay.App.CasosDeUso.AdicionarConta
 
         public async Task<LoginResponse> Handle(LoginRequest request, CancellationToken cancellationToken)
         {
-            Conta conta = await _repositorioConta.BuscarConta(request.Documento, cancellationToken);
+            Conta conta = await _repositorioConta.BuscarConta(request.Cpf, cancellationToken);
 
             bool autenticado = _encriptador.Comparar(request.Senha, conta.Senha);
 
             if (!autenticado) throw new Exception("Senha inválida!");
 
-            string token = _autenticador.GerarToken(request.Documento);
+            string token = _autenticador.GerarToken(request.Cpf);
 
             return new LoginResponse { Nome = conta.Cliente.Nome, Token = token };
         }

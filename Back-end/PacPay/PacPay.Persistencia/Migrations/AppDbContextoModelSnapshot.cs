@@ -15,7 +15,7 @@ namespace PacPay.Infra.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.3");
 
             modelBuilder.Entity("PacPay.Dominio.Entidades.Cliente", b =>
                 {
@@ -23,11 +23,11 @@ namespace PacPay.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("DataNascimento")
+                    b.Property<string>("Cpf")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Documento")
+                    b.Property<string>("DataNascimento")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

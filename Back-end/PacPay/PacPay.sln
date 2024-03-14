@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{27290374-EC6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{924C20CC-4A66-4384-B592-E79F62D2B055}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{665846A3-A695-4513-8E3F-DEC3534C28C1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacPay.Infra", "PacPay.Persistencia\PacPay.Infra.csproj", "{FD523847-119C-438B-8DC4-76908D7B5540}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacPay.Dominio", "PacPay.Dominio\PacPay.Dominio.csproj", "{BF9AC6ED-5BDB-4A86-AE17-62BBDFE1F0B6}"
@@ -19,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacPay.App", "PacPay.App\Pa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{12A86484-E5BE-49DA-B9BA-DA1E394503ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacPay.Api", "PacPay.Api\PacPay.Api.csproj", "{4E93E632-6C52-48C6-85CB-F491789DC0AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacPay.Api", "PacPay.Api\PacPay.Api.csproj", "{4E93E632-6C52-48C6-85CB-F491789DC0AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

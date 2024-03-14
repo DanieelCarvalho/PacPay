@@ -6,9 +6,9 @@ using PacPay.Dominio.Interfaces.IUtilitarios;
 
 namespace PacPay.App.CasosDeUso.Contas.CriarConta
 {
-    public class CriarConta(IUnidadeDeTrabalho unidadeDeTrabalho, IRepositorioConta repositorioConta, IMapper mapper, IEncriptador encriptador) : IRequestHandler<CriarContaRequest, CriarContaResponse>
+    public class CriarConta(ICommitDados commitDados, IRepositorioConta repositorioConta, IMapper mapper, IEncriptador encriptador) : IRequestHandler<CriarContaRequest, CriarContaResponse>
     {
-        private readonly IUnidadeDeTrabalho _unidadeDeTrabalho = unidadeDeTrabalho;
+        private readonly ICommitDados _commitDados = commitDados;
         private readonly IRepositorioConta _repositorioConta = repositorioConta;
         private readonly IMapper _mapper = mapper;
         private readonly IEncriptador _encriptador = encriptador;
@@ -17,7 +17,7 @@ namespace PacPay.App.CasosDeUso.Contas.CriarConta
         {
             Conta conta = _mapper.Map<Conta>(request);
 
-            bool contaExiste = await _repositorioConta.ContaExiste(conta.Cliente.Documento, cancellationToken);
+            bool contaExiste = await _repositorioConta.ContaExiste(conta.Cliente.Cpf, cancellationToken);
 
             if (contaExiste) throw new Exception("Conta já existe");
 
@@ -25,7 +25,7 @@ namespace PacPay.App.CasosDeUso.Contas.CriarConta
 
             _repositorioConta.Adicionar(conta);
 
-            await _unidadeDeTrabalho.Commit(cancellationToken);
+            await _commitDados.Commit(cancellationToken);
 
             return _mapper.Map<CriarContaResponse>(conta);
         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PacPay.Dominio.Entidades;
 using PacPay.Dominio.Interfaces;
 using PacPay.Infra.Contexto;
 using PacPay.Infra.Repositorio;
@@ -18,8 +19,8 @@ namespace PacPay.Infra
                 options.UseSqlite(connectionString);
             });
 
-            servicos.AddScoped<IUnidadeDeTrabalho, UnidadeDeTrabalho>();
-            servicos.AddScoped<IRepositorioConta, RepositorioConta>();
+            servicos.AddScoped<ICommitDados, CommitDados>();
+            servicos.AddScoped<IRepositorioConta, RepositorioConta<Conta>>();
         }
     }
 }

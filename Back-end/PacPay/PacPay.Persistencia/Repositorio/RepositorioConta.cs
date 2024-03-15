@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PacPay.Dominio.Entidades;
+using PacPay.Dominio.Excecoes;
+using PacPay.Dominio.Excecoes.Mensagens;
 using PacPay.Dominio.Interfaces;
 using PacPay.Infra.Contexto;
 
@@ -23,15 +25,17 @@ namespace PacPay.Infra.Repositorio
 
         public async Task<Conta> BuscarConta(string cpf, CancellationToken cancellationToken)
         {
-            Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Cpf == cpf, cancellationToken) ?? throw new Exception("Conta não existe!");
-            Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.ClienteId == cliente.Id, cancellationToken) ?? throw new Exception("Conta não existe!");
+            Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Cpf == cpf, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+            Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.ClienteId == cliente.Id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
             return conta;
         }
 
-        public void Adicionar(Conta entidade)
+        public async void Adicionar(Conta entidade, CancellationToken cancellationToken)
         {
             try
             {
+                if (await ContaExiste(entidade.Cliente.Cpf, cancellationToken)) throw new RepositorioExcecao(ContaErr.ContaJaExiste);
+
                 entidade.DataCriacao = DateTime.Now.ToUniversalTime();
 
                 Contexto.Add(entidade.Cliente.Endereco);
@@ -40,16 +44,21 @@ namespace PacPay.Infra.Repositorio
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
             }
         }
 
-        public void Atualizar(Conta entidade)
+        public void Atualizar(Conta entidade, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
 
-        public void Excluir(Conta entidade)
+        public void Excluir(Conta entidade, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deposito(string cpf, decimal valor, string contaDestino, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

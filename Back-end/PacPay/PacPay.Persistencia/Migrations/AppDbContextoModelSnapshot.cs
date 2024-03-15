@@ -135,6 +135,10 @@ namespace PacPay.Infra.Migrations
                     b.Property<Guid>("IdContaOrigem")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TipoOperacao")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<decimal>("Valor")
                         .HasColumnType("TEXT");
 

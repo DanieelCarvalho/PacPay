@@ -17,13 +17,9 @@ namespace PacPay.App.CasosDeUso.Contas.CriarConta
         {
             Conta conta = _mapper.Map<Conta>(request);
 
-            bool contaExiste = await _repositorioConta.ContaExiste(conta.Cliente.Cpf, cancellationToken);
-
-            if (contaExiste) throw new Exception("Conta já existe");
-
             conta.Senha = _encriptador.Encriptar(request.Senha);
 
-            _repositorioConta.Adicionar(conta);
+            _repositorioConta.Adicionar(conta, cancellationToken);
 
             await _commitDados.Commit(cancellationToken);
 

@@ -9,6 +9,8 @@ import { Router, RouterLink } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { UsuarioService } from '../../servicos/usuario.service';
+import { Credencial } from '../../models/Credencial';
 
 @Component({
   selector: 'app-login',
@@ -24,46 +26,29 @@ import { CommonModule } from '@angular/common';
   ],
 })
 export class LoginComponent {
-  constructor(private rota: Router) {}
+  constructor(private rota: Router, private servico: UsuarioService) {}
+
   formulario = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    documento: new FormControl('', [Validators.required]),
     senha: new FormControl('', Validators.required),
   });
   senhaIncorreta: boolean = false;
 
   autenticar(): void {
-    let usuarioAutenticado = false;
-
-    let ultimoId = Number(localStorage.getItem('ultimoId')) || 0;
-
-    for (let i = 1; i <= ultimoId; i++) {
-      let usuarioJson = localStorage.getItem(i.toString());
-
-      if (usuarioJson) {
-        try {
-          let usuario = JSON.parse(usuarioJson);
-
-          if (
-            usuario.email === this.formulario.value.email &&
-            usuario.senha === this.formulario.value.senha
-          ) {
-            localStorage.setItem('nomeLogado', usuario.nome);
-            usuarioAutenticado = true;
-            break;
-          }
-        } catch (e) {
-          console.error(`Erro ao analisar o usuário com id ${i}:`, e);
+    this.servico.autenticar(this.formulario.value as Credencial).subscribe(
+      (r) => {
+        this.rota.navigateByUrl('/admin');
+        localStorage.setItem('token', r.token);
+        localStorage.setItem('nome', r.nome);
+      },
+      (error) => {
+        if (error.status === 400) {
+          this.senhaIncorreta = true;
+          setTimeout(() => {
+            this.senhaIncorreta = false;
+          }, 5000);
         }
       }
-    }
-
-    if (usuarioAutenticado) {
-      this.rota.navigateByUrl('/admin');
-    } else {
-      this.senhaIncorreta = true;
-      setTimeout(() => {
-        this.senhaIncorreta = false;
-      }, 2000);
-    }
+    );
   }
 }

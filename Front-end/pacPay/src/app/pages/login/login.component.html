@@ -18,12 +18,12 @@
 
       <div class="input-group mb-3">
         <input
-          type="email"
-          formControlName="email"
+          type="text"
+          formControlName="documento"
           class="form-control form-control-lg"
           id="emailLogin"
           aria-describedby="emailHelp"
-          placeholder="Informe seu e-mail"
+          placeholder="Informe seu cpf"
           aria-label="Username"
           aria-describedby="basic-addon1"
           class="form-control"
@@ -42,6 +42,8 @@
         <p *ngIf="senhaIncorreta" class="mensagem-erro" role="alert">
           Senha ou e-mail incorreto. Tente novamente.
         </p>
+      </div>
+      <div class="esqueceu-senha">
         <button
           type="button"
           class="btn btn-link"
@@ -63,7 +65,10 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
+              <h1
+                class="modal-title fs-5 custom-font-size"
+                id="exampleModalLabel"
+              >
                 Redefinir senha
               </h1>
               <button
@@ -74,31 +79,22 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"
-                    >Email para redifinição</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                  />
-                </div>
-              </form>
+              <div class="mb-3 input-redefinir-senha">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Email para redifinição:</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
             </div>
             <div class="modal-footer">
               <button
                 type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Fechar
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary"
+                class="btn btn-primary font-button"
                 data-bs-dismiss="modal"
               >
                 Enviar redifinição de senha

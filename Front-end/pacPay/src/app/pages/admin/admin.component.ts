@@ -15,8 +15,7 @@ export class AdminComponent {
 
   saldoVisivel: boolean = true;
   olho: boolean = true;
-  nome: any = localStorage.getItem('nomeLogado')?.split(' ');
-  nome2: any = this.nome;
+  nome: any = localStorage.getItem('nome');
 
   alternarSaldo() {
     this.saldoVisivel = !this.saldoVisivel;
@@ -24,8 +23,8 @@ export class AdminComponent {
     console.log(this.nome[0]);
   }
   sair(): any {
+    localStorage.removeItem('token');
+    localStorage.removeItem('nome');
     this.rota.navigateByUrl('/inicio');
-    localStorage.removeItem('email');
-    localStorage.removeItem('senha');
   }
 }

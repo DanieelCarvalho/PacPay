@@ -3,7 +3,7 @@
     public enum Transacoes
     {
         Deposito = 0,
-        Saqueda = 1,
+        Saque = 1,
         Transferencia = 2,
     }
 }

@@ -2,8 +2,8 @@
 {
     public interface IAutenticacao
     {
-        string GerarToken(string id);
+        string GerarToken(Guid id);
 
-        bool ValidarToken(string token);
+        string PegarId(string token);
     }
 }

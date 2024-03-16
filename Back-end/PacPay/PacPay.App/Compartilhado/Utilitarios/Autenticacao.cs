@@ -11,7 +11,7 @@ namespace PacPay.App.Compartilhado.Utilitarios
     {
         private readonly string _chave = configuration["Chave"]!;
 
-        public string GerarToken(string id)
+        public string GerarToken(Guid id)
         {
             byte[] cc = Encoding.ASCII.GetBytes(_chave);
 
@@ -19,7 +19,7 @@ namespace PacPay.App.Compartilhado.Utilitarios
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new("Id", id)
+                    new("Id", id.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddHours(3),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(cc), SecurityAlgorithms.HmacSha256Signature)
@@ -32,28 +32,12 @@ namespace PacPay.App.Compartilhado.Utilitarios
             return tokenString;
         }
 
-        public bool ValidarToken(string token)
+        public string PegarId(string token)
         {
-            byte[] cc = Encoding.ASCII.GetBytes(_chave);
-            TokenValidationParameters parametrosDeValidacao = new()
-            {
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(cc),
-                ValidateIssuer = false,
-                ValidateAudience = false,
-                ClockSkew = TimeSpan.Zero
-            };
-
             JwtSecurityTokenHandler jwtHandler = new();
-            try
-            {
-                jwtHandler.ValidateToken(token, parametrosDeValidacao, out SecurityToken tokenValidado);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            JwtSecurityToken jwtToken = jwtHandler.ReadJwtToken(token);
+            Claim idClaim = jwtToken.Claims.First(claim => claim.Type == "Id");
+            return idClaim.Value;
         }
     }
 }

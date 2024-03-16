@@ -7,9 +7,9 @@ using PacPay.Infra.Contexto;
 
 namespace PacPay.Infra.Repositorio
 {
-    public class RepositorioConta<T> : IRepositorioConta where T : Conta
+    public sealed class RepositorioConta<T> : IRepositorioConta where T : Conta
     {
-        protected readonly AppDbContexto Contexto;
+        private readonly AppDbContexto Contexto;
 
         public RepositorioConta(AppDbContexto contexto)
         {

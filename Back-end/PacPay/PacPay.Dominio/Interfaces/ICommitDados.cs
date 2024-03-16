@@ -1,6 +1,6 @@
 ﻿namespace PacPay.Dominio.Interfaces
 {
-    public interface IUnidadeDeTrabalho
+    public interface ICommitDados
     {
         Task Commit(CancellationToken cancellationToken);
     }

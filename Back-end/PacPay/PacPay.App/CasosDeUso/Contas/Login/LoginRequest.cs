@@ -2,7 +2,7 @@
 
 namespace PacPay.App.CasosDeUso.AdicionarConta
 {
-    public sealed record LoginRequest(string Documento, string Senha) : IRequest<LoginResponse>
+    public sealed record LoginRequest(string Cpf, string Senha) : IRequest<LoginResponse>
     {
     }
 }

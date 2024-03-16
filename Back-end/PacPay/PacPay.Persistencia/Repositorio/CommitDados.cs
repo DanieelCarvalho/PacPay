@@ -3,7 +3,7 @@ using PacPay.Infra.Contexto;
 
 namespace PacPay.Infra.Repositorio
 {
-    public class UnidadeDeTrabalho(AppDbContexto context) : IUnidadeDeTrabalho
+    public class CommitDados(AppDbContexto context) : ICommitDados
     {
         private readonly AppDbContexto _contexto = context;
 

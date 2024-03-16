@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PacPay.Infra.Contexto;
 
@@ -10,9 +11,11 @@ using PacPay.Infra.Contexto;
 namespace PacPay.Infra.Migrations
 {
     [DbContext(typeof(AppDbContexto))]
-    partial class AppDbContextoModelSnapshot : ModelSnapshot
+    [Migration("20240314185251_AttDaConta")]
+    partial class AttDaConta
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.3");
@@ -126,17 +129,13 @@ namespace PacPay.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("DataOperacao")
+                    b.Property<DateTimeOffset>("DataOperacao")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("IdContaDestino")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("IdContaOrigem")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TipoOperacao")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Valor")

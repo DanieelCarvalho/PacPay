@@ -8,7 +8,7 @@ import { Credencial } from '../models/Credencial';
   providedIn: 'root',
 })
 export class UsuarioService {
-  private url: string = 'https://pacpayapi.azurewebsites.net';
+  private url: string = 'https://localhost:7054';
 
   constructor(private http: HttpClient) {}
 

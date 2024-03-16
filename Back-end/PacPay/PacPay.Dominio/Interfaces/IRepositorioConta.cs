@@ -8,6 +8,6 @@ namespace PacPay.Dominio.Interfaces
 
         Task<Conta> BuscarConta(string cpf, CancellationToken cancellationToken);
 
-        void Deposito(string cpf, decimal valor, string contaDestino, CancellationToken cancellationToken);
+        Task<Conta> BuscarConta(Guid id, CancellationToken cancellationToken);
     }
 }

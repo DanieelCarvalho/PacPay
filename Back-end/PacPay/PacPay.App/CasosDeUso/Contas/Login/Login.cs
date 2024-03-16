@@ -19,9 +19,9 @@ namespace PacPay.App.CasosDeUso.AdicionarConta
 
             if (!autenticado) throw new Exception("Senha inválida!");
 
-            string token = _autenticador.GerarToken(request.Cpf);
+            string token = _autenticador.GerarToken(conta.Id);
 
-            return new LoginResponse { Nome = conta.Cliente.Nome, Token = token };
+            return new LoginResponse { Nome = conta.Cliente.Nome, Token = $"Bearer {token}" };
         }
     }
 }

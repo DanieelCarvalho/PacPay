@@ -21,6 +21,7 @@ namespace PacPay.Infra
 
             servicos.AddScoped<ICommitDados, CommitDados>();
             servicos.AddScoped<IRepositorioConta, RepositorioConta<Conta>>();
+            servicos.AddScoped<IRepositorioOperacao, RepositorioOperacao<Operacao>>();
         }
     }
 }

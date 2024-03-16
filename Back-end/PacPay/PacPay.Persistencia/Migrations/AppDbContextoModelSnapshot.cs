@@ -126,7 +126,7 @@ namespace PacPay.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTimeOffset>("DataOperacao")
+                    b.Property<DateTime>("DataOperacao")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("IdContaDestino")

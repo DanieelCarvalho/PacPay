@@ -16,6 +16,36 @@ namespace PacPay.Infra.Repositorio
             Contexto = contexto;
         }
 
+        public async Task Adicionar(Conta entidade, CancellationToken cancellationToken)
+        {
+            try
+            {
+                if (await ContaExiste(entidade.Cliente.Cpf, cancellationToken)) throw new RepositorioExcecao(ContaErr.ContaJaExiste);
+
+                Contexto.Add(entidade.Cliente.Endereco);
+                Contexto.Add(entidade.Cliente);
+                Contexto.Add(entidade);
+            }
+            catch (Exception ex)
+            {
+                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
+            }
+        }
+
+        public void Atualizar(Conta entidade, CancellationToken cancellationToken)
+        {
+            try { Contexto.Update(entidade); }
+            catch (Exception ex)
+            {
+                throw new RepositorioExcecao($"{RepositorioErr.Atualizacao}:  {ex.Message}");
+            }
+        }
+
+        public void Excluir(Conta entidade, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<bool> ContaExiste(string cpf, CancellationToken cancellationToken)
         {
             bool existe = await Contexto.Contas.AnyAsync(c => c.Cliente.Cpf == cpf, cancellationToken);
@@ -30,37 +60,10 @@ namespace PacPay.Infra.Repositorio
             return conta;
         }
 
-        public async void Adicionar(Conta entidade, CancellationToken cancellationToken)
+        public async Task<Conta> BuscarConta(Guid id, CancellationToken cancellationToken)
         {
-            try
-            {
-                if (await ContaExiste(entidade.Cliente.Cpf, cancellationToken)) throw new RepositorioExcecao(ContaErr.ContaJaExiste);
-
-                entidade.DataCriacao = DateTime.Now.ToUniversalTime();
-
-                Contexto.Add(entidade.Cliente.Endereco);
-                Contexto.Add(entidade.Cliente);
-                Contexto.Add(entidade);
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
-            }
-        }
-
-        public void Atualizar(Conta entidade, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Excluir(Conta entidade, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Deposito(string cpf, decimal valor, string contaDestino, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
+            Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.Id == id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+            return conta;
         }
     }
 }

@@ -1,10 +1,8 @@
-﻿using System.Threading;
-
-namespace PacPay.Dominio.Interfaces
+﻿namespace PacPay.Dominio.Interfaces
 {
     public interface IRepositorioBase<T>
     {
-        void Adicionar(T entidade, CancellationToken cancellationToken);
+        Task Adicionar(T entidade, CancellationToken cancellationToken);
 
         void Atualizar(T entidade, CancellationToken cancellationToken);
 

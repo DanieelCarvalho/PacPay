@@ -7,7 +7,7 @@ namespace PacPay.Api.Controladores.Operacoes
 {
     [Route("/[controller]")]
     [ApiController]
-    public class DepositoController(IMediator mediator) : ControllerBase
+    public class Deposito(IMediator mediator) : ControllerBase
     {
         private readonly IMediator _mediator = mediator;
 

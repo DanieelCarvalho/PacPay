@@ -24,14 +24,14 @@ namespace PacPay.Dominio.Entidades
             Saldo = 1000;
             DataCriacao = DateTime.Now.ToUniversalTime();
 
-            await repositorioConta.Adicionar(this, cancellationToken);
+            repositorioConta.Adicionar(this, cancellationToken);
 
             await commitDados.Commit(cancellationToken);
         }
 
-        public void AtualizarSaldo(CancellationToken cancellationToken)
+        public void AtualizarConta(IRepositorioConta repositorioConta)
         {
-            UltimaAtualizacao = DateTime.Now.ToUniversalTime();
+            repositorioConta.Atualizar(this);
         }
     }
 }

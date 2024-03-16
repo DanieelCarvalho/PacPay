@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using PacPay.Dominio.Interfaces.IUtilitarios;
 using System.IdentityModel.Tokens.Jwt;
@@ -7,9 +8,10 @@ using System.Text;
 
 namespace PacPay.App.Compartilhado.Utilitarios
 {
-    public class Autenticacao(IConfiguration configuration) : IAutenticacao
+    public class Autenticacao(IConfiguration configuration, IHttpContextAccessor httpContextAccessor) : IAutenticacao
     {
         private readonly string _chave = configuration["Chave"]!;
+        private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
 
         public string GerarToken(Guid id)
         {
@@ -32,8 +34,9 @@ namespace PacPay.App.Compartilhado.Utilitarios
             return tokenString;
         }
 
-        public string PegarId(string token)
+        public string PegarId()
         {
+            string token = _httpContextAccessor.HttpContext!.Request.Headers.Authorization!.Single()!.Split(" ").Last();
             JwtSecurityTokenHandler jwtHandler = new();
             JwtSecurityToken jwtToken = jwtHandler.ReadJwtToken(token);
             Claim idClaim = jwtToken.Claims.First(claim => claim.Type == "Id");

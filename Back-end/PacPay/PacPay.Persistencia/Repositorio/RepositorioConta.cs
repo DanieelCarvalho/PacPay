@@ -16,7 +16,7 @@ namespace PacPay.Infra.Repositorio
             Contexto = contexto;
         }
 
-        public async Task Adicionar(Conta entidade, CancellationToken cancellationToken)
+        public async void Adicionar(Conta entidade, CancellationToken cancellationToken)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace PacPay.Infra.Repositorio
             }
         }
 
-        public void Atualizar(Conta entidade, CancellationToken cancellationToken)
+        public void Atualizar(Conta entidade)
         {
             try { Contexto.Update(entidade); }
             catch (Exception ex)
@@ -41,7 +41,7 @@ namespace PacPay.Infra.Repositorio
             }
         }
 
-        public void Excluir(Conta entidade, CancellationToken cancellationToken)
+        public void Excluir(Conta entidade)
         {
             throw new NotImplementedException();
         }

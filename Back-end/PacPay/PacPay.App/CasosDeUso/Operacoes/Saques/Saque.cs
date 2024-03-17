@@ -19,11 +19,12 @@ namespace PacPay.App.CasosDeUso.Operacoes.Saques
 
             Guid id = Guid.Parse(_autenticacao.PegarId());
             decimal valor = request.Valor;
+            string? descricao = request.Descricao;
 
             Conta conta = await _repositorioConta.BuscarConta(id, cancellationToken);
             Operacao Operacao = new();
 
-            Operacao.Saque(valor, conta, _repositorioConta, _repositorioOperacao, _commitDados, cancellationToken);
+            Operacao.Saque(valor, descricao, conta, _repositorioConta, _repositorioOperacao, _commitDados, cancellationToken);
         }
     }
 }

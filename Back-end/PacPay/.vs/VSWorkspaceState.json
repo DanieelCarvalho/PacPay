@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\PacPay.App"
+    "\\PacPay.App\\CasosDeUso",
+    "\\PacPay.App\\CasosDeUso\\Contas",
+    "\\PacPay.App\\CasosDeUso\\Contas\\CriarConta",
+    "\\PacPay.Contexto",
+    "\\PacPay.Persistencia\\Contexto"
   ],
   "SelectedNode": "\\PacPay.sln",
   "PreviewInSolutionExplorer": false

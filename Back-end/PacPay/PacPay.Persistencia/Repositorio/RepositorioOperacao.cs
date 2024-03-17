@@ -6,11 +6,11 @@ using PacPay.Infra.Contexto;
 
 namespace PacPay.Infra.Repositorio
 {
-    public class RepositorioOperacao<T>(AppDbContexto contexto) : IRepositorioOperacao where T : Operacao
+    public sealed class RepositorioOperacao<T>(AppDbContexto contexto) : IRepositorioOperacao where T : Operacao
     {
-        protected readonly AppDbContexto Contexto = contexto;
+        private readonly AppDbContexto Contexto = contexto;
 
-        public void Deposito(Operacao deposito, CancellationToken cancellationToken)
+        public void Transacao(Operacao deposito)
         {
             try
             {

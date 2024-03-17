@@ -10,5 +10,6 @@
         public string? Bairro { get; set; }
         public string Cidade { get; set; } = null!;
         public string Estado { get; set; } = null!;
+        public string? PontoDeReferencia { get; set; }
     }
 }

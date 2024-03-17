@@ -13,6 +13,9 @@ namespace PacPay.App.CasosDeUso.AdicionarConta
 
         public async Task<LoginResponse> Handle(LoginRequest request, CancellationToken cancellationToken)
         {
+            FluentValidation.Results.ValidationResult resultado = new LoginValidador().Validate(request);
+            if (!resultado.IsValid) throw new FluentValidation.ValidationException(resultado.Errors);
+
             Conta conta = await _repositorioConta.BuscarConta(request.Cpf, cancellationToken);
 
             bool autenticado = _encriptador.Comparar(request.Senha, conta.Senha);

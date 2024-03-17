@@ -4,6 +4,6 @@
     {
         string GerarToken(Guid id);
 
-        string PegarId(string token);
+        string PegarId();
     }
 }

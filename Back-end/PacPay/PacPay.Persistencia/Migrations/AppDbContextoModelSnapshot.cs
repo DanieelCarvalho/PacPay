@@ -42,6 +42,10 @@ namespace PacPay.Infra.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.HasIndex("EnderecoId");
@@ -109,6 +113,9 @@ namespace PacPay.Infra.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Numero")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PontoDeReferencia")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Rua")

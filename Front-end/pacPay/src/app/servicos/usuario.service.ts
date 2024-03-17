@@ -17,6 +17,6 @@ export class UsuarioService {
   }
 
   autenticar(credential: Credencial): Observable<any> {
-    return this.http.post(`${this.url}/api/Login`, credential);
+    return this.http.post(`${this.url}/Login`, credential);
   }
 }

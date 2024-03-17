@@ -1,4 +1,4 @@
 export interface Credencial {
-  documento: string;
+  cpf: string;
   senha: string;
 }

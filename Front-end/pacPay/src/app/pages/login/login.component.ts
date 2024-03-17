@@ -29,7 +29,7 @@ export class LoginComponent {
   constructor(private rota: Router, private servico: UsuarioService) {}
 
   formulario = new FormGroup({
-    documento: new FormControl('', [
+    cpf: new FormControl('', [
       Validators.required,
       Validators.maxLength(11),
       Validators.minLength(11),

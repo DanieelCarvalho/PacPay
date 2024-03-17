@@ -2,9 +2,9 @@
 
 namespace PacPay.App.CasosDeUso.AdicionarConta
 {
-    public sealed class AdicionarContaValidador : AbstractValidator<LoginRequest>
+    public sealed class LoginValidador : AbstractValidator<LoginRequest>
     {
-        public AdicionarContaValidador()
+        public LoginValidador()
         {
             RuleFor(x => x.Senha)
                .NotEmpty().MinimumLength(8).MaximumLength(100);

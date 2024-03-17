@@ -7,9 +7,9 @@ using PacPay.Infra.Contexto;
 
 namespace PacPay.Infra.Repositorio
 {
-    public class RepositorioConta<T> : IRepositorioConta where T : Conta
+    public sealed class RepositorioConta<T> : IRepositorioConta where T : Conta
     {
-        protected readonly AppDbContexto Contexto;
+        private readonly AppDbContexto Contexto;
 
         public RepositorioConta(AppDbContexto contexto)
         {
@@ -32,7 +32,7 @@ namespace PacPay.Infra.Repositorio
             }
         }
 
-        public void Atualizar(Conta entidade, CancellationToken cancellationToken)
+        public void Atualizar(Conta entidade)
         {
             try { Contexto.Update(entidade); }
             catch (Exception ex)
@@ -41,7 +41,7 @@ namespace PacPay.Infra.Repositorio
             }
         }
 
-        public void Excluir(Conta entidade, CancellationToken cancellationToken)
+        public void Excluir(Conta entidade)
         {
             throw new NotImplementedException();
         }

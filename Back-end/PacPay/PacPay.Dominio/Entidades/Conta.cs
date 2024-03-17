@@ -29,9 +29,9 @@ namespace PacPay.Dominio.Entidades
             await commitDados.Commit(cancellationToken);
         }
 
-        public void AtualizarSaldo(CancellationToken cancellationToken)
+        public void AtualizarConta(IRepositorioConta repositorioConta)
         {
-            UltimaAtualizacao = DateTime.Now.ToUniversalTime();
+            repositorioConta.Atualizar(this);
         }
     }
 }

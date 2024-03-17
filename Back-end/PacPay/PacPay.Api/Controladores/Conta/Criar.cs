@@ -13,14 +13,13 @@ namespace PacPay.Api.Controllers.Conta
 
        
         [HttpPost]
-       
-        public async Task<ActionResult<CriarContaResponse>> CriarConta(CriarContaRequest request, CancellationToken cancellationToken)
+        public async Task<IActionResult> CriarConta(CriarContaRequest request, CancellationToken cancellationToken)
         {
             try
             {
-                CriarContaResponse response = await _mediator.Send(request, cancellationToken);
+                await _mediator.Send(request, cancellationToken);
 
-                return Ok(response);
+                return Ok();
             }
             catch (Exception ex)
             {

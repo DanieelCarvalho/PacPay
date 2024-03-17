@@ -2,9 +2,9 @@
 
 namespace PacPay.App.CasosDeUso.Contas.CriarConta
 {
-    public sealed class AdicionarContaValidador : AbstractValidator<CriarContaRequest>
+    public sealed class CriarContaValidador : AbstractValidator<CriarContaRequest>
     {
-        public AdicionarContaValidador()
+        public CriarContaValidador()
         {
             RuleFor(x => x.Senha)
                 .NotEmpty().MinimumLength(8).MaximumLength(100).Matches(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,100}$").WithMessage("A senha deve ter pelo menos uma letra minúscula, uma letra maiúscula, um número e um caractere especial.");
@@ -30,20 +30,20 @@ namespace PacPay.App.CasosDeUso.Contas.CriarConta
             RuleFor(x => x.Rua)
                 .NotEmpty().MinimumLength(3).MaximumLength(100).WithMessage("A rua deve ter entre 3 e 100 caracteres.");
 
+            RuleFor(x => x.Cidade)
+                .NotEmpty().MinimumLength(3).MaximumLength(100).WithMessage("A cidade deve ter entre 3 e 100 caracteres.");
+
+            RuleFor(x => x.Estado)
+                .NotEmpty().MinimumLength(2).MaximumLength(2).Matches(@"^[A-Z]{2}$").WithMessage("O estado deve ter 2 caracteres e serem letras maiúsculas. Ex: SP");
+
             RuleFor(x => x.Numero)
-                .Matches(@"^\d+$").WithMessage("O número deve conter apenas dígitos.");
+              .Matches(@"^\d+$").WithMessage("O número deve conter apenas dígitos.");
 
             RuleFor(x => x.Complemento)
                 .MaximumLength(100).WithMessage("O complemento deve ter no máximo 100 caracteres.");
 
             RuleFor(x => x.Bairro)
                 .MinimumLength(3).MaximumLength(100).WithMessage("O bairro deve ter entre 3 e 100 caracteres.");
-
-            RuleFor(x => x.Cidade)
-                .NotEmpty().MinimumLength(3).MaximumLength(100).WithMessage("A cidade deve ter entre 3 e 100 caracteres.");
-
-            RuleFor(x => x.Estado)
-                .NotEmpty().MinimumLength(2).MaximumLength(2).Matches(@"^[A-Z]{2}$").WithMessage("O estado deve ter 2 caracteres e serem letras maiúsculas. Ex: SP");
 
             RuleFor(x => x.PontoDeReferencia)
                 .MaximumLength(100).WithMessage("O ponto de referência deve ter no máximo 100 caracteres.");

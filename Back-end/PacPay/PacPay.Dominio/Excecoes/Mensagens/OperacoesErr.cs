@@ -5,5 +5,6 @@
         public const string OperacaoNaoEncontrada = "Operação não encontrada";
         public const string ValorInvalido = "Valor inválido";
         public const string SaldoInsuficiente = "Saldo insuficiente";
+        public const string TransferenciaMesmaConta = "Transferência para a mesma conta";
     }
 }

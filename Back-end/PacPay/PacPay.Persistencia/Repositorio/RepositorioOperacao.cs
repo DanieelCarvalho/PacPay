@@ -10,23 +10,11 @@ namespace PacPay.Infra.Repositorio
     {
         private readonly AppDbContexto Contexto = contexto;
 
-        public void Deposito(Operacao deposito)
+        public void Transacao(Operacao deposito)
         {
             try
             {
                 Contexto.Add(deposito);
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
-            }
-        }
-
-        public void Saque(Operacao saque)
-        {
-            try
-            {
-                Contexto.Add(saque);
             }
             catch (Exception ex)
             {

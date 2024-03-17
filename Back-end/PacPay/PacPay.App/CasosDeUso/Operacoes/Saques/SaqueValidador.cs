@@ -6,7 +6,7 @@ namespace PacPay.App.CasosDeUso.Operacoes.Saques
     {
         public SaqueValidador()
         {
-            RuleFor(x => x.Valor).GreaterThan(0).WithMessage("O valor do saque deve ser maior que zero.");
+            RuleFor(x => x.Valor).NotEmpty().GreaterThan(0).WithMessage("O valor do saque deve ser maior que zero.");
         }
     }
 }

@@ -5,7 +5,7 @@ using PacPay.Dominio.Interfaces;
 
 namespace PacPay.App.CasosDeUso.Operacoes.Saques
 {
-    public class Saque(IAutenticacao autenticacao, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados) : IRequestHandler<SaqueRequest>
+    public sealed class Saque(IAutenticacao autenticacao, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados) : IRequestHandler<SaqueRequest>
     {
         private readonly IAutenticacao _autenticacao = autenticacao;
         private readonly IRepositorioConta _repositorioConta = repositorioConta;
@@ -14,6 +14,9 @@ namespace PacPay.App.CasosDeUso.Operacoes.Saques
 
         public async Task Handle(SaqueRequest request, CancellationToken cancellationToken)
         {
+            FluentValidation.Results.ValidationResult resultado = new SaqueValidador().Validate(request);
+            if (!resultado.IsValid) throw new FluentValidation.ValidationException(resultado.Errors);
+
             Guid id = Guid.Parse(_autenticacao.PegarId());
             decimal valor = request.Valor;
 

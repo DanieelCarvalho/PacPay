@@ -24,7 +24,7 @@ namespace PacPay.Dominio.Entidades
             Saldo = 1000;
             DataCriacao = DateTime.Now.ToUniversalTime();
 
-            repositorioConta.Adicionar(this, cancellationToken);
+            await repositorioConta.Adicionar(this, cancellationToken);
 
             await commitDados.Commit(cancellationToken);
         }

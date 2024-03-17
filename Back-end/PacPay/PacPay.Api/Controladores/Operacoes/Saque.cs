@@ -13,7 +13,7 @@ namespace PacPay.Api.Controladores.Operacoes
 
         [Authorize]
         [HttpPost]
-        public async Task<OkObjectResult> Sacar(SaqueRequest saqueRequest, CancellationToken cancellationToken)
+        public async Task<IActionResult> Sacar(SaqueRequest saqueRequest, CancellationToken cancellationToken)
         {
             try
             {
@@ -23,7 +23,7 @@ namespace PacPay.Api.Controladores.Operacoes
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                return BadRequest(ex.Message);
             }
         }
     }

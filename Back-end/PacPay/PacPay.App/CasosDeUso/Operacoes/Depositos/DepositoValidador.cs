@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using PacPay.App.CasosDeUso.Operacoes.Deposito;
 
 namespace PacPay.App.CasosDeUso.Operacoes.Depositos
 {
@@ -7,7 +6,7 @@ namespace PacPay.App.CasosDeUso.Operacoes.Depositos
     {
         public DepositoValidador()
         {
-            RuleFor(x => x.Valor).GreaterThan(0).WithMessage("O valor do depósito deve ser maior que zero.");
+            RuleFor(x => x.Valor).NotEmpty().GreaterThan(0).WithMessage("O valor do depósito deve ser maior que zero.");
         }
     }
 }

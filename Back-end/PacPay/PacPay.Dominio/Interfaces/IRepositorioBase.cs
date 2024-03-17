@@ -2,7 +2,7 @@
 {
     public interface IRepositorioBase<T>
     {
-        void Adicionar(T entidade, CancellationToken cancellationToken);
+        Task Adicionar(T entidade, CancellationToken cancellationToken);
 
         void Atualizar(T entidade);
 

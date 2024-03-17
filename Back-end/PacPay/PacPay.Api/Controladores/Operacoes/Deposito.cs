@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PacPay.App.CasosDeUso.Operacoes.Deposito;
+using PacPay.App.CasosDeUso.Operacoes.Depositos;
 
 namespace PacPay.Api.Controladores.Operacoes
 {
@@ -13,7 +13,7 @@ namespace PacPay.Api.Controladores.Operacoes
 
         [Authorize]
         [HttpPost]
-        public async Task<OkObjectResult> Depositar(DepositoRequest depositoRequest, CancellationToken cancellationToken)
+        public async Task<IActionResult> Depositar(DepositoRequest depositoRequest, CancellationToken cancellationToken)
         {
             try
             {
@@ -23,7 +23,7 @@ namespace PacPay.Api.Controladores.Operacoes
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                return BadRequest(ex.Message);
             }
         }
     }

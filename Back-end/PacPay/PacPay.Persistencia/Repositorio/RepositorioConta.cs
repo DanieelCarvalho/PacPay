@@ -16,7 +16,7 @@ namespace PacPay.Infra.Repositorio
             Contexto = contexto;
         }
 
-        public async void Adicionar(Conta entidade, CancellationToken cancellationToken)
+        public async Task Adicionar(Conta entidade, CancellationToken cancellationToken)
         {
             try
             {

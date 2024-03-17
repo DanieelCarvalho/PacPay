@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using PacPay.App.Compartilhado.Comportamento;
 using PacPay.App.Compartilhado.Utilitarios;
 using PacPay.Dominio.Interfaces.IUtilitarios;
 using System.Reflection;
@@ -15,7 +14,6 @@ namespace PacPay.App.Servicos
             servicos.AddAutoMapper(typeof(ExtensoesServico));
             servicos.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
             servicos.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            servicos.AddTransient(typeof(IPipelineBehavior<,>), typeof(ComportamentoDeValidacaor<,>));
             servicos.AddScoped<IEncriptador, Encriptador>();
             servicos.AddScoped<IAutenticacao, Autenticacao>();
         }

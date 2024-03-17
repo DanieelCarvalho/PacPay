@@ -15,7 +15,7 @@ namespace PacPay.Infra.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.3");
 
             modelBuilder.Entity("PacPay.Dominio.Entidades.Cliente", b =>
                 {
@@ -23,11 +23,11 @@ namespace PacPay.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("DataNascimento")
+                    b.Property<string>("Cpf")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Documento")
+                    b.Property<string>("DataNascimento")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -39,6 +39,10 @@ namespace PacPay.Infra.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Telefone")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -111,6 +115,9 @@ namespace PacPay.Infra.Migrations
                     b.Property<string>("Numero")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("PontoDeReferencia")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Rua")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -126,13 +133,17 @@ namespace PacPay.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTimeOffset>("DataOperacao")
+                    b.Property<DateTime>("DataOperacao")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("IdContaDestino")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("IdContaOrigem")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TipoOperacao")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Valor")

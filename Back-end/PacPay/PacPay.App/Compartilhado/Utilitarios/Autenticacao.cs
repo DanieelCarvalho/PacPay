@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using PacPay.Dominio.Interfaces.IUtilitarios;
 using System.IdentityModel.Tokens.Jwt;
@@ -7,11 +8,12 @@ using System.Text;
 
 namespace PacPay.App.Compartilhado.Utilitarios
 {
-    public class Autenticacao(IConfiguration configuration) : IAutenticacao
+    public class Autenticacao(IConfiguration configuration, IHttpContextAccessor httpContextAccessor) : IAutenticacao
     {
         private readonly string _chave = configuration["Chave"]!;
+        private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
 
-        public string GerarToken(string id)
+        public string GerarToken(Guid id)
         {
             byte[] cc = Encoding.ASCII.GetBytes(_chave);
 
@@ -19,7 +21,7 @@ namespace PacPay.App.Compartilhado.Utilitarios
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new("Id", id)
+                    new("Id", id.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddHours(3),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(cc), SecurityAlgorithms.HmacSha256Signature)
@@ -32,28 +34,13 @@ namespace PacPay.App.Compartilhado.Utilitarios
             return tokenString;
         }
 
-        public bool ValidarToken(string token)
+        public string PegarId()
         {
-            byte[] cc = Encoding.ASCII.GetBytes(_chave);
-            TokenValidationParameters parametrosDeValidacao = new()
-            {
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(cc),
-                ValidateIssuer = false,
-                ValidateAudience = false,
-                ClockSkew = TimeSpan.Zero
-            };
-
+            string token = _httpContextAccessor.HttpContext!.Request.Headers.Authorization!.Single()!.Split(" ").Last();
             JwtSecurityTokenHandler jwtHandler = new();
-            try
-            {
-                jwtHandler.ValidateToken(token, parametrosDeValidacao, out SecurityToken tokenValidado);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            JwtSecurityToken jwtToken = jwtHandler.ReadJwtToken(token);
+            Claim idClaim = jwtToken.Claims.First(claim => claim.Type == "Id");
+            return idClaim.Value;
         }
     }
 }

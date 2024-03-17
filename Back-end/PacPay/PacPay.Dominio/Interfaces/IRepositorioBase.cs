@@ -1,17 +1,11 @@
-﻿using PacPay.Dominio.Entidades;
-
-namespace PacPay.Dominio.Interfaces
+﻿namespace PacPay.Dominio.Interfaces
 {
-    public interface IRepositorioBase<T> where T : EntidadeBase
+    public interface IRepositorioBase<T>
     {
-        void Adicionar(T entidade);
+        Task Adicionar(T entidade, CancellationToken cancellationToken);
 
         void Atualizar(T entidade);
 
         void Excluir(T entidade);
-
-        Task<bool> ContaExiste(string documento, CancellationToken cancellationToken);
-
-        Task<Conta> BuscarConta(string documento, CancellationToken cancellationToken);
     }
 }

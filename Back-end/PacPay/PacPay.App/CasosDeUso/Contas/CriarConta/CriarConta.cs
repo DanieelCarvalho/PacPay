@@ -6,28 +6,22 @@ using PacPay.Dominio.Interfaces.IUtilitarios;
 
 namespace PacPay.App.CasosDeUso.Contas.CriarConta
 {
-    public class CriarConta(IUnidadeDeTrabalho unidadeDeTrabalho, IRepositorioConta repositorioConta, IMapper mapper, IEncriptador encriptador) : IRequestHandler<CriarContaRequest, CriarContaResponse>
+    public class CriarConta(IMapper mapper, IRepositorioConta repositorioConta, ICommitDados commitDados, IEncriptador encriptador) : IRequestHandler<CriarContaRequest>
     {
-        private readonly IUnidadeDeTrabalho _unidadeDeTrabalho = unidadeDeTrabalho;
-        private readonly IRepositorioConta _repositorioConta = repositorioConta;
         private readonly IMapper _mapper = mapper;
+        private readonly IRepositorioConta _repositorioConta = repositorioConta;
+        private readonly ICommitDados _commitDados = commitDados;
         private readonly IEncriptador _encriptador = encriptador;
 
-        public async Task<CriarContaResponse> Handle(CriarContaRequest request, CancellationToken cancellationToken)
+        public async Task Handle(CriarContaRequest request, CancellationToken cancellationToken)
+
         {
+            FluentValidation.Results.ValidationResult resultado = new CriarContaValidador().Validate(request);
+            if (!resultado.IsValid) throw new FluentValidation.ValidationException(resultado.Errors);
+
             Conta conta = _mapper.Map<Conta>(request);
 
-            bool contaExiste = await _repositorioConta.ContaExiste(conta.Cliente.Documento, cancellationToken);
-
-            if (contaExiste) throw new Exception("Conta já existe");
-
-            conta.Senha = _encriptador.Encriptar(request.Senha);
-
-            _repositorioConta.Adicionar(conta);
-
-            await _unidadeDeTrabalho.Commit(cancellationToken);
-
-            return _mapper.Map<CriarContaResponse>(conta);
+            await conta.RegistrarConta(_encriptador, _repositorioConta, _commitDados, cancellationToken);
         }
     }
 }

@@ -18,6 +18,8 @@ namespace PacPay.App.CasosDeUso.Operacoes.Transferencias
             if (!resultado.IsValid) throw new FluentValidation.ValidationException(resultado.Errors);
 
             decimal valor = request.Valor;
+            string? descricao = request.Descricao;
+
             Guid id = Guid.Parse(_autenticacao.PegarId());
 
             Conta contaOrigem = await _repositorioConta.BuscarConta(id, cancellationToken);
@@ -25,7 +27,7 @@ namespace PacPay.App.CasosDeUso.Operacoes.Transferencias
             Conta contaDestino = await _repositorioConta.BuscarConta(request.ContaDestino, cancellationToken);
 
             Operacao operacao = new();
-            operacao.Transferencia(valor, contaOrigem, contaDestino, _repositorioConta, _repositorioOperacao, _commitDados, cancellationToken);
+            operacao.Transferencia(valor, descricao, contaOrigem, contaDestino, _repositorioConta, _repositorioOperacao, _commitDados, cancellationToken);
         }
     }
 }

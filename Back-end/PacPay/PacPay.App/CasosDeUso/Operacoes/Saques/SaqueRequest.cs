@@ -2,7 +2,7 @@
 
 namespace PacPay.App.CasosDeUso.Operacoes.Saques
 {
-    public sealed record SaqueRequest(decimal Valor) : IRequest
+    public sealed record SaqueRequest(decimal Valor, string? Descricao) : IRequest
     {
     }
 }

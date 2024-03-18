@@ -1,3 +1,4 @@
 export interface Deposito {
-  valor: number;
+  valor?: number;
+  descricao?: string;
 }

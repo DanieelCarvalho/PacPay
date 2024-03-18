@@ -74,5 +74,14 @@ namespace PacPay.Dominio.Entidades
             repositorioOperacao.Transacao(this);
             commitDados.Commit(cancellationToken);
         }
+
+        public List<Operacao> Historico(Guid id, int numeroDaPagina, IRepositorioOperacao repositorioOperacao, CancellationToken cancellationToken)
+        {
+            List<Operacao> operacoes = repositorioOperacao.Historico(id, numeroDaPagina, cancellationToken);
+
+            if (operacoes.Count == 0) throw new DominioExcecao(OperacoesErr.HistoricoVazio);
+
+            return operacoes;
+        }
     }
 }

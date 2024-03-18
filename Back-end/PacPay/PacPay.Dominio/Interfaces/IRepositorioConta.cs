@@ -9,5 +9,7 @@ namespace PacPay.Dominio.Interfaces
         Task<Conta> BuscarConta(string cpf, CancellationToken cancellationToken);
 
         Task<Conta> BuscarConta(Guid id, CancellationToken cancellationToken);
+
+        Task<string?> PegarCpf(Guid id, CancellationToken cancellationToken);
     }
 }

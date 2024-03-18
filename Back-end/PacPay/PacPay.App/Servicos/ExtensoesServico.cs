@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using PacPay.App.Compartilhado.Utilitarios;
 using PacPay.Dominio.Interfaces.IUtilitarios;

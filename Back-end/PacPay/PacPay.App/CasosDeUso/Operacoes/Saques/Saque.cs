@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using PacPay.Dominio.Entidades;
-using PacPay.Dominio.Interfaces.IUtilitarios;
 using PacPay.Dominio.Interfaces;
+using PacPay.Dominio.Interfaces.IUtilitarios;
 
 namespace PacPay.App.CasosDeUso.Operacoes.Saques
 {

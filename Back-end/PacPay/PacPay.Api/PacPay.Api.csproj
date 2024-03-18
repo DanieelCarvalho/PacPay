@@ -22,4 +22,12 @@
     <ProjectReference Include="..\PacPay.Persistencia\PacPay.Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="examplo.appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

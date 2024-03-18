@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using PacPay.App.Servicos;
 using PacPay.Infra;
 using PacPay.Infra.Contexto;
+using System.Reflection;
 
 namespace PacPay.Api
 {
@@ -44,6 +46,7 @@ namespace PacPay.Api
                            new List<string>()
                         },
                     });
+                   
                 }
                 );
 

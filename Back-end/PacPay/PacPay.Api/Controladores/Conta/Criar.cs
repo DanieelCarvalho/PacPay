@@ -10,6 +10,8 @@ namespace PacPay.Api.Controllers.Conta
     {
         private readonly IMediator _mediator = mediator;
 
+
+       
         [HttpPost]
         public async Task<IActionResult> CriarConta(CriarContaRequest request, CancellationToken cancellationToken)
         {

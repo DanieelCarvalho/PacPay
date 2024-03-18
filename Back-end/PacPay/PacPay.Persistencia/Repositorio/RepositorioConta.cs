@@ -64,8 +64,8 @@ namespace PacPay.Infra.Repositorio
         {
             try
             {
-                Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Cpf == cpf, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
-                Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.ClienteId == cliente.Id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+                Cliente cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Cpf == cpf, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+                Conta conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.ClienteId == cliente.Id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
                 return conta;
             }
             catch (Exception ex)
@@ -78,7 +78,26 @@ namespace PacPay.Infra.Repositorio
         {
             try
             {
-                Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.Id == id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+                Conta conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.Id == id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+                return conta;
+            }
+            catch (Exception ex)
+            {
+                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
+            }
+        }
+
+        public async Task<Conta?> BuscarCliente(Guid id, CancellationToken cancellationToken)
+        {
+            try
+            {
+                Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+                if (conta == null) return null;
+
+                Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Id == conta.ClienteId, cancellationToken);
+                if (cliente == null) return null;
+
+                conta.Cliente = cliente;
                 return conta;
             }
             catch (Exception ex)

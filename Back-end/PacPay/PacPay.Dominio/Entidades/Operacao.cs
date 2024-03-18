@@ -13,67 +13,75 @@ namespace PacPay.Dominio.Entidades
         public Guid IdContaOrigem { get; set; }
         public Guid IdContaDestino { get; set; }
         public DateTime DataOperacao { get; set; }
+        public string? Descricao { get; set; }
 
-        public void Deposito(decimal valor, Conta conta, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados, CancellationToken cancellationToken)
+        private void InfoOperacao(decimal valor, Transacoes tipoOperacao, Guid idContaOrigem, Guid idContaDestino, string? descricao)
+        {
+            Valor = valor;
+            TipoOperacao = tipoOperacao;
+            IdContaOrigem = idContaOrigem;
+            IdContaDestino = idContaDestino;
+            DataOperacao = DateTime.Now.ToUniversalTime();
+            Descricao = descricao ?? string.Empty;
+        }
+
+        private void OperacaoConta(decimal valor, Conta conta, Transacoes tipoOperacao, IRepositorioConta repositorioConta)
+        {
+            if (tipoOperacao == Transacoes.Saque) conta.Saldo -= valor;
+            if (tipoOperacao == Transacoes.Deposito) conta.Saldo += valor;
+
+            conta.UltimaAtualizacao = DateTime.Now.ToUniversalTime();
+            conta.AtualizarConta(repositorioConta);
+        }
+
+        public void Deposito(decimal valor, string? descricao, Conta conta, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados, CancellationToken cancellationToken)
         {
             if (valor <= 0) throw new DominioExcecao(OperacoesErr.ValorInvalido);
 
-            Valor = valor;
-            TipoOperacao = Transacoes.Deposito;
-            IdContaOrigem = conta.Id;
-            IdContaDestino = conta.Id;
-            DataOperacao = DateTime.Now.ToUniversalTime();
+            InfoOperacao(valor, Transacoes.Deposito, conta.Id, conta.Id, descricao);
 
-            conta.Saldo += valor;
-            conta.UltimaAtualizacao = DateTime.Now.ToUniversalTime();
-            conta.AtualizarConta(repositorioConta);
+            OperacaoConta(valor, conta, Transacoes.Deposito, repositorioConta);
 
             repositorioOperacao.Transacao(this);
 
             commitDados.Commit(cancellationToken);
         }
 
-        public void Saque(decimal valor, Conta conta, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados, CancellationToken cancellationToken)
+        public void Saque(decimal valor, string? descricao, Conta conta, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados, CancellationToken cancellationToken)
         {
             if (valor <= 0) throw new DominioExcecao(OperacoesErr.ValorInvalido);
             if (valor > conta.Saldo) throw new DominioExcecao(OperacoesErr.SaldoInsuficiente);
 
-            Valor = valor;
-            TipoOperacao = Transacoes.Saque;
-            IdContaOrigem = conta.Id;
-            IdContaDestino = conta.Id;
-            DataOperacao = DateTime.Now.ToUniversalTime();
+            InfoOperacao(valor, Transacoes.Saque, conta.Id, conta.Id, descricao);
 
-            conta.Saldo -= valor;
-            conta.UltimaAtualizacao = DateTime.Now.ToUniversalTime();
-            conta.AtualizarConta(repositorioConta);
+            OperacaoConta(valor, conta, Transacoes.Saque, repositorioConta);
 
             repositorioOperacao.Transacao(this);
             commitDados.Commit(cancellationToken);
         }
 
-        public void Transferencia(decimal valor, Conta contaOrigem, Conta contaDestino, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados, CancellationToken cancellationToken)
+        public void Transferencia(decimal valor, string? descricao, Conta contaOrigem, Conta contaDestino, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados, CancellationToken cancellationToken)
         {
             if (valor <= 0) throw new DominioExcecao(OperacoesErr.ValorInvalido);
             if (valor > contaOrigem.Saldo) throw new DominioExcecao(OperacoesErr.SaldoInsuficiente);
             if (contaOrigem.Id == contaDestino.Id) throw new DominioExcecao(OperacoesErr.TransferenciaMesmaConta);
 
-            Valor = valor;
-            TipoOperacao = Transacoes.Transferencia;
-            IdContaOrigem = contaOrigem.Id;
-            IdContaDestino = contaDestino.Id;
-            DataOperacao = DateTime.Now.ToUniversalTime();
+            InfoOperacao(valor, Transacoes.Transferencia, contaOrigem.Id, contaDestino.Id, descricao);
 
-            contaOrigem.Saldo -= valor;
-            contaOrigem.UltimaAtualizacao = DateTime.Now.ToUniversalTime();
-            contaOrigem.AtualizarConta(repositorioConta);
-
-            contaDestino.Saldo += valor;
-            contaDestino.UltimaAtualizacao = DateTime.Now.ToUniversalTime();
-            contaDestino.AtualizarConta(repositorioConta);
+            OperacaoConta(valor, contaOrigem, Transacoes.Saque, repositorioConta);
+            OperacaoConta(valor, contaDestino, Transacoes.Deposito, repositorioConta);
 
             repositorioOperacao.Transacao(this);
             commitDados.Commit(cancellationToken);
+        }
+
+        public List<Operacao> Historico(Guid id, int numeroDaPagina, IRepositorioOperacao repositorioOperacao, CancellationToken cancellationToken)
+        {
+            List<Operacao> operacoes = repositorioOperacao.Historico(id, numeroDaPagina, cancellationToken);
+
+            if (operacoes.Count == 0) throw new DominioExcecao(OperacoesErr.HistoricoVazio);
+
+            return operacoes;
         }
     }
 }

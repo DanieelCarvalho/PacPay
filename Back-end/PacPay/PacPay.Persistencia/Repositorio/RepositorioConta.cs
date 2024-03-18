@@ -48,22 +48,78 @@ namespace PacPay.Infra.Repositorio
 
         public async Task<bool> ContaExiste(string cpf, CancellationToken cancellationToken)
         {
-            bool existe = await Contexto.Contas.AnyAsync(c => c.Cliente.Cpf == cpf, cancellationToken);
+            try
+            {
+                bool existe = await Contexto.Contas.AnyAsync(c => c.Cliente.Cpf == cpf, cancellationToken);
 
-            return existe;
+                return existe;
+            }
+            catch (Exception ex)
+            {
+                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
+            }
         }
 
         public async Task<Conta> BuscarConta(string cpf, CancellationToken cancellationToken)
         {
-            Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Cpf == cpf, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
-            Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.ClienteId == cliente.Id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
-            return conta;
+            try
+            {
+                Cliente cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Cpf == cpf, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+                Conta conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.ClienteId == cliente.Id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+                return conta;
+            }
+            catch (Exception ex)
+            {
+                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
+            }
         }
 
         public async Task<Conta> BuscarConta(Guid id, CancellationToken cancellationToken)
         {
-            Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.Id == id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
-            return conta;
+            try
+            {
+                Conta conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.Id == id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+                return conta;
+            }
+            catch (Exception ex)
+            {
+                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
+            }
+        }
+
+        public async Task<Conta?> BuscarCliente(Guid id, CancellationToken cancellationToken)
+        {
+            try
+            {
+                Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+                if (conta == null) return null;
+
+                Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Id == conta.ClienteId, cancellationToken);
+                if (cliente == null) return null;
+
+                conta.Cliente = cliente;
+                return conta;
+            }
+            catch (Exception ex)
+            {
+                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
+            }
+        }
+
+        public async Task<string?> PegarCpf(Guid id, CancellationToken cancellationToken)
+        {
+            try
+            {
+                Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+                if (conta == null) return null;
+
+                Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Id == conta.ClienteId, cancellationToken);
+                return cliente?.Cpf ?? null;
+            }
+            catch (Exception ex)
+            {
+                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
+            }
         }
     }
 }

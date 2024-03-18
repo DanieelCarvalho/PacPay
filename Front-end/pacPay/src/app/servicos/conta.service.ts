@@ -16,29 +16,37 @@ export class ContaService {
   constructor(private http: HttpClient) {}
   public saldoAtualizado = new BehaviorSubject<Buscar>({ saldo: 0 });
 
-  sacar(obj: Sacar): Observable<Sacar> {
+  sacar(obj: Sacar): Observable<string> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
-      Authorization: token ? token : '',
+      Authorization: token ?? '',
     });
 
-    return this.http.post(`${this.url}/Saque`, obj, { headers });
+    return this.http.post(`${this.url}/Saque`, obj, {
+      headers,
+      responseType: 'text',
+    });
+  }
+  depositar(obj: Deposito): Observable<string> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: token ?? '',
+    });
+    return this.http.post(`${this.url}/Deposito`, obj, {
+      headers,
+      responseType: 'text',
+    });
   }
 
-  depositar(obj: Deposito): Observable<Deposito> {
+  Transferencia(obj: Transferencia): Observable<string> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
-      Authorization: token ? token : '',
+      Authorization: token ?? '',
     });
-    return this.http.post(`${this.url}/Deposito`, obj, { headers });
-  }
-
-  Transferencia(obj: Transferencia): Observable<Transferencia> {
-    const token = localStorage.getItem('token');
-    const headers = new HttpHeaders({
-      Authorization: token ? token : '',
+    return this.http.post(`${this.url}/Transferencia`, obj, {
+      headers,
+      responseType: 'text',
     });
-    return this.http.post(`${this.url}/Transferencia`, obj, { headers });
   }
   buscar(): Observable<Buscar> {
     const token = localStorage.getItem('token');

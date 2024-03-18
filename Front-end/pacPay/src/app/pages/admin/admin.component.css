@@ -41,6 +41,12 @@
   color: #fff !important;
   font-size: 1.6rem;
 }
+th {
+  font-size: 1.6rem;
+}
+td {
+  font-size: 1.6rem;
+}
 
 section {
   border-bottom: 1px solid var(--primary-color);

@@ -35,36 +35,102 @@
       />
     </div>
   </section>
-  <section class="icons-area">
-    <div class="icons-section">
-      <div class="icon">
-        <img src="./assets/recibo.png" alt="Ícone recibo" />
-        <div class="icon-label">Extrato</div>
+  <section class="container-trasacoes">
+    <h2>Operações</h2>
+    <section class="transacoes">
+      <div class="transacoes-inputs">
+        <p class="d-inline-flex gap-1">
+          <a
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            href="#collapseSaque"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseSaque"
+          >
+            Saque
+          </a>
+        </p>
+        <div class="collapse" id="collapseSaque">
+          <div class="card card-body">
+            <input type="text" placeholder="Valor" [(ngModel)]="valorSaque" />
+            <input type="button" value="Sacar" (click)="saque()" />
+          </div>
+        </div>
       </div>
-      <div class="icon">
-        <img src="./assets/pix.png" alt="Ícone pix" />
-        <div class="icon-label">Pix</div>
+      <div class="transacoes-inputs">
+        <p class="d-inline-flex gap-1">
+          <a
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            href="#collapseDeposito"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseDeposito"
+          >
+            Deposito
+          </a>
+        </p>
+        <div class="collapse" id="collapseDeposito">
+          <div class="card card-body">
+            <input
+              type="text"
+              placeholder="Valor"
+              [(ngModel)]="valorDeposito"
+            />
+            <input type="button" value="Depositar" (click)="depositar()" />
+          </div>
+        </div>
       </div>
-      <div class="icon">
-        <img src="./assets/codigo-de-barras.png" alt="Ícone codigo" />
-        <div class="icon-label">Código de Barras</div>
+      <div class="transacoes-inputs">
+        <p class="d-inline-flex gap-1">
+          <a
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            href="#collapseTranferir"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseTranferir"
+          >
+            Transferir
+          </a>
+        </p>
+        <div class="collapse teste" id="collapseTranferir">
+          <div class="card card-body">
+            <input
+              type="text"
+              placeholder="Valor"
+              [(ngModel)]="valorTranferencia"
+            />
+            <input type="text" placeholder="Conta" [(ngModel)]="ContaDestino" />
+            <input type="button" value="Transferir" (click)="transferir()" />
+          </div>
+        </div>
       </div>
-      <div class="icon">
-        <img src="./assets/cofrinho.png" alt="Ícone cofrinho" />
-        <div class="icon-label">Cofrinho</div>
-      </div>
-      <div class="icon">
-        <img src="./assets/transferir.png" alt="Ícone transferir" />
-        <div class="icon-label">Transferir</div>
-      </div>
-      <div class="icon">
-        <img src="./assets/cartao.png" alt="Ícone cartao" />
-        <div class="icon-label">Cartão</div>
-      </div>
-    </div>
+    </section>
   </section>
 
   <section>
+    <h2>Histórico de Transações</h2>
+    <table id="HTransações" class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Valor</th>
+          <th>Destinatário</th>
+          <th>Tipo de transação</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td>exemplo</td>
+        <td>exemplo</td>
+        <td>exemplo</td>
+        <td>exemplo</td>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- <section>
     <div class="transaction-history">
       <h2>Histórico de Transações</h2>
       <ul>
@@ -158,5 +224,5 @@
         </li>
       </ul>
     </div>
-  </section>
+  </section> -->
 </main>

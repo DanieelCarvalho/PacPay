@@ -7,7 +7,8 @@ import { Sacar } from '../../models/Sacar';
 import { FormsModule, Validator } from '@angular/forms';
 import { Transferencia } from '../../models/Transferencia';
 import { Deposito } from '../../models/Deposito';
-import { Token } from '@angular/compiler';
+import { Buscar } from '../../models/Buscar';
+import { Historico } from '../../models/Historico';
 
 @Component({
   selector: 'app-admin',
@@ -22,25 +23,47 @@ export class AdminComponent {
   saldoVisivel: boolean = true;
   olho: boolean = true;
   nome: any = localStorage.getItem('nome');
-  valorSaque: number = 0.0;
-  valorDeposito: number = 0;
+  valorSaque?: number = 0.0;
+  valorDeposito?: number = 20;
   valorTranferencia: number = 0;
   ContaDestino: string = '';
+  saldo?: number;
+  historicoDados: Historico[] = [];
+
+  BuscarSaldo(): void {
+    this.servico.buscar().subscribe((r) => {
+      if (r.saldo !== undefined) {
+        console.log(r);
+        this.saldo = r.saldo;
+        const saldoAtualizado: Buscar = { saldo: this.saldo };
+        this.servico.saldoAtualizado.next(saldoAtualizado);
+      }
+    });
+  }
 
   saque(): void {
     const payload = { valor: this.valorSaque };
     console.log(this.valorSaque);
-    this.servico.sacar(payload as Sacar).subscribe((resposta) => {});
+    this.servico.sacar(payload as Sacar).subscribe((resposta) => {
+      console.log(resposta);
+      this.BuscarSaldo();
+    });
   }
-
   depositar(): void {
     const payload: Deposito = { valor: this.valorDeposito };
     console.log(this.valorDeposito);
 
-    this.servico.sacar(payload as Deposito).subscribe((resposta) => {
-      console.log('Novo saldo:', resposta.valor);
-    });
+    this.servico.depositar(payload as Deposito).subscribe(
+      (resposta) => {
+        console.log('Depósito realizado com sucesso!');
+        this.BuscarSaldo();
+      },
+      (error) => {
+        console.error('Erro ao realizar o depósito:', error);
+      }
+    );
   }
+
   transferir(): void {
     const payload: Transferencia = {
       valor: this.valorTranferencia,
@@ -63,5 +86,21 @@ export class AdminComponent {
     localStorage.removeItem('token');
     localStorage.removeItem('nome');
     this.rota.navigateByUrl('/inicio');
+  }
+  buscarHistorico(numeroDaPagina: number): void {
+    this.servico.pegarHistorico(numeroDaPagina).subscribe((r) => {
+      console.log(r);
+      const historico = r.map((t) => {
+        return {
+          ...t,
+        };
+      });
+      this.historicoDados = historico;
+    });
+  }
+
+  ngOnInit(): void {
+    this.BuscarSaldo();
+    this.buscarHistorico(1);
   }
 }

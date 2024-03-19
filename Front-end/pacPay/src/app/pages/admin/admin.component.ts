@@ -30,6 +30,7 @@ export class AdminComponent {
   ContaDestino: string = '';
   saldo?: number;
   historicoDados: Historico[] = [];
+  saldotest: Buscar[] = [];
   etapa: number = 1;
 
   private buscarSaldoSubscription: Subscription | undefined;
@@ -45,11 +46,11 @@ export class AdminComponent {
   }
 
   BuscarSaldo(): void {
-    this.buscarSaldoSubscription = this.servico.buscar().subscribe((r) => {
+    this.buscarSaldoSubscription = this.servico.buscarSaque().subscribe((r) => {
       if (r.saldo !== undefined) {
         console.log(r);
         this.saldo = r.saldo;
-        const saldoAtualizado: any = { saldo: this.saldo }; // Altere "any" pelo tipo adequado se possível
+        const saldoAtualizado: any = { saldo: this.saldo };
         this.servico.saldoAtualizado.next(saldoAtualizado);
       }
     });
@@ -110,6 +111,7 @@ export class AdminComponent {
     localStorage.removeItem('nome');
     this.rota.navigateByUrl('/inicio');
   }
+
   buscarHistorico(numeroDaPagina: number): void {
     this.servico.pegarHistorico(numeroDaPagina).subscribe((r) => {
       console.log(r);
@@ -130,6 +132,10 @@ export class AdminComponent {
   etapaAnterior() {
     this.etapa--;
     this.buscarHistorico(this.etapa);
+  }
+  perfil() {
+    this.rota.navigateByUrl('/perfil');
+    console.log('oi');
   }
 
   ngOnInit(): void {

@@ -7,7 +7,11 @@
       </div>
       <div class="logout">
         <p (click)="sair()">sair</p>
-        <img src="./assets/engrenagem.png" alt="Ícone de engrenagem" />
+        <img
+          src="./assets/engrenagem.png"
+          alt="Ícone de engrenagem"
+          (click)="perfil()"
+        />
       </div>
     </div>
   </header>
@@ -137,7 +141,7 @@
       </thead>
       <tbody *ngFor="let v of historicoDados">
         <td>{{ v.valor }}</td>
-        <td>{{ v.cpfDestino ? v.cpfDestino : "minha Conta " }}</td>
+        <td>{{ v.cpfDestino ? v.cpfDestino : "Minha Conta " }}</td>
         <td>{{ v.tipoOperacao }}</td>
         <td>{{ v.dataOperacao }}</td>
       </tbody>

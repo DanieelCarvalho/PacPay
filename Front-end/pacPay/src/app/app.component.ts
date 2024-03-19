@@ -5,6 +5,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { HeaderComponent } from './components/header/header.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
+import { ContaService } from './servicos/conta.service';
+import { Buscar } from './models/Buscar';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     CadastroComponent,
     HeaderComponent,
+    PerfilComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

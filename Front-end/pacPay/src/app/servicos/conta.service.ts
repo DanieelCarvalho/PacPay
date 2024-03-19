@@ -49,13 +49,21 @@ export class ContaService {
       responseType: 'text',
     });
   }
-  buscar(): Observable<Buscar> {
+  buscarSaque(): Observable<Buscar> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: token ? token : '',
     });
     return this.http.get(`${this.url}/Buscar`, { headers });
   }
+  buscarDados(): Observable<Buscar> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: token ? token : '',
+    });
+    return this.http.get<Buscar>(`${this.url}/Buscar`, { headers });
+  }
+
   pegarHistorico(numeroDaPagina: number): Observable<Historico[]> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({

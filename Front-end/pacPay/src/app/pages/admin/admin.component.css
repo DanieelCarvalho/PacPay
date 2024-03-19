@@ -1,6 +1,11 @@
 * {
-  background-color: black;
   font-weight: 200;
+  background-color: black;
+}
+main {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
 }
 
 .saldo-section,
@@ -12,8 +17,28 @@
 .container-trasacoes {
   display: flex;
   flex-direction: column;
-
   justify-content: center;
+}
+.transaction-history {
+  height: 100%;
+}
+.btn-next {
+  padding-right: 0.9rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn-next figure img {
+  cursor: pointer;
+  background-color: black;
+}
+.btn-next figure {
+  background-color: black;
+
+  display: flex;
+  justify-content: space-between;
+  width: 7rem;
 }
 .transacoes-inputs {
   display: flex;
@@ -26,16 +51,16 @@
 }
 
 .transacoes {
+  background-color: black !important;
   display: flex;
-
   justify-content: space-evenly;
   align-items: center;
-
   height: 20rem;
 }
 .transacoes a {
   font-size: 1.6rem;
   border: 0.1rem solid var(--primary-color);
+  background-color: black;
 }
 .transacoes input {
   color: #fff !important;
@@ -43,9 +68,11 @@
 }
 th {
   font-size: 1.6rem;
+  text-align: center;
 }
 td {
   font-size: 1.6rem;
+  text-align: center;
 }
 
 section {

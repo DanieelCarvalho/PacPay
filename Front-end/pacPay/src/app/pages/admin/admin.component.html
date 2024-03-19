@@ -110,8 +110,22 @@
     </section>
   </section>
 
-  <section>
-    <h2 (click)="buscarHistorico(2)">Histórico de Transações</h2>
+  <section class="transaction-history">
+    <h2>Histórico de Transações</h2>
+    <div class="btn-next">
+      <figure>
+        <img
+          src="./assets/arrow-circle-left (1).svg"
+          alt="seta para esquerda"
+          (click)="etapaAnterior()"
+        />
+        <img
+          src="./assets/arrow-circle-right.svg"
+          alt="seta para direita"
+          (click)="proximaetapa()"
+        />
+      </figure>
+    </div>
     <table id="HTransações" class="table table-dark table-striped">
       <thead>
         <tr>
@@ -123,106 +137,10 @@
       </thead>
       <tbody *ngFor="let v of historicoDados">
         <td>{{ v.valor }}</td>
-        <td>{{ v.cpfDestino }}</td>
+        <td>{{ v.cpfDestino ? v.cpfDestino : "minha Conta " }}</td>
         <td>{{ v.tipoOperacao }}</td>
         <td>{{ v.dataOperacao }}</td>
       </tbody>
     </table>
   </section>
-
-  <!-- <section>
-    <div class="transaction-history">
-      <h2>Histórico de Transações</h2>
-      <ul>
-        <li class="entrada">
-          <img
-            src="./assets/iconextratransf.png"
-            alt="icone de transferencia"
-          />
-          <p>Transf. recebida de João -</p>
-          <span>R$ 500,00</span>
-        </li>
-        <li class="saida">
-          <img
-            src="./assets/iconextratransf.png"
-            alt="icone de transferencia"
-          />
-          <p>Pagamento de conta de luz -</p>
-          <span>R$ 100,00</span>
-        </li>
-        <li class="entrada">
-          <img
-            src="./assets/iconextratransf.png"
-            alt="icone de transferencia"
-          />
-          <p>Compra online na loja X -</p>
-          <span>R$ 200,00</span>
-        </li>
-        <li class="entrada">
-          <img
-            src="./assets/iconextratransf.png"
-            alt="icone de transferencia"
-          />
-          <p>Depósito em dinheiro -</p>
-          <span>R$ 300,00</span>
-        </li>
-        <li class="saida">
-          <img
-            src="./assets/iconextratransf.png"
-            alt="icone de transferencia"
-          />
-          <p>Transferência para Maria -</p>
-          <span>R$ 150,00</span>
-        </li>
-        <li class="saida">
-          <img
-            src="./assets/iconextratransf.png"
-            alt="icone de transferencia"
-          />
-          <p>Compra de mantimentos -</p>
-          <span>R$ 50,00</span>
-        </li>
-        <li class="entrada">
-          <img
-            src="./assets/iconextratransf.png"
-            alt="icone de transferencia"
-          />
-          <p>Pagamento de salário -</p>
-          <span>R$ 1000,00</span>
-        </li>
-        <li class="saida">
-          <img
-            src="./assets/iconextratransf.png"
-            alt="icone de transferencia"
-          />
-          <p>Pagamento de aluguel -</p>
-          <span>R$ 700,00</span>
-        </li>
-        <li class="entrada">
-          <img
-            src="./assets/iconextratransf.png"
-            alt="icone de transferencia"
-          />
-          <p>Reembolso de despesas -</p>
-          <span>R$ 250,00</span>
-        </li>
-        <li class="saida">
-          <img
-            src="./assets/iconextratransf.png"
-            alt="icone de transferencia"
-          />
-          <p>Compra de eletrônicos -</p>
-          <span>R$ 800,00</span>
-        </li>
-        <li class="entrada">
-          <img
-            src="./assets/iconextratransf.png"
-            alt="icone de transferencia"
-          />
-          <p>Prêmio de loteria -</p>
-          <span>R$ 5000,00</span>
-        </li>
-      </ul>
-    </div>
-  </section> -->
 </main>

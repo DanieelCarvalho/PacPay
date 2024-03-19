@@ -15,6 +15,7 @@ export class ContaService {
 
   constructor(private http: HttpClient) {}
   public saldoAtualizado = new BehaviorSubject<Buscar>({ saldo: 0 });
+  public historico = new BehaviorSubject<Historico[]>([]);
 
   sacar(obj: Sacar): Observable<string> {
     const token = localStorage.getItem('token');

@@ -9,6 +9,7 @@ import { Transferencia } from '../../models/Transferencia';
 import { Deposito } from '../../models/Deposito';
 import { Buscar } from '../../models/Buscar';
 import { Historico } from '../../models/Historico';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -23,19 +24,32 @@ export class AdminComponent {
   saldoVisivel: boolean = true;
   olho: boolean = true;
   nome: any = localStorage.getItem('nome');
-  valorSaque?: number = 0.0;
-  valorDeposito?: number = 20;
-  valorTranferencia: number = 0;
+  valorSaque?: number;
+  valorDeposito?: number;
+  valorTranferencia?: number;
   ContaDestino: string = '';
   saldo?: number;
   historicoDados: Historico[] = [];
+  etapa: number = 1;
+
+  private buscarSaldoSubscription: Subscription | undefined;
+  private saqueSubscription: Subscription | undefined;
+  private depositarSubscription: Subscription | undefined;
+  private transferirSubscription: Subscription | undefined;
+
+  ngOnDestroy(): void {
+    this.buscarSaldoSubscription?.unsubscribe();
+    this.saqueSubscription?.unsubscribe();
+    this.depositarSubscription?.unsubscribe();
+    this.transferirSubscription?.unsubscribe();
+  }
 
   BuscarSaldo(): void {
-    this.servico.buscar().subscribe((r) => {
+    this.buscarSaldoSubscription = this.servico.buscar().subscribe((r) => {
       if (r.saldo !== undefined) {
         console.log(r);
         this.saldo = r.saldo;
-        const saldoAtualizado: Buscar = { saldo: this.saldo };
+        const saldoAtualizado: any = { saldo: this.saldo }; // Altere "any" pelo tipo adequado se possível
         this.servico.saldoAtualizado.next(saldoAtualizado);
       }
     });
@@ -44,19 +58,25 @@ export class AdminComponent {
   saque(): void {
     const payload = { valor: this.valorSaque };
     console.log(this.valorSaque);
-    this.servico.sacar(payload as Sacar).subscribe((resposta) => {
-      console.log(resposta);
-      this.BuscarSaldo();
-    });
+    this.saqueSubscription = this.servico
+      .sacar(payload)
+      .subscribe((resposta) => {
+        console.log(resposta);
+        this.BuscarSaldo();
+        this.buscarHistorico(1);
+        this.valorSaque = undefined;
+      });
   }
-  depositar(): void {
-    const payload: Deposito = { valor: this.valorDeposito };
-    console.log(this.valorDeposito);
 
-    this.servico.depositar(payload as Deposito).subscribe(
+  depositar(): void {
+    const payload = { valor: this.valorDeposito };
+    console.log(this.valorDeposito);
+    this.depositarSubscription = this.servico.depositar(payload).subscribe(
       (resposta) => {
         console.log('Depósito realizado com sucesso!');
         this.BuscarSaldo();
+        this.buscarHistorico(1);
+        this.valorDeposito = undefined;
       },
       (error) => {
         console.error('Erro ao realizar o depósito:', error);
@@ -65,14 +85,17 @@ export class AdminComponent {
   }
 
   transferir(): void {
-    const payload: Transferencia = {
+    const payload = {
       valor: this.valorTranferencia,
       contaDestino: this.ContaDestino,
     };
     console.log(payload);
-    this.servico
-      .Transferencia(payload as Transferencia)
+    this.transferirSubscription = this.servico
+      .Transferencia(payload)
       .subscribe((resposta) => {
+        this.BuscarSaldo();
+        this.buscarHistorico(1);
+        this.valorTranferencia = undefined;
         console.log('Transferência realizada com sucesso!');
       });
   }
@@ -95,8 +118,18 @@ export class AdminComponent {
           ...t,
         };
       });
+
+      this.servico.historico.next(historico);
       this.historicoDados = historico;
     });
+  }
+  proximaetapa() {
+    this.etapa++;
+    this.buscarHistorico(this.etapa);
+  }
+  etapaAnterior() {
+    this.etapa--;
+    this.buscarHistorico(this.etapa);
   }
 
   ngOnInit(): void {

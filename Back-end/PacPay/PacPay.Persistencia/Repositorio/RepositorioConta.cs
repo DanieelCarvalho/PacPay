@@ -22,8 +22,6 @@ namespace PacPay.Infra.Repositorio
             {
                 if (await ContaExiste(entidade.Cliente.Cpf, cancellationToken)) throw new RepositorioExcecao(ContaErr.ContaJaExiste);
 
-                Contexto.Add(entidade.Cliente.Endereco);
-                Contexto.Add(entidade.Cliente);
                 Contexto.Add(entidade);
             }
             catch (Exception ex)
@@ -64,8 +62,12 @@ namespace PacPay.Infra.Repositorio
         {
             try
             {
-                Cliente cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Cpf == cpf, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
-                Conta conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.ClienteId == cliente.Id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+                Conta conta = await Contexto.Contas
+                    .Include(c => c.Cliente)
+                    .ThenInclude(c => c.Endereco)
+                    .FirstOrDefaultAsync(c => c.Cliente.Cpf == cpf, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+
+
                 return conta;
             }
             catch (Exception ex)
@@ -78,7 +80,11 @@ namespace PacPay.Infra.Repositorio
         {
             try
             {
-                Conta conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.Id == id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+                Conta conta = await Contexto.Contas
+                    .Include(c => c.Cliente)
+                    .ThenInclude(c => c.Endereco)
+                    .FirstOrDefaultAsync(c => c.Id == id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+
                 return conta;
             }
             catch (Exception ex)
@@ -91,13 +97,10 @@ namespace PacPay.Infra.Repositorio
         {
             try
             {
-                Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
-                if (conta == null) return null;
+                Conta? conta = await Contexto.Contas
+                        .Include(c => c.Cliente)
+                        .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
 
-                Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Id == conta.ClienteId, cancellationToken);
-                if (cliente == null) return null;
-
-                conta.Cliente = cliente;
                 return conta;
             }
             catch (Exception ex)
@@ -110,11 +113,13 @@ namespace PacPay.Infra.Repositorio
         {
             try
             {
-                Conta? conta = await Contexto.Contas.FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+                Conta? conta = await Contexto.Contas
+                         .Include(c => c.Cliente)
+                         .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+
                 if (conta == null) return null;
 
-                Cliente? cliente = await Contexto.Clientes.FirstOrDefaultAsync(c => c.Id == conta.ClienteId, cancellationToken);
-                return cliente?.Cpf ?? null;
+                return conta.Cliente.Cpf;
             }
             catch (Exception ex)
             {

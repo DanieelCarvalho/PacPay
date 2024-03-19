@@ -12,9 +12,12 @@ namespace PacPay.Infra.Contexto
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Conta>().HasOne(x => x.Cliente);
+            builder.Entity<Cliente>().HasOne(x => x.Endereco);
+
             builder.Entity<Operacao>()
-                .Property(x => x.TipoOperacao)
-                .HasConversion<string>();
+               .Property(x => x.TipoOperacao)
+               .HasConversion<string>();
         }
     }
 }

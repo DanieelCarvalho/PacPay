@@ -14,14 +14,12 @@ namespace PacPay.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.ConfiguraInfraApp(builder.Configuration);
             builder.Services.ConfiguraAplicacaoApp();
             builder.Services.Autenticacao(builder.Configuration);
             builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(
                 x =>
@@ -57,8 +55,6 @@ namespace PacPay.Api
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             CriarBancoDeDados(app);
-
-            // Configure the HTTP request pipeline.
 
             app.UseSwagger();
 

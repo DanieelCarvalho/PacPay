@@ -104,7 +104,6 @@ export class AdminComponent {
   alternarSaldo() {
     this.saldoVisivel = !this.saldoVisivel;
     this.olho = !this.olho;
-    console.log(this.nome[0]);
   }
   sair(): any {
     localStorage.removeItem('token');

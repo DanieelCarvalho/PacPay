@@ -18,7 +18,6 @@ export class PerfilComponent {
 
   buscarDados(): void {
     this.servico.buscarDados().subscribe((r) => {
-      console.log(r);
       this.DadosUsuario = r;
     });
   }

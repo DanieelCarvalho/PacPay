@@ -11,7 +11,7 @@ namespace PacPay.Api.Controllers.Conta
         private readonly IMediator _mediator = mediator;
 
         [HttpPost]
-        public async Task<ActionResult<LoginResponse>> Logar(LoginRequest request, CancellationToken cancellationToken)
+        public async Task<ActionResult<LoginResponse>> Index(LoginRequest request, CancellationToken cancellationToken)
         {
             try
             {

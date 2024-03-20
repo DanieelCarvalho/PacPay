@@ -19,7 +19,7 @@ namespace PacPay.App.CasosDeUso.Operacoes.Historico
 
             Operacao operacao = new();
 
-            List<Operacao> lista = operacao.Historico(id, numeroDaPagina, _repositorioOperacao, cancellationToken);
+            List<Operacao> lista = Operacao.Historico(id, numeroDaPagina, _repositorioOperacao, cancellationToken);
             IEnumerable<Task<HistoricoResponse>> tasks = lista.Select(async x => new HistoricoResponse
             {
                 Valor = x.Valor,

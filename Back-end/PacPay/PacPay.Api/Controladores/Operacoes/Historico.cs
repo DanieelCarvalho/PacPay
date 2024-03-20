@@ -12,7 +12,7 @@ namespace PacPay.Api.Controladores.Operacoes
         private readonly IMediator _mediator = mediator;
 
         [Authorize]
-        [HttpGet("/{numeroDaPagina}")]
+        [HttpGet("{numeroDaPagina}")]
         public async Task<IActionResult> PegarHistorico(int numeroDaPagina, CancellationToken cancellationToken)
         {
             try

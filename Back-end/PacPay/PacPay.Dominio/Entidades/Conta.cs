@@ -11,10 +11,8 @@ namespace PacPay.Dominio.Entidades
         public Cliente Cliente { get; set; } = null!;
         public string Senha { get; set; } = null!;
         public decimal Saldo { get; set; }
-
         public bool Admin { get; set; } = false;
         public DateTime DataCriacao { get; set; }
-
         public DateTime? UltimaAtualizacao { get; set; }
         public DateTime? DataExclusao { get; set; }
 
@@ -27,6 +25,13 @@ namespace PacPay.Dominio.Entidades
             await repositorioConta.Adicionar(this, cancellationToken);
 
             await commitDados.Commit(cancellationToken);
+        }
+
+        public void AtualizarConta(IRepositorioConta repositorioConta, ICommitDados commitDados, CancellationToken cancellationToken)
+        {
+            UltimaAtualizacao = DateTime.Now.ToUniversalTime();
+            repositorioConta.Atualizar(this);
+            commitDados.Commit(cancellationToken);
         }
 
         public void AtualizarConta(IRepositorioConta repositorioConta)

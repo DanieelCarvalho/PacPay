@@ -3,11 +3,8 @@
     "",
     "\\Back-end",
     "\\Back-end\\PacPay",
-    "\\Back-end\\PacPay\\PacPay.App",
-    "\\Back-end\\PacPay\\PacPay.App\\CasosDeUso",
-    "\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas",
-    "\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\CriarConta"
+    "\\Back-end\\PacPay\\PacPay.Persistencia"
   ],
-  "SelectedNode": "\\Back-end\\PacPay\\PacPay.App\\CasosDeUso\\Contas\\CriarConta\\CriarContaRequest.cs",
+  "SelectedNode": "\\Back-end\\PacPay\\PacPay.sln",
   "PreviewInSolutionExplorer": false
 }

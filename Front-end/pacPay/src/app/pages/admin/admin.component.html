@@ -6,12 +6,12 @@
         <p>Olá, {{ primeiroNome[0] }}.</p>
       </div>
       <div class="logout">
-        <p (click)="sair()">sair</p>
         <img
           src="./assets/engrenagem.png"
           alt="Ícone de engrenagem"
           (click)="perfil()"
         />
+        <p (click)="sair()">sair</p>
       </div>
     </div>
   </header>
@@ -58,6 +58,9 @@
         <div class="collapse" id="collapseSaque">
           <div class="card card-body">
             <input type="text" placeholder="Valor" [(ngModel)]="valorSaque" />
+            <p *ngIf="errorSaque" class="mensagem-erro" role="alert">
+              Insira um valor.
+            </p>
             <input type="button" value="Sacar" (click)="saque()" />
           </div>
         </div>
@@ -82,6 +85,9 @@
               placeholder="Valor"
               [(ngModel)]="valorDeposito"
             />
+            <p *ngIf="errorDeposito" class="mensagem-erro" role="alert">
+              Insira um valor.
+            </p>
             <input type="button" value="Depositar" (click)="depositar()" />
           </div>
         </div>
@@ -106,8 +112,16 @@
               placeholder="Valor"
               [(ngModel)]="valorTranferencia"
             />
-            <input type="text" placeholder="Conta" [(ngModel)]="ContaDestino" />
+
+            <input
+              type="text"
+              placeholder="CPF da conta destino"
+              [(ngModel)]="ContaDestino"
+            />
             <input type="button" value="Transferir" (click)="transferir()" />
+            <p *ngIf="cpfInvalido" class="mensagem-erro" role="alert">
+              CPF Inválido
+            </p>
           </div>
         </div>
       </div>

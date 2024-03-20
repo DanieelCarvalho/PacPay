@@ -33,6 +33,9 @@ export class AdminComponent {
   saldotest: Buscar[] = [];
   etapa: number = 1;
   primeiroNome: string = this.nomeCompleto.split(' ');
+  cpfInvalido: boolean = false;
+  errorDeposito: boolean = false;
+  errorSaque: boolean = false;
 
   private buscarSaldoSubscription: Subscription | undefined;
   private saqueSubscription: Subscription | undefined;
@@ -60,14 +63,22 @@ export class AdminComponent {
   saque(): void {
     const payload = { valor: this.valorSaque };
     console.log(this.valorSaque);
-    this.saqueSubscription = this.servico
-      .sacar(payload)
-      .subscribe((resposta) => {
+    this.saqueSubscription = this.servico.sacar(payload).subscribe(
+      (resposta) => {
         console.log(resposta);
         this.BuscarSaldo();
         this.buscarHistorico(1);
         this.valorSaque = undefined;
-      });
+      },
+      (error) => {
+        if (error.status == 400) {
+          this.errorSaque = true;
+          setTimeout(() => {
+            this.errorSaque = false;
+          }, 4000);
+        }
+      }
+    );
   }
 
   depositar(): void {
@@ -81,7 +92,12 @@ export class AdminComponent {
         this.valorDeposito = undefined;
       },
       (error) => {
-        console.error('Erro ao realizar o depósito:', error);
+        if (error.status == 400) {
+          this.errorDeposito = true;
+          setTimeout(() => {
+            this.errorDeposito = false;
+          }, 4000);
+        }
       }
     );
   }
@@ -92,14 +108,23 @@ export class AdminComponent {
       contaDestino: this.ContaDestino,
     };
     console.log(payload);
-    this.transferirSubscription = this.servico
-      .Transferencia(payload)
-      .subscribe((resposta) => {
+    this.transferirSubscription = this.servico.Transferencia(payload).subscribe(
+      (resposta) => {
         this.BuscarSaldo();
         this.buscarHistorico(1);
         this.valorTranferencia = undefined;
         console.log('Transferência realizada com sucesso!');
-      });
+      },
+      (error) => {
+        if (error.status == 400) {
+          this.cpfInvalido = true;
+          setTimeout(() => {
+            this.cpfInvalido = false;
+          }, 4000);
+          console.log(error, 'oi');
+        }
+      }
+    );
   }
 
   alternarSaldo() {

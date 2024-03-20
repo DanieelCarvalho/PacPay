@@ -56,12 +56,12 @@ export class ContaService {
     });
     return this.http.get(`${this.url}/Buscar`, { headers });
   }
-  buscarDados(): Observable<Buscar> {
+  buscarDados(): Observable<Buscar[]> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: token ? token : '',
     });
-    return this.http.get<Buscar>(`${this.url}/Buscar`, { headers });
+    return this.http.get<Buscar[]>(`${this.url}/Buscar`, { headers });
   }
 
   pegarHistorico(numeroDaPagina: number): Observable<Historico[]> {
@@ -69,8 +69,11 @@ export class ContaService {
     const headers = new HttpHeaders({
       Authorization: token ? token : '',
     });
-    return this.http.get<Historico[]>(`${this.url}/${numeroDaPagina}`, {
-      headers,
-    });
+    return this.http.get<Historico[]>(
+      `${this.url}/Historico/${numeroDaPagina}`,
+      {
+        headers,
+      }
+    );
   }
 }

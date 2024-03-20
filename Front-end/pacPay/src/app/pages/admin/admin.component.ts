@@ -23,7 +23,7 @@ export class AdminComponent {
 
   saldoVisivel: boolean = true;
   olho: boolean = true;
-  nome: any = localStorage.getItem('nome');
+  nomeCompleto: any = localStorage.getItem('nome');
   valorSaque?: number;
   valorDeposito?: number;
   valorTranferencia?: number;
@@ -32,6 +32,7 @@ export class AdminComponent {
   historicoDados: Historico[] = [];
   saldotest: Buscar[] = [];
   etapa: number = 1;
+  primeiroNome: string = this.nomeCompleto.split(' ');
 
   private buscarSaldoSubscription: Subscription | undefined;
   private saqueSubscription: Subscription | undefined;

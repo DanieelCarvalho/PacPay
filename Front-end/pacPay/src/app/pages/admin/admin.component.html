@@ -3,7 +3,7 @@
     <div class="user-info">
       <div class="user-detalhes">
         <img src="./assets/fotodousuario.png" alt="Foto do usuário" />
-        <p>Olá, {{ nome }}.</p>
+        <p>Olá, {{ primeiroNome[0] }}.</p>
       </div>
       <div class="logout">
         <p (click)="sair()">sair</p>
@@ -130,7 +130,10 @@
         />
       </figure>
     </div>
-    <table id="HTransações" class="table table-dark table-striped">
+    <table
+      id="HTransações"
+      class="table table-dark table-striped tabela-historico"
+    >
       <thead>
         <tr>
           <th>Valor</th>

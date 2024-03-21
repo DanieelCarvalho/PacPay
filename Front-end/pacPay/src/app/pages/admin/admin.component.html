@@ -25,7 +25,9 @@
     <div class="saldo-section">
       <div>
         <h3 class="saldo-label">SALDO DA CONTA CORRENTE</h3>
-        <p class="saldo-amount" *ngIf="saldoVisivel">R$ {{ saldo }}</p>
+        <p class="saldo-amount" *ngIf="saldoVisivel">
+          R$ {{ saldo?.toFixed(2) }}
+        </p>
         <p class="saldo-amount" *ngIf="!saldoVisivel">R$ ****</p>
       </div>
       <img
@@ -186,7 +188,7 @@
         </tr>
       </thead>
       <tbody *ngFor="let v of historicoDados">
-        <td>{{ v.valor }}</td>
+        <td>R$ {{ v.valor?.toFixed(2) }}</td>
         <td>{{ v.cpfDestino ? v.cpfDestino : "Minha Conta " }}</td>
         <td>{{ v.tipoOperacao }}</td>
         <td>{{ v.dataOperacao }}</td>

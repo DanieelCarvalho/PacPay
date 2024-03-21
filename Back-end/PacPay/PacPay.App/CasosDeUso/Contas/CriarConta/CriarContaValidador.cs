@@ -16,7 +16,7 @@ namespace PacPay.App.CasosDeUso.Contas.CriarConta
                 .NotEmpty().Matches(@"^\d{11}$").WithMessage("O telefone só pode conter números e deve ter exatamente 11 digitos. Ex: 84988495843");
 
             RuleFor(x => x.Email)
-                .NotEmpty().MinimumLength(3).MaximumLength(50).EmailAddress().WithMessage("O e-mail informado é inválido. Ex: string@email.com");
+                .NotEmpty().MinimumLength(3).MaximumLength(100).EmailAddress().WithMessage("O e-mail informado é inválido. Ex: string@email.com");
 
             RuleFor(x => x.Nome)
                 .NotEmpty().MinimumLength(3).MaximumLength(100).WithMessage("O nome deve ter entre 3 e 100 caracteres.");

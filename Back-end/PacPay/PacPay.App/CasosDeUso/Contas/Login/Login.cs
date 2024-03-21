@@ -1,5 +1,7 @@
 ﻿using MediatR;
 using PacPay.Dominio.Entidades;
+using PacPay.Dominio.Excecoes;
+using PacPay.Dominio.Excecoes.Mensagens;
 using PacPay.Dominio.Interfaces;
 using PacPay.Dominio.Interfaces.IUtilitarios;
 
@@ -18,9 +20,11 @@ namespace PacPay.App.CasosDeUso.AdicionarConta
 
             Conta conta = await _repositorioConta.BuscarConta(request.Cpf, cancellationToken);
 
+            if (conta.Ativa == false) throw new AppExcecao(ContaErr.ContaDesativada);
+
             bool autenticado = _encriptador.Comparar(request.Senha, conta.Senha);
 
-            if (!autenticado) throw new Exception("Senha inválida!");
+            if (!autenticado) throw new AppExcecao(ContaErr.ContaDesativada);
 
             string token = _autenticador.GerarToken(conta.Id);
 

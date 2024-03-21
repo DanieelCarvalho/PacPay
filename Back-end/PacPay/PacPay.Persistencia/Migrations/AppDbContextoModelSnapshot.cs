@@ -59,8 +59,8 @@ namespace PacPay.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("Admin")
-                        .HasColumnType("INTEGER");
+                    b.Property<bool>("Ativa")
+                        .HasColumnType("bit");
 
                     b.Property<Guid>("ClienteId")
                         .HasColumnType("TEXT");

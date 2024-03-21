@@ -13,7 +13,7 @@ namespace PacPay.Api.Controladores.Conta
 
         [Authorize]
         [HttpGet]
-        public async Task<ActionResult<BuscaResponse>> Busca(CancellationToken cancellationToken)
+        public async Task<ActionResult<BuscaResponse>> Index(CancellationToken cancellationToken)
         {
             try
             {

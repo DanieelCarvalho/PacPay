@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PacPay.Dominio.Entidades;
+using System.Reflection.Emit;
 
 namespace PacPay.Infra.Contexto
 {
@@ -16,8 +17,12 @@ namespace PacPay.Infra.Contexto
             builder.Entity<Cliente>().HasOne(x => x.Endereco);
 
             builder.Entity<Operacao>()
-               .Property(x => x.TipoOperacao)
-               .HasConversion<string>();
+                   .Property(x => x.TipoOperacao)
+                   .HasConversion<string>();
+
+            builder.Entity<Conta>()
+                   .Property(b => b.Ativa)
+                   .HasColumnType("bit");
         }
     }
 }

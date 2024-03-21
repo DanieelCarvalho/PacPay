@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PacPay.App.CasosDeUso.Operacoes.Transferencias;
+using PacPay.App.CasosDeUso.Operacoes.Transferir;
 
 namespace PacPay.Api.Controladores.Operacoes
 {
@@ -13,7 +13,7 @@ namespace PacPay.Api.Controladores.Operacoes
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> Transferir(TransferenciaRequest transferenciaRequest, CancellationToken cancellationToken)
+        public async Task<IActionResult> Transferir(TransferirRequest transferenciaRequest, CancellationToken cancellationToken)
         {
             try
             {

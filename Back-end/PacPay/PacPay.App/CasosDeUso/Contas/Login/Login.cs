@@ -7,11 +7,11 @@ using PacPay.Dominio.Interfaces.IUtilitarios;
 
 namespace PacPay.App.CasosDeUso.AdicionarConta
 {
-    public class Login(IRepositorioConta repositorioConta, IEncriptador encriptador, IAutenticacao autenticador) : IRequestHandler<LoginRequest, LoginResponse>
+    public class Login(IRepositorioConta repositorioConta, IEncriptador encriptador, IAutenticador autenticador) : IRequestHandler<LoginRequest, LoginResponse>
     {
         private readonly IRepositorioConta _repositorioConta = repositorioConta;
         private readonly IEncriptador _encriptador = encriptador;
-        private readonly IAutenticacao _autenticador = autenticador;
+        private readonly IAutenticador _autenticador = autenticador;
 
         public async Task<LoginResponse> Handle(LoginRequest request, CancellationToken cancellationToken)
         {

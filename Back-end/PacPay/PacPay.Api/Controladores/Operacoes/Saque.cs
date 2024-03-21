@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PacPay.App.CasosDeUso.Operacoes.Saques;
+using PacPay.App.CasosDeUso.Operacoes.Sacar;
 
 namespace PacPay.Api.Controladores.Operacoes
 {
@@ -13,7 +13,7 @@ namespace PacPay.Api.Controladores.Operacoes
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> Sacar(SaqueRequest saqueRequest, CancellationToken cancellationToken)
+        public async Task<IActionResult> Sacar(SacarRequest saqueRequest, CancellationToken cancellationToken)
         {
             try
             {

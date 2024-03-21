@@ -2,6 +2,9 @@
 using PacPay.Dominio.Excecoes.Mensagens;
 using PacPay.Dominio.Interfaces;
 using PacPay.Dominio.Interfaces.IUtilitarios;
+using System.ComponentModel;
+using System.Diagnostics;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PacPay.Dominio.Entidades
 {
@@ -17,32 +20,32 @@ namespace PacPay.Dominio.Entidades
         public DateTime? UltimaAtualizacao { get; set; }
         public DateTime? DataExclusao { get; set; }
 
-        public async Task RegistrarConta(IEncriptador encriptador, IRepositorioConta repositorioConta, ICommitDados commitDados, CancellationToken cancellationToken)
+        public async Task Registrar(IEncriptador encriptador, IRepositorioConta repositorioConta, ICommitDados commitDados, CancellationToken cancellationToken)
         {
             Senha = encriptador.Encriptar(Senha);
             Saldo = 1000;
             DataCriacao = DateTime.Now.ToUniversalTime();
 
-            await repositorioConta.Adicionar(this, cancellationToken);
+            repositorioConta.Adicionar(this, cancellationToken);
 
             await commitDados.Commit(cancellationToken);
         }
 
-        public void AtualizarConta(IRepositorioConta repositorioConta, ICommitDados commitDados, CancellationToken cancellationToken)
+        public void Atualizar(IRepositorioConta repositorioConta)
+        {
+            if (Ativa == false) throw new DominioExcecao(ContaErr.ContaDesativada);
+            UltimaAtualizacao = DateTime.Now.ToUniversalTime();
+
+            repositorioConta.Atualizar(this);
+        }
+
+        public void Atualizar(IRepositorioConta repositorioConta, ICommitDados commitDados, CancellationToken cancellationToken)
         {
             if (Ativa == false) throw new DominioExcecao(ContaErr.ContaDesativada);
             UltimaAtualizacao = DateTime.Now.ToUniversalTime();
 
             repositorioConta.Atualizar(this);
             commitDados.Commit(cancellationToken);
-        }
-
-        public void AtualizarConta(IRepositorioConta repositorioConta)
-        {
-            if (Ativa == false) throw new DominioExcecao(ContaErr.ContaDesativada);
-            UltimaAtualizacao = DateTime.Now.ToUniversalTime();
-
-            repositorioConta.Atualizar(this);
         }
 
         public void Desativar(string senha, IRepositorioConta repositorioConta, IEncriptador encriptador, ICommitDados commitDados, CancellationToken cancellationToken)

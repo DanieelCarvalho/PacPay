@@ -6,15 +6,15 @@ using PacPay.Dominio.Interfaces.IUtilitarios;
 
 namespace PacPay.App.CasosDeUso.Operacoes.Historico
 {
-    public sealed class Historico(IAutenticacao autenticacao, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao) : IRequestHandler<HistoricoRequest, List<HistoricoResponse>>
+    public sealed class Historico(IAutenticador autenticador, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao) : IRequestHandler<HistoricoRequest, List<HistoricoResponse>>
     {
-        private readonly IAutenticacao _autenticacao = autenticacao;
+        private readonly IAutenticador _autenticador = autenticador;
         private readonly IRepositorioConta _repositorioConta = repositorioConta;
         private readonly IRepositorioOperacao _repositorioOperacao = repositorioOperacao;
 
         public async Task<List<HistoricoResponse>> Handle(HistoricoRequest request, CancellationToken cancellationToken)
         {
-            Guid id = Guid.Parse(_autenticacao.PegarId());
+            Guid id = Guid.Parse(_autenticador.PegarId());
             int numeroDaPagina = request.NumeroDaPagina;
 
             Operacao operacao = new();

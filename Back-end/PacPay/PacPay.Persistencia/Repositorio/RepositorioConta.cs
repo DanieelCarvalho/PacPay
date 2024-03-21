@@ -7,16 +7,11 @@ using PacPay.Infra.Contexto;
 
 namespace PacPay.Infra.Repositorio
 {
-    public sealed class RepositorioConta<T> : IRepositorioConta where T : Conta
+    public sealed class RepositorioConta<T>(AppDbContexto contexto) : IRepositorioConta where T : Conta
     {
-        private readonly AppDbContexto Contexto;
+        private readonly AppDbContexto Contexto = contexto;
 
-        public RepositorioConta(AppDbContexto contexto)
-        {
-            Contexto = contexto;
-        }
-
-        public async Task Adicionar(Conta entidade, CancellationToken cancellationToken)
+        public async void Adicionar(Conta entidade, CancellationToken cancellationToken)
         {
             try
             {

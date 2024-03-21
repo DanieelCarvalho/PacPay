@@ -30,7 +30,7 @@ namespace PacPay.Dominio.Entidades
             if (tipoOperacao == Transacoes.Saque) conta.Saldo -= valor;
             if (tipoOperacao == Transacoes.Deposito) conta.Saldo += valor;
 
-            conta.AtualizarConta(repositorioConta);
+            conta.Atualizar(repositorioConta);
         }
 
         public void Deposito(decimal valor, string? descricao, Conta conta, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados, CancellationToken cancellationToken)

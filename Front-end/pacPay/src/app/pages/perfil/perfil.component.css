@@ -1,6 +1,65 @@
+* {
+  background-color: var(--secondary-color-2);
+}
+
+
+.container-nome {
+
+  display: flex;
+  justify-content: center;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  }
+.imagemusuario{
+  padding: 1em;
+  width: 6em;
+  height: auto;
+}
+
+.nomeUsuario {
+  border: 0.01em solid var(--primary-color);
+  border-radius: 0.5em;
+  padding: 3em 4em 1em;
+  margin: 2em;
+  text-align: center;
+}
+
+
+ 
+
+h1 {
+  font-size: 3rem;
+  font-weight: 200;
+  padding: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid var(--primary-color)
+}
+
 .dadosUsuario {
   display: flex;
   flex-direction: column;
-  border: solid;
-  height: 50vh;
+  color: var(--secondary-color);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--header-color);
+
+
+}
+
+.dadosUsuario label {
+  padding: 0.5em 1em 0;
+
+
+}
+
+.dadosUsuario input {
+  padding: 1em;
+  font-size: 2rem;
+  font-weight: 200;
+  width: 100%;
+  border: none;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--primary-color);
 }

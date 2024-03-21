@@ -12,7 +12,7 @@ namespace PacPay.App.CasosDeUso.Contas.Buscar
         private readonly IAutenticacao _autenticacao = autenticacao;
         private readonly IRepositorioConta _repositorioConta = repositorioConta;
 
-        public async Task<BuscaResponse> Handle(BuscaRequest reques, CancellationToken cancellationToken)
+        public async Task<BuscaResponse> Handle(BuscaRequest request, CancellationToken cancellationToken)
         {
             Guid id = Guid.Parse(_autenticacao.PegarId());
             Conta cliente = await _repositorioConta.BuscarCliente(id, cancellationToken) ?? throw new Exception("Cliente não encontrado");

@@ -13,7 +13,7 @@ namespace PacPay.Api.Controladores.Conta
 
         [Authorize]
         [HttpPatch]
-        public async Task<ActionResult<AtualizarResponse>> Atualizacao(AtualizarRequest atualizarRequest, CancellationToken cancellationToken)
+        public async Task<ActionResult<AtualizarResponse>> Index(AtualizarRequest atualizarRequest, CancellationToken cancellationToken)
         {
             try
             {

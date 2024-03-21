@@ -25,12 +25,11 @@ namespace PacPay.Dominio.Entidades
             Descricao = descricao ?? string.Empty;
         }
 
-        private void OperacaoConta(decimal valor, Conta conta, Transacoes tipoOperacao, IRepositorioConta repositorioConta)
+        private static void OperacaoConta(decimal valor, Conta conta, Transacoes tipoOperacao, IRepositorioConta repositorioConta)
         {
             if (tipoOperacao == Transacoes.Saque) conta.Saldo -= valor;
             if (tipoOperacao == Transacoes.Deposito) conta.Saldo += valor;
 
-            conta.UltimaAtualizacao = DateTime.Now.ToUniversalTime();
             conta.AtualizarConta(repositorioConta);
         }
 
@@ -75,7 +74,7 @@ namespace PacPay.Dominio.Entidades
             commitDados.Commit(cancellationToken);
         }
 
-        public List<Operacao> Historico(Guid id, int numeroDaPagina, IRepositorioOperacao repositorioOperacao, CancellationToken cancellationToken)
+        public static List<Operacao> Historico(Guid id, int numeroDaPagina, IRepositorioOperacao repositorioOperacao, CancellationToken cancellationToken)
         {
             List<Operacao> operacoes = repositorioOperacao.Historico(id, numeroDaPagina, cancellationToken);
 

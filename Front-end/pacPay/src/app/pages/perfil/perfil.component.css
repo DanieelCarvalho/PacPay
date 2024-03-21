@@ -1,0 +1,6 @@
+.dadosUsuario {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  height: 50vh;
+}

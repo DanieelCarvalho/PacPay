@@ -9,6 +9,7 @@ import { Transferencia } from '../../models/Transferencia';
 import { Deposito } from '../../models/Deposito';
 import { Buscar } from '../../models/Buscar';
 import { Historico } from '../../models/Historico';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -22,20 +23,38 @@ export class AdminComponent {
 
   saldoVisivel: boolean = true;
   olho: boolean = true;
-  nome: any = localStorage.getItem('nome');
-  valorSaque?: number = 0.0;
-  valorDeposito?: number = 20;
-  valorTranferencia: number = 0;
+  nomeCompleto: any = localStorage.getItem('nome');
+  valorSaque?: number;
+  valorDeposito?: number;
+  valorTranferencia?: number;
   ContaDestino: string = '';
   saldo?: number;
   historicoDados: Historico[] = [];
+  saldotest: Buscar[] = [];
+  etapa: number = 1;
+  primeiroNome: string = this.nomeCompleto.split(' ');
+  cpfInvalido: boolean = false;
+  errorDeposito: boolean = false;
+  errorSaque: boolean = false;
+
+  private buscarSaldoSubscription: Subscription | undefined;
+  private saqueSubscription: Subscription | undefined;
+  private depositarSubscription: Subscription | undefined;
+  private transferirSubscription: Subscription | undefined;
+
+  ngOnDestroy(): void {
+    this.buscarSaldoSubscription?.unsubscribe();
+    this.saqueSubscription?.unsubscribe();
+    this.depositarSubscription?.unsubscribe();
+    this.transferirSubscription?.unsubscribe();
+  }
 
   BuscarSaldo(): void {
-    this.servico.buscar().subscribe((r) => {
+    this.buscarSaldoSubscription = this.servico.buscarSaque().subscribe((r) => {
       if (r.saldo !== undefined) {
         console.log(r);
         this.saldo = r.saldo;
-        const saldoAtualizado: Buscar = { saldo: this.saldo };
+        const saldoAtualizado: any = { saldo: this.saldo };
         this.servico.saldoAtualizado.next(saldoAtualizado);
       }
     });
@@ -44,49 +63,80 @@ export class AdminComponent {
   saque(): void {
     const payload = { valor: this.valorSaque };
     console.log(this.valorSaque);
-    this.servico.sacar(payload as Sacar).subscribe((resposta) => {
-      console.log(resposta);
-      this.BuscarSaldo();
-    });
+    this.saqueSubscription = this.servico.sacar(payload).subscribe(
+      (resposta) => {
+        console.log(resposta);
+        this.BuscarSaldo();
+        this.buscarHistorico(1);
+        this.valorSaque = undefined;
+      },
+      (error) => {
+        if (error.status == 400) {
+          this.errorSaque = true;
+          setTimeout(() => {
+            this.errorSaque = false;
+          }, 4000);
+        }
+      }
+    );
   }
-  depositar(): void {
-    const payload: Deposito = { valor: this.valorDeposito };
-    console.log(this.valorDeposito);
 
-    this.servico.depositar(payload as Deposito).subscribe(
+  depositar(): void {
+    const payload = { valor: this.valorDeposito };
+    console.log(this.valorDeposito);
+    this.depositarSubscription = this.servico.depositar(payload).subscribe(
       (resposta) => {
         console.log('Depósito realizado com sucesso!');
         this.BuscarSaldo();
+        this.buscarHistorico(1);
+        this.valorDeposito = undefined;
       },
       (error) => {
-        console.error('Erro ao realizar o depósito:', error);
+        if (error.status == 400) {
+          this.errorDeposito = true;
+          setTimeout(() => {
+            this.errorDeposito = false;
+          }, 4000);
+        }
       }
     );
   }
 
   transferir(): void {
-    const payload: Transferencia = {
+    const payload = {
       valor: this.valorTranferencia,
       contaDestino: this.ContaDestino,
     };
     console.log(payload);
-    this.servico
-      .Transferencia(payload as Transferencia)
-      .subscribe((resposta) => {
+    this.transferirSubscription = this.servico.Transferencia(payload).subscribe(
+      (resposta) => {
+        this.BuscarSaldo();
+        this.buscarHistorico(1);
+        this.valorTranferencia = undefined;
         console.log('Transferência realizada com sucesso!');
-      });
+      },
+      (error) => {
+        if (error.status == 400) {
+          this.cpfInvalido = true;
+          setTimeout(() => {
+            this.cpfInvalido = false;
+          }, 4000);
+          console.log(error, 'oi');
+        }
+      }
+    );
   }
 
   alternarSaldo() {
     this.saldoVisivel = !this.saldoVisivel;
     this.olho = !this.olho;
-    console.log(this.nome[0]);
   }
   sair(): any {
     localStorage.removeItem('token');
     localStorage.removeItem('nome');
     this.rota.navigateByUrl('/inicio');
   }
+
   buscarHistorico(numeroDaPagina: number): void {
     this.servico.pegarHistorico(numeroDaPagina).subscribe((r) => {
       console.log(r);
@@ -95,8 +145,22 @@ export class AdminComponent {
           ...t,
         };
       });
+
+      this.servico.historico.next(historico);
       this.historicoDados = historico;
     });
+  }
+  proximaetapa() {
+    this.etapa++;
+    this.buscarHistorico(this.etapa);
+  }
+  etapaAnterior() {
+    this.etapa--;
+    this.buscarHistorico(this.etapa);
+  }
+  perfil() {
+    this.rota.navigateByUrl('/perfil');
+    console.log('oi');
   }
 
   ngOnInit(): void {

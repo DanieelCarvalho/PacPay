@@ -15,45 +15,65 @@ export class ContaService {
 
   constructor(private http: HttpClient) {}
   public saldoAtualizado = new BehaviorSubject<Buscar>({ saldo: 0 });
+  public historico = new BehaviorSubject<Historico[]>([]);
 
-  sacar(obj: Sacar): Observable<Sacar> {
+  sacar(obj: Sacar): Observable<string> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
-      Authorization: token ? token : '',
+      Authorization: token ?? '',
     });
 
-    return this.http.post(`${this.url}/Saque`, obj, { headers });
+    return this.http.post(`${this.url}/Saque`, obj, {
+      headers,
+      responseType: 'text',
+    });
   }
-
-  depositar(obj: Deposito): Observable<Deposito> {
+  depositar(obj: Deposito): Observable<string> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
-      Authorization: token ? token : '',
+      Authorization: token ?? '',
     });
-    return this.http.post(`${this.url}/Deposito`, obj, { headers });
+    return this.http.post(`${this.url}/Deposito`, obj, {
+      headers,
+      responseType: 'text',
+    });
   }
 
-  Transferencia(obj: Transferencia): Observable<Transferencia> {
+  Transferencia(obj: Transferencia): Observable<string> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
-      Authorization: token ? token : '',
+      Authorization: token ?? '',
     });
-    return this.http.post(`${this.url}/Transferencia`, obj, { headers });
+    return this.http.post(`${this.url}/Transferencia`, obj, {
+      headers,
+      responseType: 'text',
+    });
   }
-  buscar(): Observable<Buscar> {
+  buscarSaque(): Observable<Buscar> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: token ? token : '',
     });
     return this.http.get(`${this.url}/Buscar`, { headers });
   }
+  buscarDados(): Observable<Buscar[]> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: token ? token : '',
+    });
+    return this.http.get<Buscar[]>(`${this.url}/Buscar`, { headers });
+  }
+
   pegarHistorico(numeroDaPagina: number): Observable<Historico[]> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: token ? token : '',
     });
-    return this.http.get<Historico[]>(`${this.url}/${numeroDaPagina}`, {
-      headers,
-    });
+    return this.http.get<Historico[]>(
+      `${this.url}/Historico/${numeroDaPagina}`,
+      {
+        headers,
+      }
+    );
   }
 }

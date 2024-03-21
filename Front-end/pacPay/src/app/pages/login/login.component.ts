@@ -27,6 +27,7 @@ import { Credencial } from '../../models/Credencial';
 })
 export class LoginComponent {
   constructor(private rota: Router, private servico: UsuarioService) {}
+  carregando: boolean = false;
 
   formulario = new FormGroup({
     cpf: new FormControl('', [
@@ -39,13 +40,16 @@ export class LoginComponent {
   senhaIncorreta: boolean = false;
 
   autenticar(): void {
+    this.carregando = true;
     this.servico.autenticar(this.formulario.value as Credencial).subscribe(
       (r) => {
+        this.carregando = false;
         this.rota.navigateByUrl('/admin');
         localStorage.setItem('token', r.token);
         localStorage.setItem('nome', r.nome);
       },
       (error) => {
+        this.carregando = false;
         if (error.status === 400) {
           this.senhaIncorreta = true;
           setTimeout(() => {

@@ -61,6 +61,11 @@
             <p *ngIf="errorSaque" class="mensagem-erro" role="alert">
               Insira um valor.
             </p>
+            <div class="text-center">
+              <div *ngIf="carregandoSaque" class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
             <input type="button" value="Sacar" (click)="saque()" />
           </div>
         </div>
@@ -88,6 +93,15 @@
             <p *ngIf="errorDeposito" class="mensagem-erro" role="alert">
               Insira um valor.
             </p>
+            <div class="text-center">
+              <div
+                *ngIf="carregandoDeposito"
+                class="spinner-border"
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
             <input type="button" value="Depositar" (click)="depositar()" />
           </div>
         </div>
@@ -122,6 +136,15 @@
             <p *ngIf="cpfInvalido" class="mensagem-erro" role="alert">
               CPF Inválido
             </p>
+            <div class="text-center">
+              <div
+                *ngIf="carregandoTransfe"
+                class="spinner-border"
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -137,6 +160,7 @@
           alt="seta para esquerda"
           (click)="etapaAnterior()"
         />
+        <p>{{ etapa }}</p>
         <img
           src="./assets/arrow-circle-right.svg"
           alt="seta para direita"

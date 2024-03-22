@@ -1,7 +1,21 @@
 {
   "Version": 1,
+<<<<<<< HEAD
+  "WorkspaceRootPath": "C:\\Users\\keell\\Desktop\\Projeto Final\\PacPay\\Back-end\\PacPay\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37D676D5-1352-4699-BBDC-96EF352412AD}|PacPay.App\\PacPay.App.csproj|c:\\users\\keell\\desktop\\projeto final\\pacpay\\back-end\\pacpay\\pacpay.app\\pacpay.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{37D676D5-1352-4699-BBDC-96EF352412AD}|PacPay.App\\PacPay.App.csproj|solutionrelative:pacpay.app\\pacpay.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E93E632-6C52-48C6-85CB-F491789DC0AF}|PacPay.Api\\PacPay.Api.csproj|c:\\users\\keell\\desktop\\projeto final\\pacpay\\back-end\\pacpay\\pacpay.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4E93E632-6C52-48C6-85CB-F491789DC0AF}|PacPay.Api\\PacPay.Api.csproj|solutionrelative:pacpay.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+=======
   "WorkspaceRootPath": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\",
   "Documents": [],
+>>>>>>> 9902b58441688385645c9eef9b79cad7a4c5bc61
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,6 +23,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PacPay.App",
+              "DocumentMoniker": "C:\\Users\\keell\\Desktop\\Projeto Final\\PacPay\\Back-end\\PacPay\\PacPay.App\\PacPay.App.csproj",
+              "RelativeDocumentMoniker": "PacPay.App\\PacPay.App.csproj",
+              "ToolTip": "C:\\Users\\keell\\Desktop\\Projeto Final\\PacPay\\Back-end\\PacPay\\PacPay.App\\PacPay.App.csproj",
+              "RelativeToolTip": "PacPay.App\\PacPay.App.csproj",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-21T19:25:57.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\keell\\Desktop\\Projeto Final\\PacPay\\Back-end\\PacPay\\PacPay.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "PacPay.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\keell\\Desktop\\Projeto Final\\PacPay\\Back-end\\PacPay\\PacPay.Api\\appsettings.json",
+              "RelativeToolTip": "PacPay.Api\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-20T16:08:42.685Z",
+              "EditorCaption": ""
+=======
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -34,6 +77,7 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+>>>>>>> 9902b58441688385645c9eef9b79cad7a4c5bc61
             }
           ]
         }

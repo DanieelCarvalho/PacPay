@@ -8,7 +8,7 @@
       <div class="logout">
         <img
           src="./assets/user-circle-gear.svg"
-          alt="Ícone de engrenagem"
+          alt="icone de direcionamento ao perfil"
           (click)="perfil()"
         />
 
@@ -62,7 +62,7 @@
             Saque
           </a>
         </p>
-        <div class="collapse" id="collapseSaque">
+        <div class="collapse teste" id="collapseSaque">
           <div class="card card-body">
             <input type="text" placeholder="Valor" [(ngModel)]="valorSaque" />
             <p *ngIf="errorSaque" class="mensagem-erro" role="alert">
@@ -90,7 +90,7 @@
             Deposito
           </a>
         </p>
-        <div class="collapse" id="collapseDeposito">
+        <div class="collapse teste" id="collapseDeposito">
           <div class="card card-body">
             <input
               type="text"
@@ -113,7 +113,7 @@
           </div>
         </div>
       </div>
-      <div class="transacoes-inputs">
+      <div class="transacoes-inputs" >
         <p class="d-inline-flex gap-1">
           <a
             class="btn btn-primary"

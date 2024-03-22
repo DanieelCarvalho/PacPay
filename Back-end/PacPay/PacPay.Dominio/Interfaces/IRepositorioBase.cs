@@ -6,6 +6,8 @@
 
         void Atualizar(T entidade);
 
-        void Excluir(T entidade);
+        void Desativar(T entidade);
+
+        void Reativar(T entidade);
     }
 }

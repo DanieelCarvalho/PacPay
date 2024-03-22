@@ -48,7 +48,10 @@ export class CadastroComponent {
       nome: new FormControl('', Validators.required),
       cpf: new FormControl('', Validators.required),
       dataNascimento: new FormControl('', Validators.required),
-      telefone: new FormControl('', Validators.required),
+      telefone: new FormControl('', [
+        Validators.required,
+        Validators.minLength(11),
+      ]),
       email: new FormControl('', [Validators.required, Validators.email]),
       senha: new FormControl('', Validators.required),
       cep: new FormControl('', Validators.required),
@@ -89,31 +92,5 @@ export class CadastroComponent {
         this.formulario.reset();
         this.rota.navigateByUrl('/login');
       });
-
-    //   if (this.formulario.valid) {
-    //     let ultimoId = Number(localStorage.getItem('ultimoId')) || 0;
-    //     let novoId = ultimoId + 1;
-    //     localStorage.setItem('ultimoId', novoId.toString());
-    //     localStorage.setItem(`${novoId}`, JSON.stringify(this.formulario.value));
-
-    //   } else {
-    //     console.log('Formulário inválido');
-
-    //     Object.keys(this.formulario.controls).forEach((key) => {
-    //       const control = this.formulario.get(key);
-    //       if (control) {
-    //         const controlErrors: ValidationErrors = control.errors!;
-    //         if (controlErrors != null) {
-    //           Object.keys(controlErrors).forEach((keyError) => {
-    //             console.log(
-    //               `Nome: ${key}
-    // Erro: ${keyError}
-    // Valor: ${controlErrors[keyError]}`
-    //             );
-    //           });
-    //         }
-    //       }
-    //     });
-    //   }
   }
 }

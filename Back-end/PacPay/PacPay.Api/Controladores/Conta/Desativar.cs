@@ -1,25 +1,25 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PacPay.App.CasosDeUso.Contas.Atualizacao;
+using PacPay.App.CasosDeUso.Contas.Desativacao;
 
 namespace PacPay.Api.Controladores.Conta
 {
     [Route("/[controller]")]
     [ApiController]
-    public class Atualizar(IMediator mediator) : ControllerBase
+    public class Desativar(IMediator mediator) : ControllerBase
     {
         private readonly IMediator _mediator = mediator;
 
         [Authorize]
-        [HttpPatch]
-        public async Task<ActionResult<AtualizarResponse>> Index(AtualizarRequest atualizarRequest, CancellationToken cancellationToken)
+        [HttpDelete]
+        public async Task<ActionResult<DesativarResponse>> Index(DesativarRequest request, CancellationToken cancellationToken)
         {
             try
             {
-                AtualizarResponse atualizarResponse = await _mediator.Send(atualizarRequest, cancellationToken);
+                DesativarResponse response = await _mediator.Send(request, cancellationToken);
 
-                return Ok(atualizarResponse);
+                return response;
             }
             catch (Exception ex)
             {

@@ -6,6 +6,7 @@ import { Deposito } from '../models/Deposito';
 import { Transferencia } from '../models/Transferencia';
 import { Buscar } from '../models/Buscar';
 import { Historico } from '../models/Historico';
+import { ApagarConta } from '../models/ApagarConta';
 
 @Injectable({
   providedIn: 'root',
@@ -75,5 +76,16 @@ export class ContaService {
         headers,
       }
     );
+  }
+
+  apagarConta(): Observable<ApagarConta> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: token ? token : '',
+    });
+
+    return this.http.delete(`${this.url}/Desativar`, {
+      headers,
+    });
   }
 }

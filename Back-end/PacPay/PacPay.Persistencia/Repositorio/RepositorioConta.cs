@@ -39,9 +39,28 @@ namespace PacPay.Infra.Repositorio
             }
         }
 
-        public void Excluir(Conta entidade)
+        public void Desativar(Conta entidade)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Atualizar(entidade);
+            }
+            catch (Exception ex)
+            {
+                throw new RepositorioExcecao($"{RepositorioErr.Exclusao}:  {ex.Message}");
+            }
+        }
+
+        public void Reativar(Conta entidade)
+        {
+            try
+            {
+                Atualizar(entidade);
+            }
+            catch (Exception ex)
+            {
+                throw new RepositorioExcecao($"{RepositorioErr.Atualizacao}:  {ex.Message}");
+            }
         }
 
         public async Task<bool> ContaExiste(string cpf, CancellationToken cancellationToken)
@@ -66,7 +85,6 @@ namespace PacPay.Infra.Repositorio
                     .Include(c => c.Cliente)
                     .ThenInclude(c => c.Endereco)
                     .FirstOrDefaultAsync(c => c.Cliente.Cpf == cpf, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
-
 
                 return conta;
             }

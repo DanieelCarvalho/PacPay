@@ -1,34 +1,22 @@
+<section class="container-nome">
+  
+  <div class="nomeUsuario">
+    <img class="imagemusuario" src="./assets/fotodousuario.png" alt="Foto do usuário" />
+    <p>{{ DadosUsuario.nome }}</p>
+  </div>
+</section>
+
 <section *ngIf="DadosUsuario" class="dadosUsuario">
-  <h1>Dados do Usuário</h1>
+  <h1>Meus Dados</h1>
   <label for="nome">Nome:</label>
-  <input
-    type="text"
-    id="nome"
-    [(ngModel)]="DadosUsuario.nome"
-    [disabled]="true"
-  />
+  <input type="text" id="nome" [(ngModel)]="DadosUsuario.nome" [disabled]="true" />
 
   <label for="cpf">CPF:</label>
-  <input
-    type="text"
-    id="cpf"
-    [(ngModel)]="DadosUsuario.cpf"
-    [disabled]="true"
-  />
+  <input type="text" id="cpf" [(ngModel)]="DadosUsuario.cpf" [disabled]="true" />
 
   <label for="email">Email:</label>
-  <input
-    type="text"
-    id="email"
-    [(ngModel)]="DadosUsuario.email"
-    [disabled]="true"
-  />
+  <input type="text" id="email" [(ngModel)]="DadosUsuario.email" [disabled]="true" />
 
   <label for="dataDeCriacao">Data de Criação:</label>
-  <input
-    type="text"
-    id="dataDeCriacao"
-    [(ngModel)]="DadosUsuario.dataDeCriacao"
-    [disabled]="true"
-  />
-</section>
+  <input type="text" id="dataDeCriacao" [(ngModel)]="DadosUsuario.dataDeCriacao" [disabled]="true" />
+  </section>

@@ -62,7 +62,7 @@
             Saque
           </a>
         </p>
-        <div class="collapse teste" id="collapseSaque">
+        <div class="collapse border-operacoes" id="collapseSaque">
           <div class="card card-body">
             <input type="text" placeholder="Valor" [(ngModel)]="valorSaque" />
             <p *ngIf="errorSaque" class="mensagem-erro" role="alert">
@@ -87,10 +87,10 @@
             aria-expanded="false"
             aria-controls="collapseDeposito"
           >
-            Deposito
+            Depósito
           </a>
         </p>
-        <div class="collapse teste" id="collapseDeposito">
+        <div class="collapse border-operacoes" id="collapseDeposito">
           <div class="card card-body">
             <input
               type="text"
@@ -126,7 +126,7 @@
             Transferir
           </a>
         </p>
-        <div class="collapse teste" id="collapseTranferir">
+        <div class="collapse border-operacoes" id="collapseTranferir">
           <div class="card card-body">
             <input
               type="text"
@@ -160,21 +160,7 @@
 
   <section class="transaction-history">
     <h2>Histórico de Transações</h2>
-    <div class="btn-next">
-      <figure>
-        <img
-          src="./assets/arrow-circle-left (1).svg"
-          alt="seta para esquerda"
-          (click)="etapaAnterior()"
-        />
-        <p>{{ etapa }}</p>
-        <img
-          src="./assets/arrow-circle-right.svg"
-          alt="seta para direita"
-          (click)="proximaetapa()"
-        />
-      </figure>
-    </div>
+    
     <table
       id="HTransações"
       class="table table-dark table-striped tabela-historico"
@@ -194,5 +180,20 @@
         <td>{{ v.dataOperacao }}</td>
       </tbody>
     </table>
+    <div class="btn-next">
+        <figure>
+          <img
+            src="./assets/arrow-circle-left (1).svg"
+            alt="seta para esquerda"
+            (click)="etapaAnterior()"
+          />
+          <p>{{ etapa }}</p>
+          <img
+            src="./assets/arrow-circle-right.svg"
+            alt="seta para direita"
+            (click)="proximaetapa()"
+          />
+        </figure>
+      </div>
   </section>
 </main>

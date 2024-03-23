@@ -78,7 +78,7 @@ export class ContaService {
     );
   }
 
-  apagarConta(): Observable<ApagarConta> {
+  apagarConta(credential: ApagarConta): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: token ? token : '',
@@ -86,6 +86,7 @@ export class ContaService {
 
     return this.http.delete(`${this.url}/Desativar`, {
       headers,
+      body: credential,
     });
   }
 }

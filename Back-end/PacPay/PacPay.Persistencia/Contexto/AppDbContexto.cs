@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PacPay.Dominio.Entidades;
-using System.Reflection.Emit;
 
 namespace PacPay.Infra.Contexto
 {
@@ -14,15 +13,15 @@ namespace PacPay.Infra.Contexto
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Conta>().HasOne(x => x.Cliente);
+            builder.Entity<Conta>()
+                   .Property(b => b.Ativa)
+                   .HasColumnType("bit");
+
             builder.Entity<Cliente>().HasOne(x => x.Endereco);
 
             builder.Entity<Operacao>()
                    .Property(x => x.TipoOperacao)
                    .HasConversion<string>();
-
-            builder.Entity<Conta>()
-                   .Property(b => b.Ativa)
-                   .HasColumnType("bit");
         }
     }
 }

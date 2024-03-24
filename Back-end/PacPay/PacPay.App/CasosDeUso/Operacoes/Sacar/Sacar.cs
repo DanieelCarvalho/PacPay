@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using PacPay.Dominio.Entidades;
+using PacPay.Dominio.Excecoes.Mensagens;
 using PacPay.Dominio.Interfaces;
 using PacPay.Dominio.Interfaces.IUtilitarios;
 
@@ -21,10 +22,9 @@ namespace PacPay.App.CasosDeUso.Operacoes.Sacar
             decimal valor = request.Valor;
             string? descricao = request.Descricao;
 
-            Conta conta = await _repositorioConta.BuscarConta(id, cancellationToken);
-            Operacao Operacao = new();
+            Conta conta = await _repositorioConta.BuscarConta(id, cancellationToken) ?? throw ContaErr.ContaNaoEncontrada404;
 
-            Operacao.Saque(valor, descricao, conta, _repositorioConta, _repositorioOperacao, _commitDados, cancellationToken);
+            new Operacao().Saque(valor, descricao, conta, _repositorioConta, _repositorioOperacao, _commitDados, cancellationToken);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using PacPay.App.CasosDeUso.Contas.Criar;
+using PacPay.Dominio.Excecoes;
 
 namespace PacPay.Api.Controllers.Contas
 {
@@ -11,19 +12,24 @@ namespace PacPay.Api.Controllers.Contas
         private readonly IMediator _mediator = mediator;
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Index(CriarRequest request, CancellationToken cancellationToken)
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> Index(CriarRequest request, CancellationToken cancellationToken)
         {
             try
             {
                 await _mediator.Send(request, cancellationToken);
 
-                return Ok();
+                return Created();
+            }
+            catch (Excecao ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500, ex.Message);
             }
         }
     }

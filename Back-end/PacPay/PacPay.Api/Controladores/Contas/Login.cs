@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using PacPay.App.CasosDeUso.AdicionarConta;
+using PacPay.Dominio.Excecoes;
 
 namespace PacPay.Api.Controllers.Contas
 {
@@ -12,7 +13,10 @@ namespace PacPay.Api.Controllers.Contas
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<LoginResponse>> Index(LoginRequest request, CancellationToken cancellationToken)
         {
             try
@@ -21,9 +25,13 @@ namespace PacPay.Api.Controllers.Contas
 
                 return Ok(response);
             }
+            catch (Excecao ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500, ex.Message);
             }
         }
     }

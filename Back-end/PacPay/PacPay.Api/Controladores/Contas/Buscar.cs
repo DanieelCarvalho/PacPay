@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PacPay.App.CasosDeUso.Contas.Buscar;
+using PacPay.Dominio.Excecoes;
 
 namespace PacPay.Api.Controladores.Contas
 {
@@ -14,7 +15,9 @@ namespace PacPay.Api.Controladores.Contas
         [Authorize]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<BuscarResponse>> Index(CancellationToken cancellationToken)
         {
             try
@@ -23,9 +26,13 @@ namespace PacPay.Api.Controladores.Contas
 
                 return Ok(buscaRespons);
             }
+            catch (Excecao ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500, ex.Message);
             }
         }
     }

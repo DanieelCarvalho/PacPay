@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PacPay.App.CasosDeUso.Contas.Atualizar;
+using PacPay.Dominio.Excecoes;
 
 namespace PacPay.Api.Controladores.Contas
 {
@@ -13,19 +14,27 @@ namespace PacPay.Api.Controladores.Contas
 
         [Authorize]
         [HttpPatch]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<AtualizarResponse>> Index(AtualizarRequest atualizarRequest, CancellationToken cancellationToken)
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> Index(AtualizarRequest atualizarRequest, CancellationToken cancellationToken)
         {
             try
             {
-                AtualizarResponse atualizarResponse = await _mediator.Send(atualizarRequest, cancellationToken);
+                await _mediator.Send(atualizarRequest, cancellationToken);
 
-                return Ok(atualizarResponse);
+                return NoContent();
+            }
+            catch (Excecao ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500, ex.Message);
             }
         }
     }

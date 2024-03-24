@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using PacPay.App.CasosDeUso.Contas.Reativar;
+using PacPay.Dominio.Excecoes;
 
 namespace PacPay.Api.Controladores.Contas
 {
@@ -11,15 +12,22 @@ namespace PacPay.Api.Controladores.Contas
         private readonly IMediator _mediator = mediator;
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Index(ReativarRequest request, CancellationToken cancellationToken)
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> Index(ReativarRequest request, CancellationToken cancellationToken)
         {
             try
             {
                 await _mediator.Send(request, cancellationToken);
 
                 return NoContent();
+            }
+            catch (Excecao ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
             }
             catch (Exception ex)
             {

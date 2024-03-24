@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PacPay.App.CasosDeUso.Operacoes.Depositar;
+using PacPay.Dominio.Excecoes;
 
 namespace PacPay.Api.Controladores.Operacoes
 {
@@ -13,13 +14,21 @@ namespace PacPay.Api.Controladores.Operacoes
 
         [Authorize]
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Depositar(DepositarRequest depositoRequest, CancellationToken cancellationToken)
         {
             try
             {
                 await _mediator.Send(depositoRequest, cancellationToken);
 
-                return Ok("Depósito realizado com sucesso");
+                return NoContent();
+            }
+            catch (Excecao ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
             }
             catch (Exception ex)
             {

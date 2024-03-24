@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PacPay.App.CasosDeUso.Contas.Desativar;
+using PacPay.Dominio.Excecoes;
 
 namespace PacPay.Api.Controladores.Contas
 {
@@ -13,19 +14,26 @@ namespace PacPay.Api.Controladores.Contas
 
         [Authorize]
         [HttpDelete]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<DesativarResponse>> Index(DesativarRequest request, CancellationToken cancellationToken)
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> Index(DesativarRequest request, CancellationToken cancellationToken)
         {
             try
             {
-                DesativarResponse response = await _mediator.Send(request, cancellationToken);
+                await _mediator.Send(request, cancellationToken);
 
-                return response;
+                return NoContent();
+            }
+            catch (Excecao ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500, ex.Message);
             }
         }
     }

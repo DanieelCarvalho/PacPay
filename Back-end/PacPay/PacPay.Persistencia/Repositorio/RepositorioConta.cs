@@ -11,133 +11,71 @@ namespace PacPay.Infra.Repositorio
     {
         private readonly AppDbContexto Contexto = contexto;
 
-        public async void Adicionar(Conta entidade, CancellationToken cancellationToken)
+        public void Adicionar(Conta entidade, CancellationToken cancellationToken)
         {
-            try
-            {
-                if (await ContaExiste(entidade.Cliente.Cpf, cancellationToken)) throw new RepositorioExcecao(ContaErr.ContaJaExiste);
-
-                Contexto.Add(entidade);
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
-            }
+            Contexto.Add(entidade);
         }
 
         public void Atualizar(Conta entidade)
         {
-            try { Contexto.Update(entidade); }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Atualizacao}:  {ex.Message}");
-            }
+            Contexto.Update(entidade);
         }
 
         public void Desativar(Conta entidade)
         {
-            try
-            {
-                Atualizar(entidade);
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Exclusao}:  {ex.Message}");
-            }
+            Atualizar(entidade);
         }
 
         public void Reativar(Conta entidade)
         {
-            try
-            {
-                Atualizar(entidade);
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Atualizacao}:  {ex.Message}");
-            }
+            Atualizar(entidade);
         }
 
         public async Task<bool> ContaExiste(string cpf, CancellationToken cancellationToken)
         {
-            try
-            {
-                bool existe = await Contexto.Contas.AnyAsync(c => c.Cliente.Cpf == cpf, cancellationToken);
+            bool existe = await Contexto.Contas.AnyAsync(c => c.Cliente.Cpf == cpf, cancellationToken);
 
-                return existe;
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
-            }
+            return existe;
         }
 
-        public async Task<Conta> BuscarConta(string cpf, CancellationToken cancellationToken)
+        public async Task<Conta?> BuscarConta(string cpf, CancellationToken cancellationToken)
         {
-            try
-            {
-                Conta conta = await Contexto.Contas
-                    .Include(c => c.Cliente)
-                    .ThenInclude(c => c.Endereco)
-                    .FirstOrDefaultAsync(c => c.Cliente.Cpf == cpf, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+            Conta? conta = await Contexto.Contas
+                .Include(c => c.Cliente)
+                .ThenInclude(c => c.Endereco)
+                .FirstOrDefaultAsync(c => c.Cliente.Cpf == cpf, cancellationToken);
 
-                return conta;
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
-            }
+            return conta;
         }
 
-        public async Task<Conta> BuscarConta(Guid id, CancellationToken cancellationToken)
+        public async Task<Conta?> BuscarConta(Guid id, CancellationToken cancellationToken)
         {
-            try
-            {
-                Conta conta = await Contexto.Contas
-                    .Include(c => c.Cliente)
-                    .ThenInclude(c => c.Endereco)
-                    .FirstOrDefaultAsync(c => c.Id == id, cancellationToken) ?? throw new RepositorioExcecao(ContaErr.ContaNaoEncontrada);
+            Conta? conta = await Contexto.Contas
+                .Include(c => c.Cliente)
+                .ThenInclude(c => c.Endereco)
+                .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
 
-                return conta;
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
-            }
+            return conta;
         }
 
         public async Task<Conta?> BuscarCliente(Guid id, CancellationToken cancellationToken)
         {
-            try
-            {
-                Conta? conta = await Contexto.Contas
-                        .Include(c => c.Cliente)
-                        .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+            Conta? conta = await Contexto.Contas
+                    .Include(c => c.Cliente)
+                    .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
 
-                return conta;
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
-            }
+            return conta;
         }
 
         public async Task<string?> PegarCpf(Guid id, CancellationToken cancellationToken)
         {
-            try
-            {
-                Conta? conta = await Contexto.Contas
-                         .Include(c => c.Cliente)
-                         .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+            Conta? conta = await Contexto.Contas
+                     .Include(c => c.Cliente)
+                     .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
 
-                if (conta == null) return null;
+            if (conta == null) return null;
 
-                return conta.Cliente.Cpf;
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
-            }
+            return conta.Cliente.Cpf;
         }
     }
 }

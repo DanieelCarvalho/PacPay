@@ -3,6 +3,8 @@ using PacPay.Dominio.Interfaces;
 using PacPay.Dominio.Entidades;
 using AutoMapper;
 using MediatR;
+using PacPay.App.Compartilhado.Utilitarios;
+using PacPay.Dominio.Excecoes.Mensagens;
 
 namespace PacPay.App.CasosDeUso.Contas.Buscar
 {
@@ -15,9 +17,10 @@ namespace PacPay.App.CasosDeUso.Contas.Buscar
         public async Task<BuscarResponse> Handle(BuscarRequest request, CancellationToken cancellationToken)
         {
             Guid id = Guid.Parse(_autenticador.PegarId());
-            Conta cliente = await _repositorioConta.BuscarCliente(id, cancellationToken) ?? throw new Exception("Cliente não encontrado");
+            Conta cliente = await _repositorioConta.BuscarCliente(id, cancellationToken) ?? throw ContaErr.ContaNaoEncontrada404;
+            if(cliente.Ativa == false) throw ContaErr.ContaDesativada403;
             BuscarResponse response = _mapper.Map<BuscarResponse>(cliente);
-            response.DataDeCriacao = cliente.DataCriacao.ToLocalTime().ToString("dd/MM/yyyy HH:mm:hh");
+            response.DataDeCriacao = FormatarData.ParaString(cliente.DataCriacao);
 
             return response;
         }

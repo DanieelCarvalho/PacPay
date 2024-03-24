@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using PacPay.Dominio.Entidades;
+using PacPay.Dominio.Excecoes.Mensagens;
 using PacPay.Dominio.Interfaces;
 using PacPay.Dominio.Interfaces.IUtilitarios;
 
@@ -16,7 +17,7 @@ namespace PacPay.App.CasosDeUso.Contas.Reativar
             FluentValidation.Results.ValidationResult resultado = new ReativarValidador().Validate(request);
             if (!resultado.IsValid) throw new FluentValidation.ValidationException(resultado.Errors);
 
-            Conta conta = await _repositorioConta.BuscarConta(request.Cpf, cancellationToken);
+            Conta conta = await _repositorioConta.BuscarConta(request.Cpf, cancellationToken) ?? throw ContaErr.ContaNaoEncontrada404;
 
             conta.Reativar(request.Cpf, request.Email, request.Senha, _repositorioConta, _encriptador, _commitDados, cancellationToken);
         }

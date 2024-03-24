@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PacPay.App.CasosDeUso.Operacoes.Sacar;
+using PacPay.Dominio.Excecoes;
 
 namespace PacPay.Api.Controladores.Operacoes
 {
@@ -13,13 +14,22 @@ namespace PacPay.Api.Controladores.Operacoes
 
         [Authorize]
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status402PaymentRequired)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Sacar(SacarRequest saqueRequest, CancellationToken cancellationToken)
         {
             try
             {
                 await _mediator.Send(saqueRequest, cancellationToken);
 
-                return Ok("Saque realizado com sucesso");
+                return NoContent();
+            }
+            catch (Excecao ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
             }
             catch (Exception ex)
             {

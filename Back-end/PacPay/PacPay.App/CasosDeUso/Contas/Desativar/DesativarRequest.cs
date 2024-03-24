@@ -2,7 +2,7 @@
 
 namespace PacPay.App.CasosDeUso.Contas.Desativar
 {
-    public sealed record DesativarRequest(string Senha) : IRequest<DesativarResponse>
+    public sealed record DesativarRequest(string Senha) : IRequest
     {
     }
 }

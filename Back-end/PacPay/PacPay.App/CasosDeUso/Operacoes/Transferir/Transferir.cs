@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using PacPay.Dominio.Entidades;
+using PacPay.Dominio.Excecoes.Mensagens;
 using PacPay.Dominio.Interfaces;
 using PacPay.Dominio.Interfaces.IUtilitarios;
 
@@ -22,12 +23,11 @@ namespace PacPay.App.CasosDeUso.Operacoes.Transferir
 
             Guid id = Guid.Parse(_autenticador.PegarId());
 
-            Conta contaOrigem = await _repositorioConta.BuscarConta(id, cancellationToken);
+            Conta contaOrigem = await _repositorioConta.BuscarConta(id, cancellationToken) ?? throw ContaErr.ContaNaoEncontrada404;
 
-            Conta contaDestino = await _repositorioConta.BuscarConta(request.ContaDestino, cancellationToken);
+            Conta contaDestino = await _repositorioConta.BuscarConta(request.ContaDestino, cancellationToken) ?? throw ContaErr.ContaNaoEncontrada404;
 
-            Operacao operacao = new();
-            operacao.Transferencia(valor, descricao, contaOrigem, contaDestino, _repositorioConta, _repositorioOperacao, _commitDados, cancellationToken);
+            new Operacao().Transferencia(valor, descricao, contaOrigem, contaDestino, _repositorioConta, _repositorioOperacao, _commitDados, cancellationToken);
         }
     }
 }

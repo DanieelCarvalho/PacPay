@@ -64,6 +64,16 @@
           formControlName="numero"
         />
         <label class="fs-5 pt-4" for="numero-cadastro">Número</label>
+        <div
+          *ngIf="
+            formulario.controls['numero'].invalid &&
+            (formulario.controls['numero'].dirty ||
+              formulario.controls['numero'].touched)
+          "
+          class="text-danger ms-1"
+        >
+          Numero é obrigatório.
+        </div>
       </div>
     </div>
     <div class="col-md-6">

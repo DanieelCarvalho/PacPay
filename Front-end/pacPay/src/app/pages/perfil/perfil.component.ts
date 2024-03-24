@@ -15,7 +15,7 @@ import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink],
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.css',
 })
@@ -25,6 +25,7 @@ export class PerfilComponent {
   DadosUsuario?: any;
   deletionError: string | null = null;
   deletionSuccess: string | null = null;
+  errorApagarConta: boolean = false;
 
   senhaForm = new FormGroup({
     senha: new FormControl('', Validators.required),
@@ -35,14 +36,23 @@ export class PerfilComponent {
       this.DadosUsuario = r;
     });
   }
+
   Apagarconta(): void {
-    this.servico
-      .apagarConta(this.senhaForm.value as ApagarConta)
-      .subscribe((r) => {
+    this.servico.apagarConta(this.senhaForm.value as ApagarConta).subscribe(
+      (r) => {
         localStorage.removeItem('token');
         localStorage.removeItem('nome');
         this.rota.navigateByUrl('/inicio');
-      });
+      },
+      (error) => {
+        if (error.status === 500 || error.status === 401) {
+          this.errorApagarConta = true;
+          setTimeout(() => {
+            this.errorApagarConta = false;
+          }, 4000);
+        }
+      }
+    );
   }
 
   ngOnInit(): void {

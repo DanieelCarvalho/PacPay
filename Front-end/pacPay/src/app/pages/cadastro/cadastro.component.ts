@@ -56,7 +56,7 @@ export class CadastroComponent {
       senha: new FormControl('', Validators.required),
       cep: new FormControl('', Validators.required),
       rua: new FormControl('', Validators.required),
-      numero: new FormControl(''),
+      numero: new FormControl('', Validators.required),
       complemento: new FormControl(''),
       bairro: new FormControl(''),
       cidade: new FormControl('', Validators.required),

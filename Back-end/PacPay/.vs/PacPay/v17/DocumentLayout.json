@@ -1,5 +1,18 @@
 {
   "Version": 1,
+<<<<<<< HEAD
+  "WorkspaceRootPath": "C:\\Users\\keell\\Desktop\\Projeto Final\\PacPay\\Back-end\\PacPay\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37D676D5-1352-4699-BBDC-96EF352412AD}|PacPay.App\\PacPay.App.csproj|c:\\users\\keell\\desktop\\projeto final\\pacpay\\back-end\\pacpay\\pacpay.app\\pacpay.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{37D676D5-1352-4699-BBDC-96EF352412AD}|PacPay.App\\PacPay.App.csproj|solutionrelative:pacpay.app\\pacpay.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E93E632-6C52-48C6-85CB-F491789DC0AF}|PacPay.Api\\PacPay.Api.csproj|c:\\users\\keell\\desktop\\projeto final\\pacpay\\back-end\\pacpay\\pacpay.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4E93E632-6C52-48C6-85CB-F491789DC0AF}|PacPay.Api\\PacPay.Api.csproj|solutionrelative:pacpay.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+=======
   "WorkspaceRootPath": "C:\\Users\\luanf\\OneDrive\\Documentos\\codigos\\PacPay\\Back-end\\PacPay\\",
   "Documents": [
     {

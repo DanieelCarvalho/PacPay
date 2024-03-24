@@ -10,76 +10,120 @@ main {
 }
 .tabela-historico {
   border: 0.1rem solid var(--primary-color);
+  max-width: 80%;
+  margin: 20px auto;
 }
 .tabela-historico th {
-  font-size: 1.6rem;
+  width: 25%;
+  font-size: 1.7rem;
+  font-weight: 500;
   text-align: center;
-  /* border-left: 0.1rem solid #d9d9d9;
-  border-right: 0.1rem solid #d9d9d9; */
+  border-left: 0.1rem solid #d9d9d9;
+  border-right: 0.1rem solid #d9d9d9;
 }
 .tabela-historico td {
+  width: 25%;
+  max-width: fit-content;
   font-size: 1.6rem;
   text-align: center;
-  /* border: 0.1rem solid #d9d9d9; */
+  border-left: 0.1rem solid #d9d9d9;
+  border-bottom: 0.1rem solid var(--primary-color);
+  border-right: 0.1rem solid #d9d9d9;
 }
-
 .saldo-section,
 .icons-section,
 .transaction-history {
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
+.transaction-history > h2 {
+  width: fit-content;
+  margin: 3rem auto;
+  border-bottom: 2px solid var(--primary-color);
+}
 .container-trasacoes {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+.container-trasacoes > h2 {
+  width: fit-content;
+  align-self: center;
+  border-bottom: 2px solid var(--primary-color);
+  margin: 3rem auto;
+}
 .transaction-history {
-  height: 100%;
+    height: 100%;
 }
 .btn-next {
-  padding-right: 0.9rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
 .btn-next figure img {
   cursor: pointer;
   background-color: black;
+  width: 4rem;
+  margin: 1rem 2rem;
 }
 .btn-next figure {
   background-color: black;
-
   display: flex;
   justify-content: space-between;
-  width: 7rem;
+  align-items: center;
 }
+.btn-next p {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
 .transacoes-inputs {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 30rem;
+  margin-top: 3rem;
 }
-.teste {
+.border-operacoes {
   border: 0.1rem solid var(--primary-color);
+  padding: 5px 5px;
+  border-radius: 5px;
 }
 
 .transacoes {
-  /* background-color: black !important; */
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  height: 20rem;
+  align-items: start;
+  height: 23rem;
 }
 .transacoes a {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   border: 0.1rem solid var(--primary-color);
-  /* background-color: black; */
+  transition: background-color 0.5s ease-in-out;
+  width: 5em;
+}
+.transacoes a:hover{
+    background-color: #df7300;
 }
 .transacoes input {
   color: #fff !important;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.transacoes input[type="button"] {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.5s ease;
+}
+.transacoes input[type="button"]:hover {
+  background-color: #df7300;
 }
 
 section {
@@ -98,7 +142,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   height: 100%;
   margin-bottom: 1rem;
   margin-left: 1rem;
@@ -108,7 +152,7 @@ header {
 .user-detalhes {
   display: flex;
   align-items: center;
-  height: 100%;
+  height: 10rem;
   justify-content: space-evenly;
   width: 20rem;
 }
@@ -133,7 +177,7 @@ header {
 .logout img {
   width: 3rem;
   height: 3rem;
-  margin-right: 0.5rem;
+  margin-right: 2rem;
   cursor: pointer;
 }
 
@@ -144,8 +188,9 @@ header {
   flex-wrap: wrap;
   font-size: 2rem;
   margin-top: 2rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  padding: 2rem 0rem;
 }
 
 .olho-saldo {
@@ -200,21 +245,24 @@ h2 {
 .hidden {
   display: none;
 }
-
+@media screen and (max-width: 700px){
+    .tabela-historico th{
+        text-align: center; 
+        vertical-align: middle; 
+      }
+      .tabela-historico td{
+        text-align: center; 
+        vertical-align: middle;
+      }
+}
 @media screen and (max-width: 435px) {
   .user-info {
-    width: 95%;
+    width: 100%;
     margin: 0px;
     font-size: 1.5rem;
   }
   .logout {
     display: flex;
-  }
-
-  .logout p {
-    text-transform: uppercase;
-    padding: 0.5rem;
-    margin-right: 1rem;
   }
 
   .logout img {
@@ -244,11 +292,16 @@ h2 {
 
   .logout img {
     margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+  .logout img:first-child {
+    margin-right: 1.8rem;
   }
 
   .saldo-section {
     font-size: 1.5rem;
-    width: 90%;
+    max-width: 100%;
+    margin: 2rem 3rem;
   }
 
   .olho-saldo {
@@ -262,28 +315,22 @@ h2 {
   .icon-label {
     font-size: 1.5rem;
   }
-  .transaction-history ul li {
-    font-size: 1.2rem;
+  .container-trasacoes{
+    max-width: 100%;
   }
-  .transaction-history ul {
-    min-width: 75%;
-    width: 80%;
-    padding: 0px;
+  
+  .tabela-historico{
+    max-width: 95%;
   }
-  .transaction-history p {
-    margin: 0px;
+  .tabela-historico th{
+    text-align: center; 
+    vertical-align: middle; 
   }
-  .transaction-history li {
-    display: flex;
-    word-break: keep-all;
-    align-items: center;
+  .tabela-historico td{
+    text-align: center; 
+    vertical-align: middle;
   }
-  .transaction-history img {
-    width: 2em;
-    height: 3em;
-    margin-right: 5px;
-  }
-  .transaction-history span {
-    word-break: keep-all;
+  .btn-next figure img{
+    width: 4.8em;
   }
 }

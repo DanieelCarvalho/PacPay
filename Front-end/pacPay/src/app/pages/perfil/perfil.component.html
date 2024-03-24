@@ -1,5 +1,16 @@
+<section class="container-nome">
+  <div class="nomeUsuario">
+    <img
+      class="imagemusuario"
+      src="./assets/fotodousuario.png"
+      alt="Foto do usuário"
+    />
+    <p>{{ DadosUsuario.nome }}</p>
+  </div>
+</section>
+
 <section *ngIf="DadosUsuario" class="dadosUsuario">
-  <h1>Dados do Usuário</h1>
+  <h1>Meus Dados</h1>
   <label for="nome">Nome:</label>
   <input
     type="text"
@@ -31,4 +42,24 @@
     [(ngModel)]="DadosUsuario.dataDeCriacao"
     [disabled]="true"
   />
+
+  <form [formGroup]="senhaForm" (ngSubmit)="Apagarconta()" style="color: #fff">
+    <div>
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" formControlName="senha" />
+      <!-- <div
+        *ngIf="
+          senhaForm.get('senha').errors?.required &&
+          senhaForm.get('senha').touched
+        "
+      >
+        Senha é obrigatória.
+      </div> -->
+    </div>
+    <div *ngIf="deletionError" style="color: red">{{ deletionError }}</div>
+    <div *ngIf="deletionSuccess" style="color: green">
+      {{ deletionSuccess }}
+    </div>
+    <button type="submit" style="color: #fff">Apagar Conta</button>
+  </form>
 </section>

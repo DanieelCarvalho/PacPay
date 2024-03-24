@@ -7,11 +7,16 @@
       </div>
       <div class="logout">
         <img
-          src="./assets/engrenagem.png"
-          alt="Ícone de engrenagem"
+          src="./assets/user-circle-gear.svg"
+          alt="icone de direcionamento ao perfil"
           (click)="perfil()"
         />
-        <p (click)="sair()">sair</p>
+
+        <img
+          src="./assets/sign-out (1).svg"
+          alt="icone de saida da página"
+          (click)="sair()"
+        />
       </div>
     </div>
   </header>
@@ -20,7 +25,9 @@
     <div class="saldo-section">
       <div>
         <h3 class="saldo-label">SALDO DA CONTA CORRENTE</h3>
-        <p class="saldo-amount" *ngIf="saldoVisivel">R$ {{ saldo }}</p>
+        <p class="saldo-amount" *ngIf="saldoVisivel">
+          R$ {{ saldo?.toFixed(2) }}
+        </p>
         <p class="saldo-amount" *ngIf="!saldoVisivel">R$ ****</p>
       </div>
       <img
@@ -55,12 +62,17 @@
             Saque
           </a>
         </p>
-        <div class="collapse" id="collapseSaque">
+        <div class="collapse border-operacoes" id="collapseSaque">
           <div class="card card-body">
             <input type="text" placeholder="Valor" [(ngModel)]="valorSaque" />
             <p *ngIf="errorSaque" class="mensagem-erro" role="alert">
               Insira um valor.
             </p>
+            <div class="text-center">
+              <div *ngIf="carregandoSaque" class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
             <input type="button" value="Sacar" (click)="saque()" />
           </div>
         </div>
@@ -75,10 +87,10 @@
             aria-expanded="false"
             aria-controls="collapseDeposito"
           >
-            Deposito
+            Depósito
           </a>
         </p>
-        <div class="collapse" id="collapseDeposito">
+        <div class="collapse border-operacoes" id="collapseDeposito">
           <div class="card card-body">
             <input
               type="text"
@@ -88,6 +100,15 @@
             <p *ngIf="errorDeposito" class="mensagem-erro" role="alert">
               Insira um valor.
             </p>
+            <div class="text-center">
+              <div
+                *ngIf="carregandoDeposito"
+                class="spinner-border"
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
             <input type="button" value="Depositar" (click)="depositar()" />
           </div>
         </div>
@@ -105,7 +126,7 @@
             Transferir
           </a>
         </p>
-        <div class="collapse teste" id="collapseTranferir">
+        <div class="collapse border-operacoes" id="collapseTranferir">
           <div class="card card-body">
             <input
               type="text"
@@ -122,6 +143,15 @@
             <p *ngIf="cpfInvalido" class="mensagem-erro" role="alert">
               CPF Inválido
             </p>
+            <div class="text-center">
+              <div
+                *ngIf="carregandoTransfe"
+                class="spinner-border"
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -130,20 +160,7 @@
 
   <section class="transaction-history">
     <h2>Histórico de Transações</h2>
-    <div class="btn-next">
-      <figure>
-        <img
-          src="./assets/arrow-circle-left (1).svg"
-          alt="seta para esquerda"
-          (click)="etapaAnterior()"
-        />
-        <img
-          src="./assets/arrow-circle-right.svg"
-          alt="seta para direita"
-          (click)="proximaetapa()"
-        />
-      </figure>
-    </div>
+
     <table
       id="HTransações"
       class="table table-dark table-striped tabela-historico"
@@ -157,11 +174,26 @@
         </tr>
       </thead>
       <tbody *ngFor="let v of historicoDados">
-        <td>{{ v.valor }}</td>
+        <td>R$ {{ v.valor?.toFixed(2) }}</td>
         <td>{{ v.cpfDestino ? v.cpfDestino : "Minha Conta " }}</td>
         <td>{{ v.tipoOperacao }}</td>
         <td>{{ v.dataOperacao }}</td>
       </tbody>
     </table>
+    <div class="btn-next">
+      <figure>
+        <img
+          src="./assets/arrow-circle-left (1).svg"
+          alt="seta para esquerda"
+          (click)="etapaAnterior()"
+        />
+        <p>{{ etapa }}</p>
+        <img
+          src="./assets/arrow-circle-right.svg"
+          alt="seta para direita"
+          (click)="proximaetapa()"
+        />
+      </figure>
+    </div>
   </section>
 </main>

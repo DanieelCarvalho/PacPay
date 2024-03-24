@@ -36,6 +36,10 @@ export class AdminComponent {
   cpfInvalido: boolean = false;
   errorDeposito: boolean = false;
   errorSaque: boolean = false;
+  carregandoSaque: boolean = false;
+  carregandoDeposito: boolean = false;
+  carregandoTransfe: boolean = false;
+  testeNpg?: number;
 
   private buscarSaldoSubscription: Subscription | undefined;
   private saqueSubscription: Subscription | undefined;
@@ -61,17 +65,21 @@ export class AdminComponent {
   }
 
   saque(): void {
+    this.carregandoSaque = true;
     const payload = { valor: this.valorSaque };
     console.log(this.valorSaque);
+
     this.saqueSubscription = this.servico.sacar(payload).subscribe(
       (resposta) => {
         console.log(resposta);
+        this.carregandoSaque = false;
         this.BuscarSaldo();
         this.buscarHistorico(1);
         this.valorSaque = undefined;
       },
       (error) => {
         if (error.status == 400) {
+          this.carregandoSaque = false;
           this.errorSaque = true;
           setTimeout(() => {
             this.errorSaque = false;
@@ -82,16 +90,18 @@ export class AdminComponent {
   }
 
   depositar(): void {
+    this.carregandoDeposito = true;
     const payload = { valor: this.valorDeposito };
     console.log(this.valorDeposito);
     this.depositarSubscription = this.servico.depositar(payload).subscribe(
       (resposta) => {
-        console.log('Depósito realizado com sucesso!');
+        this.carregandoDeposito = false;
         this.BuscarSaldo();
         this.buscarHistorico(1);
         this.valorDeposito = undefined;
       },
       (error) => {
+        this.carregandoDeposito = false;
         if (error.status == 400) {
           this.errorDeposito = true;
           setTimeout(() => {
@@ -103,6 +113,7 @@ export class AdminComponent {
   }
 
   transferir(): void {
+    this.carregandoTransfe = true;
     const payload = {
       valor: this.valorTranferencia,
       contaDestino: this.ContaDestino,
@@ -110,12 +121,15 @@ export class AdminComponent {
     console.log(payload);
     this.transferirSubscription = this.servico.Transferencia(payload).subscribe(
       (resposta) => {
+        this.carregandoTransfe = false;
         this.BuscarSaldo();
         this.buscarHistorico(1);
         this.valorTranferencia = undefined;
+        this.ContaDestino = '';
         console.log('Transferência realizada com sucesso!');
       },
       (error) => {
+        this.carregandoTransfe = false;
         if (error.status == 400) {
           this.cpfInvalido = true;
           setTimeout(() => {
@@ -151,12 +165,28 @@ export class AdminComponent {
     });
   }
   proximaetapa() {
-    this.etapa++;
-    this.buscarHistorico(this.etapa);
+    const proximaEtapa = this.etapa + 1;
+    this.servico.pegarHistorico(proximaEtapa).subscribe((r) => {
+      if (r.length > 0) {
+        // Verifica se há algum item no histórico
+        this.etapa++;
+        this.buscarHistorico(this.etapa);
+      } else {
+        console.log('Não há folha disponível para a próxima etapa.');
+        // Adicione aqui a lógica para lidar com o caso em que não há folha disponível
+      }
+    });
   }
+
   etapaAnterior() {
-    this.etapa--;
-    this.buscarHistorico(this.etapa);
+    if (this.etapa > 1) {
+      // Verifica se a etapa atual não é a primeira
+      this.etapa--;
+      this.buscarHistorico(this.etapa);
+    } else {
+      console.log('Você já está na primeira etapa.');
+      // Adicione aqui a lógica para lidar com o caso em que o usuário está na primeira etapa
+    }
   }
   perfil() {
     this.rota.navigateByUrl('/perfil');

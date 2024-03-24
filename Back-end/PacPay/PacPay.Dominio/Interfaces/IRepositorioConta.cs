@@ -6,9 +6,9 @@ namespace PacPay.Dominio.Interfaces
     {
         Task<bool> ContaExiste(string cpf, CancellationToken cancellationToken);
 
-        Task<Conta> BuscarConta(string cpf, CancellationToken cancellationToken);
+        Task<Conta?> BuscarConta(string cpf, CancellationToken cancellationToken);
 
-        Task<Conta> BuscarConta(Guid id, CancellationToken cancellationToken);
+        Task<Conta?> BuscarConta(Guid id, CancellationToken cancellationToken);
 
         Task<Conta?> BuscarCliente(Guid id, CancellationToken cancellationToken);
 

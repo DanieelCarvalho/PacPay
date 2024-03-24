@@ -6,7 +6,7 @@ namespace PacPay.App.Compartilhado.Utilitarios
     {
         public string Encriptar(string senha)
         {
-            string salt = BCrypt.Net.BCrypt.GenerateSalt(16);
+            string salt = BCrypt.Net.BCrypt.GenerateSalt(10);
             string hash = BCrypt.Net.BCrypt.HashPassword(senha, salt);
 
             return hash;

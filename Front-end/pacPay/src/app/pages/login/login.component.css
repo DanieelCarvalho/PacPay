@@ -146,11 +146,7 @@ p {
   border: #e89d00 solid;
 }
 
-@media screen and (max-width: 435px) {
-  /* .center-container{
-    display: none;
-  } */
-
+@media screen and (max-width: 500px) {
   .footer {
     display: none;
   }
@@ -189,7 +185,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 100%;
+    width: 90%;
   }
   .frase {
     height: 7rem;

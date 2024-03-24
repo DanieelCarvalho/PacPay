@@ -15,7 +15,7 @@ import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink,],
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.css',
 })

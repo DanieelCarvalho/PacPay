@@ -130,7 +130,7 @@ export class AdminComponent {
       },
       (error) => {
         this.carregandoTransfe = false;
-        if (error.status == 400) {
+        if (error.status == 404 || error.status == 500 || error.status == 403) {
           this.cpfInvalido = true;
           setTimeout(() => {
             this.cpfInvalido = false;

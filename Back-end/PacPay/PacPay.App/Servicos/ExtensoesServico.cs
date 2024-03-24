@@ -14,7 +14,7 @@ namespace PacPay.App.Servicos
             servicos.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
             servicos.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             servicos.AddScoped<IEncriptador, Encriptador>();
-            servicos.AddScoped<IAutenticacao, Autenticacao>();
+            servicos.AddScoped<IAutenticador, Autenticador>();
         }
     }
 }

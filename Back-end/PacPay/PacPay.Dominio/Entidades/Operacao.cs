@@ -1,5 +1,4 @@
 ﻿using PacPay.Dominio.Entidades.Enums;
-using PacPay.Dominio.Excecoes;
 using PacPay.Dominio.Excecoes.Mensagens;
 using PacPay.Dominio.Interfaces;
 
@@ -30,12 +29,13 @@ namespace PacPay.Dominio.Entidades
             if (tipoOperacao == Transacoes.Saque) conta.Saldo -= valor;
             if (tipoOperacao == Transacoes.Deposito) conta.Saldo += valor;
 
-            conta.AtualizarConta(repositorioConta);
+            conta.Atualizar(repositorioConta);
         }
 
         public void Deposito(decimal valor, string? descricao, Conta conta, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados, CancellationToken cancellationToken)
         {
-            if (valor <= 0) throw new DominioExcecao(OperacoesErr.ValorInvalido);
+            if(conta.Ativa == false) throw ContaErr.ContaDesativada403;
+            if (valor <= 0) throw OperacoesErr.ValorInvalido400;
 
             InfoOperacao(valor, Transacoes.Deposito, conta.Id, conta.Id, descricao);
 
@@ -48,8 +48,9 @@ namespace PacPay.Dominio.Entidades
 
         public void Saque(decimal valor, string? descricao, Conta conta, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados, CancellationToken cancellationToken)
         {
-            if (valor <= 0) throw new DominioExcecao(OperacoesErr.ValorInvalido);
-            if (valor > conta.Saldo) throw new DominioExcecao(OperacoesErr.SaldoInsuficiente);
+            if(conta.Ativa == false) throw ContaErr.ContaDesativada403;
+            if (valor <= 0) throw OperacoesErr.ValorInvalido400;
+            if (valor > conta.Saldo) throw OperacoesErr.SaldoInsuficiente402;
 
             InfoOperacao(valor, Transacoes.Saque, conta.Id, conta.Id, descricao);
 
@@ -61,9 +62,11 @@ namespace PacPay.Dominio.Entidades
 
         public void Transferencia(decimal valor, string? descricao, Conta contaOrigem, Conta contaDestino, IRepositorioConta repositorioConta, IRepositorioOperacao repositorioOperacao, ICommitDados commitDados, CancellationToken cancellationToken)
         {
-            if (valor <= 0) throw new DominioExcecao(OperacoesErr.ValorInvalido);
-            if (valor > contaOrigem.Saldo) throw new DominioExcecao(OperacoesErr.SaldoInsuficiente);
-            if (contaOrigem.Id == contaDestino.Id) throw new DominioExcecao(OperacoesErr.TransferenciaMesmaConta);
+            if(contaOrigem.Ativa == false) throw ContaErr.ContaDesativada403;
+            if(contaDestino.Ativa == false) throw ContaErr.ContaDestinoDesativada403;
+            if (valor <= 0) throw OperacoesErr.ValorInvalido400;
+            if (valor > contaOrigem.Saldo) throw OperacoesErr.SaldoInsuficiente402;
+            if (contaOrigem.Id == contaDestino.Id) throw OperacoesErr.TransferenciaMesmaConta403;
 
             InfoOperacao(valor, Transacoes.Transferencia, contaOrigem.Id, contaDestino.Id, descricao);
 
@@ -77,9 +80,9 @@ namespace PacPay.Dominio.Entidades
         public static List<Operacao> Historico(Guid id, int numeroDaPagina, IRepositorioOperacao repositorioOperacao, CancellationToken cancellationToken)
         {
             List<Operacao> operacoes = repositorioOperacao.Historico(id, numeroDaPagina, cancellationToken);
-
-            if (operacoes.Count == 0) throw new DominioExcecao(OperacoesErr.HistoricoVazio);
-
+            Console.WriteLine("aqui");
+            if (operacoes.Count == 0) throw OperacoesErr.HistoricoVazio204;
+            Console.WriteLine("depois");
             return operacoes;
         }
     }

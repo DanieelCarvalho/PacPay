@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PacPay.App.CasosDeUso.Operacoes.Historico;
+using PacPay.Dominio.Excecoes;
 
 namespace PacPay.Api.Controladores.Operacoes
 {
@@ -13,6 +14,9 @@ namespace PacPay.Api.Controladores.Operacoes
 
         [Authorize]
         [HttpGet("{numeroDaPagina}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> PegarHistorico(int numeroDaPagina, CancellationToken cancellationToken)
         {
             try
@@ -22,9 +26,13 @@ namespace PacPay.Api.Controladores.Operacoes
                 List<HistoricoResponse> response = await _mediator.Send(historicoRequest, cancellationToken);
                 return Ok(response);
             }
+            catch (Excecao ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500, ex.Message);
             }
         }
     }

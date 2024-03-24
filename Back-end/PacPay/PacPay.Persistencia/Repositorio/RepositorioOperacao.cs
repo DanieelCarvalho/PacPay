@@ -1,6 +1,4 @@
 ﻿using PacPay.Dominio.Entidades;
-using PacPay.Dominio.Excecoes;
-using PacPay.Dominio.Excecoes.Mensagens;
 using PacPay.Dominio.Interfaces;
 using PacPay.Infra.Contexto;
 
@@ -12,35 +10,21 @@ namespace PacPay.Infra.Repositorio
 
         public List<Operacao> Historico(Guid id, int NumeroDaPagina, CancellationToken cancellationToken)
         {
-            try
-            {
-                int tamanho = 10;
-                int skip = (NumeroDaPagina - 1) * tamanho;
+            int tamanho = 10;
+            int skip = (NumeroDaPagina - 1) * tamanho;
 
-                List<Operacao> operacoes = [.. Contexto.Operacoes
+            List<Operacao> operacoes = [.. Contexto.Operacoes
                 .Where(x => x.IdContaOrigem == id)
                 .OrderByDescending(x => x.DataOperacao)
                 .Skip(skip)
                 .Take(tamanho)];
 
-                return operacoes;
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
-            }
+            return operacoes;
         }
 
         public void Transacao(Operacao deposito)
         {
-            try
-            {
-                Contexto.Add(deposito);
-            }
-            catch (Exception ex)
-            {
-                throw new RepositorioExcecao($"{RepositorioErr.Cadastro}:  {ex.Message}");
-            }
+            Contexto.Add(deposito);
         }
     }
 }

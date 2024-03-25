@@ -77,6 +77,9 @@
               <p *ngIf="errorApagarConta" class="mensagem-erro" role="alert">
                 Senha inválida.
               </p>
+              <p *ngIf="error" class="mensagem-erro" role="alert">
+                A conta ainda possui saldo, faça um saque ou transferência para zerar a conta
+              </p>
               <div class="text-center">
                 <div *ngIf="" class="spinner-border" role="status">
                   <span class="visually-hidden">Loading...</span>

@@ -26,6 +26,7 @@ export class PerfilComponent {
   deletionError: string | null = null;
   deletionSuccess: string | null = null;
   errorApagarConta: boolean = false;
+  error: boolean = false;
 
   senhaForm = new FormGroup({
     senha: new FormControl('', Validators.required),
@@ -49,6 +50,11 @@ export class PerfilComponent {
           this.errorApagarConta = true;
           setTimeout(() => {
             this.errorApagarConta = false;
+          }, 4000);
+        } else if (error.status == 403) {
+          this.error = true;
+          setTimeout(() => {
+            this.error = false;
           }, 4000);
         }
       }

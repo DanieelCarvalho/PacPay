@@ -8,7 +8,7 @@ Projeto de Banco em aplicação web
 - [Features](#features)
 - [Tecnologias usadas](#tecnologias-usadas)
 - [Autores](#autores)
-- [Deploy](#deploy)
+<!-- - [Deploy](#deploy) -->
 
 ## Descrição
 
@@ -30,7 +30,15 @@ Repositório do projeto Hackadev proposto no bootcamp Sharp Coders 2023, promovi
 
 ### Backend
 
-👨‍💻 em construção... 🚧
+☑ Cadastro de Contas
+
+☑ Operação de Depósito
+
+☑ Operação de Saque
+
+☑ Operação de Saque
+
+☑ Consulta de Saldo
 
 ## Tecnologias usadas
 
@@ -45,6 +53,7 @@ Repositório do projeto Hackadev proposto no bootcamp Sharp Coders 2023, promovi
 ### Backend
 
 - C#
+- .NET Framework
 
 ## Autores
 
@@ -101,8 +110,8 @@ Este projeto está sendo desenvolvido com muito carinho e dedicação pelas pess
 
 <div align="center"><a href=""><img src="https://img.shields.io/badge/-Petrus-blue?style=flat-square&logo=Linkedin&logoColor=white"/></a></div>
 
-## Deploy
+<!-- ## Deploy
 
 O deploy do projeto foi feito no serviço Vercel.
 
-🚀 Deploy: https://pac-pay.vercel.app/inicio
+🚀 Deploy: https://pac-pay.vercel.app/inicio -->
